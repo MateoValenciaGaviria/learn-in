@@ -1,0 +1,86 @@
+body, html{
+    margin: 0px;
+    font-family: $primary-font-family;
+}
+
+.app{
+
+    &__content{
+        
+    }
+
+    &__navbar{
+        color: white;
+        display: flex;
+        flex-direction: row;
+        height: 70px;
+        justify-content: space-between;
+        background-color: $purple;
+        align-items: center;
+    }
+
+    &__logo{
+        margin-left: $main-margin;
+        height: 30%;
+    }
+
+    &__linkscontainer{
+        display: flex;
+        flex-direction: row;
+        width: 33%;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    &__link{
+
+        color: white;
+        font-size: 14px;
+        text-decoration: none;
+
+        &--selected{
+            color: white;
+            font-family: $tertiary-font-family;
+            font-size: 18px;
+            text-decoration: none;
+        }
+    }
+
+    &__useroptionscontainer{
+        display: flex;
+        flex-direction: row;
+        margin-right: $main-margin;
+        align-items: center;
+        height: 100%;
+    }
+
+    &__notificationsicon{
+        height: 30%;
+    }
+
+    &__usernameandocupation{
+        display: flex;
+        flex-direction: column;
+        margin: 0 20px;
+        line-height:100%;
+    }
+
+    &__navusername{
+        margin: 0;
+        font-size: 15px;
+        font-family: $tertiary-font-family;
+    }
+
+    &__navuserocupation{
+        margin: 0;
+        font-size: 14px;
+    }
+
+    &__useravatarcontainer{
+        height: 70%;
+    }
+
+    &__useravatar{
+        height: 100%;
+    }
+}

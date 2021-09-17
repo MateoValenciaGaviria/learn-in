@@ -1,0 +1,30 @@
+@font-face{
+    font-family: Poppins-regular;
+    src: url("../fonts/poppins/Poppins-Regular.ttf");
+}
+
+@font-face{
+    font-family: Poppins-medium;
+    src: url("../fonts/poppins/Poppins-Medium.ttf");
+}
+
+@font-face{
+    font-family: Poppins-bold;
+    src: url("../fonts/poppins/Poppins-Bold.ttf");
+}
+
+$primary-font-family: "Poppins-regular"; 
+$secondary-font-family: "Poppins-medium";
+$tertiary-font-family: "Poppins-bold";
+
+$main-margin: 46px;
+
+$darkblue: #001E4D;
+$blue: #00367C;
+$purple: #6F447A;
+$magenta: #F73C57;
+$gray: #9098BD;
+$yellow: #FFB508;
+
+
+@import '../containers/App/App';

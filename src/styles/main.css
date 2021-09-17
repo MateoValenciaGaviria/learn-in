@@ -1,1 +1,123 @@
-/* No CSS *//*# sourceMappingURL=main.css.map */
+@font-face {
+  font-family: Poppins-regular;
+  src: url("../fonts/poppins/Poppins-Regular.ttf");
+}
+
+@font-face {
+  font-family: Poppins-medium;
+  src: url("../fonts/poppins/Poppins-Medium.ttf");
+}
+
+@font-face {
+  font-family: Poppins-bold;
+  src: url("../fonts/poppins/Poppins-Bold.ttf");
+}
+
+body, html {
+  margin: 0px;
+  font-family: "Poppins-regular";
+}
+
+.app__navbar {
+  color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  height: 70px;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  background-color: #6F447A;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.app__logo {
+  margin-left: 46px;
+  height: 30%;
+}
+
+.app__linkscontainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  width: 33%;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.app__link {
+  color: white;
+  font-size: 14px;
+  text-decoration: none;
+}
+
+.app__link--selected {
+  color: white;
+  font-family: "Poppins-bold";
+  font-size: 18px;
+  text-decoration: none;
+}
+
+.app__useroptionscontainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  margin-right: 46px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100%;
+}
+
+.app__notificationsicon {
+  height: 30%;
+}
+
+.app__usernameandocupation {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: 0 20px;
+  line-height: 100%;
+}
+
+.app__navusername {
+  margin: 0;
+  font-size: 15px;
+  font-family: "Poppins-bold";
+}
+
+.app__navuserocupation {
+  margin: 0;
+  font-size: 14px;
+}
+
+.app__useravatarcontainer {
+  height: 70%;
+}
+
+.app__useravatar {
+  height: 100%;
+}
+/*# sourceMappingURL=main.css.map */
