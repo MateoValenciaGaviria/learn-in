@@ -1,21 +1,24 @@
-body, html{
-    margin: 0px;
+html, body{
+    margin:0; 
+    padding:0; 
+    min-height:100vh;
     font-family: $primary-font-family;
+    background-color: $darkbackground;
 }
 
 .app{
 
     &__content{
-        
+        height: 100%;
     }
 
     &__navbar{
         color: white;
         display: flex;
         flex-direction: row;
-        height: 70px;
+        height: 10%;
         justify-content: space-between;
-        background-color: $purple;
+        background-color: $darkblue;
         align-items: center;
     }
 
@@ -82,5 +85,11 @@ body, html{
 
     &__useravatar{
         height: 100%;
+    }
+
+    &__sectionscontainer{
+        display: flex;
+        flex-direction: column;
+        height: 90%;
     }
 }

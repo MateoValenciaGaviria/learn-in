@@ -13,9 +13,16 @@
   src: url("../fonts/poppins/Poppins-Bold.ttf");
 }
 
-body, html {
-  margin: 0px;
+html, body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
   font-family: "Poppins-regular";
+  background-color: #090B22;
+}
+
+.app__content {
+  height: 100%;
 }
 
 .app__navbar {
@@ -27,11 +34,11 @@ body, html {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  height: 70px;
+  height: 10%;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  background-color: #6F447A;
+  background-color: #001E4D;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -119,5 +126,116 @@ body, html {
 
 .app__useravatar {
   height: 100%;
+}
+
+.app__sectionscontainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: 90%;
+}
+
+.home {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  margin: 0;
+  height: 100%;
+}
+
+.home__leftcontainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 80%;
+  height: 100%;
+}
+
+.home__publicitycontainer {
+  height: 33.3%;
+}
+
+.home__modulescontainer {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[2];
+      grid-template-columns: repeat(2, 1fr);
+  grid-auto-rows: minmax(50%, auto);
+  height: 66.6%;
+}
+
+.home__box {
+  height: 100%;
+  width: 100%;
+  border: 2px #F73C57;
+  border-style: dotted;
+}
+
+.home__rightcontainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 20%;
+  height: 100%;
+  margin-left: auto;
+  background-color: #1F223F;
+}
+
+.home__calendarcontainer {
+  height: 30%;
+  width: 100%;
+}
+
+.home__schedulecontainer {
+  height: 45%;
+  width: 100%;
+}
+
+.home__remindercontainer {
+  height: 25%;
+  width: 100%;
+}
+
+.home__calendar {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 20px;
+  height: 100%;
+  width: 100%;
+  background-color: #F73C57;
+}
+
+.home__schedule {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 20px;
+  height: 100%;
+  width: 100%;
+  background-color: #9098BD;
+}
+
+.home__reminder {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 20px;
+  height: 100%;
+  width: 100%;
+  background-color: #F73C57;
 }
 /*# sourceMappingURL=main.css.map */

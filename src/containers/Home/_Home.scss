@@ -1,0 +1,81 @@
+.home{
+
+    display: flex;
+    flex-direction: row;
+    margin: 0;
+    height: 100%;
+
+    &__leftcontainer{
+        display: flex;
+        flex-direction: column;
+        width: 80%;
+        height: 100%;
+    }
+
+    &__publicitycontainer{
+        height: 33.3%;
+    }
+
+    &__modulescontainer{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-auto-rows: minmax(50%, auto);
+        height: 66.6%;
+    }
+
+    &__box{
+        height: 100%;
+        width: 100%;
+        border: 2px $magenta;
+        border-style: dotted;
+    }
+    
+    &__rightcontainer{
+        display: flex;
+        flex-direction: column;
+        width: 20%;
+        height: 100%;
+        margin-left: auto;
+        background-color: $darkgray;
+    }
+
+    &__calendarcontainer{
+        height: 30%;
+        width: 100%;
+    }
+
+    &__schedulecontainer{
+        height: 45%;
+        width: 100%;
+    }
+
+    &__remindercontainer{
+        height: 25%;
+        width: 100%;
+        
+    }
+
+    &__calendar{
+        box-sizing: border-box;
+        padding: 20px;
+        height: 100%;
+        width: 100%;
+        background-color: $magenta;
+    }
+
+    &__schedule{
+        box-sizing: border-box;
+        padding: 20px;
+        height: 100%;
+        width: 100%;
+        background-color: $gray;
+    }
+
+    &__reminder{
+        box-sizing: border-box;
+        padding: 20px;
+        height: 100%;
+        width: 100%;
+        background-color: $magenta;
+    }
+}

@@ -23,8 +23,15 @@ $darkblue: #001E4D;
 $blue: #00367C;
 $purple: #6F447A;
 $magenta: #F73C57;
+$darkgray: #1F223F;
 $gray: #9098BD;
 $yellow: #FFB508;
+$darkbackground: #090B22;
 
 
 @import '../containers/App/App';
+@import '../containers/Home/Home';
+@import '../containers/Courses/Courses';
+@import '../containers/Schedule/Schedule';
+@import '../containers/Profile/Profile';
+@import '../containers/Chat/Chat';

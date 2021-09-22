@@ -62,24 +62,24 @@ export const App = () => {
             </div>
           </div>
         </div>
-      </div>
-      <Redirect to='/home'></Redirect>
-      <div className="app__sectionscontainer">
-        <Route path='/home' render={() => 
-            <Home></Home>}>
-        </Route>
-        <Route path='/courses' render={() => 
-            <Courses></Courses>}>
-        </Route>
-        <Route path='/schedule' render={() => 
-            <Schedule></Schedule>}>
-        </Route>
-        <Route path='/profile' render={() => 
-            <Profile></Profile>}>
-        </Route>
-        <Route path='/chat' render={() => 
-            <Chat></Chat>}>
-        </Route>
+        <Redirect to='/home'></Redirect>
+        <div className="app__sectionscontainer">
+          <Route path='/home' render={() => 
+              <Home></Home>}>
+          </Route>
+          <Route path='/courses' render={() => 
+              <Courses></Courses>}>
+          </Route>
+          <Route path='/schedule' render={() => 
+              <Schedule></Schedule>}>
+          </Route>
+          <Route path='/profile' render={() => 
+              <Profile></Profile>}>
+          </Route>
+          <Route path='/chat' render={() => 
+              <Chat></Chat>}>
+          </Route>
+        </div>
       </div>
     </HashRouter>
   );
