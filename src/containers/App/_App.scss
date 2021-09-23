@@ -6,6 +6,30 @@ html, body{
     background-color: $darkbackground;
 }
 
+::-webkit-scrollbar {
+    /* width of the entire scrollbar */
+    width: 17px;             
+}
+  
+::-webkit-scrollbar-track {
+    /* color of the tracking area */
+    background: transparent;        
+}
+  
+::-webkit-scrollbar-thumb {
+    //display: none;
+    /* color of the scroll thumb */
+    background-color: rgba(144, 152, 189, 0.2);    
+    /* roundness of the scroll thumb */
+    border-radius: 20px;     
+    /* creates padding around scroll thumb */  
+    border: 5px solid $darkbackground;  
+
+    &:hover{
+        //display: flex;
+    }
+}
+
 .app{
 
     &__content{
@@ -16,6 +40,7 @@ html, body{
         color: white;
         display: flex;
         flex-direction: row;
+        min-height: 60px;
         height: 10%;
         justify-content: space-between;
         background-color: $darkblue;

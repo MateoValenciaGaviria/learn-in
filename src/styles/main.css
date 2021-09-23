@@ -21,6 +21,25 @@ html, body {
   background-color: #090B22;
 }
 
+::-webkit-scrollbar {
+  /* width of the entire scrollbar */
+  width: 17px;
+}
+
+::-webkit-scrollbar-track {
+  /* color of the tracking area */
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  /* color of the scroll thumb */
+  background-color: rgba(144, 152, 189, 0.2);
+  /* roundness of the scroll thumb */
+  border-radius: 20px;
+  /* creates padding around scroll thumb */
+  border: 5px solid #090B22;
+}
+
 .app__content {
   height: 100%;
 }
@@ -34,6 +53,7 @@ html, body {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
+  min-height: 60px;
   height: 10%;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
@@ -45,7 +65,7 @@ html, body {
 }
 
 .app__logo {
-  margin-left: 46px;
+  margin-left: 40px;
   height: 30%;
 }
 
@@ -86,7 +106,7 @@ html, body {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  margin-right: 46px;
+  margin-right: 40px;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -161,10 +181,17 @@ html, body {
           flex-direction: column;
   width: 80%;
   height: 100%;
+  overflow-y: scroll;
+  overflow-x: hidden;
 }
 
 .home__publicitycontainer {
+  min-height: 206px;
   height: 33.3%;
+  margin-top: 30px;
+  margin-left: 40px;
+  margin-right: 40px;
+  background-color: #F73C57;
 }
 
 .home__modulescontainer {
@@ -172,15 +199,54 @@ html, body {
   display: grid;
   -ms-grid-columns: (1fr)[2];
       grid-template-columns: repeat(2, 1fr);
-  grid-auto-rows: minmax(50%, auto);
-  height: 66.6%;
+  grid-column-gap: 35px;
+  row-gap: 30px;
+  grid-auto-rows: minmax(auto, auto);
+  height: auto;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  margin-left: 40px;
+  margin-right: 40px;
 }
 
-.home__box {
+.home__panelcontainer {
+  min-height: 270px;
   height: 100%;
   width: 100%;
-  border: 2px #F73C57;
-  border-style: dotted;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  background-color: #F73C57;
+}
+
+.home__select {
+  background-color: transparent;
+  border: none;
+  margin: 0 0 15px 0;
+  width: auto;
+  font-family: "Poppins-bold";
+  font-size: 20px;
+  cursor: pointer;
+  color: white;
+  outline: none;
+  display: block;
+}
+
+.home__select::-webkit-scrollbar {
+  width: 0;
+}
+
+.home__selectoption {
+  font-family: "Poppins-medium";
+  font-size: 15px;
+  color: #001E4D;
+  padding: 0 0 0 5px;
+}
+
+.home__selectoption--disable {
+  font-family: "Poppins-medium";
+  font-size: 15px;
+  color: #9098BD;
+  padding: 0 0 0 5px;
 }
 
 .home__rightcontainer {
