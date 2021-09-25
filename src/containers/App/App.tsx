@@ -42,28 +42,28 @@ export const App = () => {
       <div className="app__content">
         <div className="app__navbar">
           <img className="app__logo" src={learnInLogo} alt="learn-in logo" />
-          <div className="app__linkscontainer">
+          <div className="app__links-container">
             <Link onClick={handleHome} to="/home" className={`${(activeLink === 1) ? 'app__link--selected' : 'app__link'}`}>Inicio</Link>
             <Link onClick={handleCourses} to="/courses" className={`${(activeLink === 2) ? 'app__link--selected' : 'app__link'}`}>Cursos</Link>
             <Link onClick={handleSchedule} to="/schedule" className={`${(activeLink === 3) ? 'app__link--selected' : 'app__link'}`}>Horario</Link>
             <Link onClick={handleProfile} to="/profile" className={`${(activeLink === 4) ? 'app__link--selected' : 'app__link'}`}>Perfil</Link>
             <Link onClick={handleChat} to="/chat" className={`${(activeLink === 5) ? 'app__link--selected' : 'app__link'}`}>Chat</Link>
           </div>
-          <div className="app__useroptionscontainer">
-            <img className="app__notificationsicon" src={notificationsicon} alt="notifications icon" />
-            <div className="app__usernameandocupation">
-              <p className="app__navusername">Username</p>
-              <p className="app__navuserocupation">User ocupation</p>
+          <div className="app__user-options-container">
+            <img className="app__notifications-icon" src={notificationsicon} alt="notifications icon" />
+            <div className="app__username-and-ocupation">
+              <p className="app__nav-username">Username</p>
+              <p className="app__nav-user-ocupation">User ocupation</p>
             </div>
-            <div className="app__useravatarcontainer">
+            <div className="app__user-avatar-container">
               <Link onClick={handleProfile} to="/profile" className={`${(activeLink === 4) ? 'app__link--selected' : 'app__link'}`}>
-                <img className="app__useravatar" src={userAvatar} alt="user avatar" />
+                <img className="app__user-avatar" src={userAvatar} alt="user avatar" />
               </Link>
             </div>
           </div>
         </div>
         <Redirect to='/home'></Redirect>
-        <div className="app__sectionscontainer">
+        <div className="app__sections-container">
           <Route path='/home' render={() => 
               <Home></Home>}>
           </Route>

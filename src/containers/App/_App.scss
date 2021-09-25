@@ -52,7 +52,7 @@ html, body{
         height: 30%;
     }
 
-    &__linkscontainer{
+    &__links-container{
         display: flex;
         flex-direction: row;
         width: 33%;
@@ -74,7 +74,7 @@ html, body{
         }
     }
 
-    &__useroptionscontainer{
+    &__user-options-container{
         display: flex;
         flex-direction: row;
         margin-right: $main-margin;
@@ -82,37 +82,37 @@ html, body{
         height: 100%;
     }
 
-    &__notificationsicon{
+    &__notifications-icon{
         height: 30%;
     }
 
-    &__usernameandocupation{
+    &__username-and-ocupation{
         display: flex;
         flex-direction: column;
         margin: 0 20px;
         line-height:100%;
     }
 
-    &__navusername{
+    &__nav-username{
         margin: 0;
         font-size: 15px;
         font-family: $tertiary-font-family;
     }
 
-    &__navuserocupation{
+    &__nav-user-ocupation{
         margin: 0;
         font-size: 14px;
     }
 
-    &__useravatarcontainer{
+    &__user-avatar-container{
         height: 70%;
     }
 
-    &__useravatar{
+    &__user-avatar{
         height: 100%;
     }
 
-    &__sectionscontainer{
+    &__sections-container{
         display: flex;
         flex-direction: column;
         height: 90%;

@@ -69,7 +69,7 @@ html, body {
   height: 30%;
 }
 
-.app__linkscontainer {
+.app__links-container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -98,7 +98,7 @@ html, body {
   text-decoration: none;
 }
 
-.app__useroptionscontainer {
+.app__user-options-container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -113,11 +113,11 @@ html, body {
   height: 100%;
 }
 
-.app__notificationsicon {
+.app__notifications-icon {
   height: 30%;
 }
 
-.app__usernameandocupation {
+.app__username-and-ocupation {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -129,26 +129,26 @@ html, body {
   line-height: 100%;
 }
 
-.app__navusername {
+.app__nav-username {
   margin: 0;
   font-size: 15px;
   font-family: "Poppins-bold";
 }
 
-.app__navuserocupation {
+.app__nav-user-ocupation {
   margin: 0;
   font-size: 14px;
 }
 
-.app__useravatarcontainer {
+.app__user-avatar-container {
   height: 70%;
 }
 
-.app__useravatar {
+.app__user-avatar {
   height: 100%;
 }
 
-.app__sectionscontainer {
+.app__sections-container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -171,7 +171,7 @@ html, body {
   height: 100%;
 }
 
-.home__leftcontainer {
+.home__left-container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -185,7 +185,7 @@ html, body {
   overflow-x: hidden;
 }
 
-.home__publicitycontainer {
+.home__publicity-container {
   min-height: 206px;
   height: 33.3%;
   margin-top: 30px;
@@ -194,7 +194,7 @@ html, body {
   background-color: #F73C57;
 }
 
-.home__modulescontainer {
+.home__modules-container {
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: (1fr)[2];
@@ -209,7 +209,7 @@ html, body {
   margin-right: 40px;
 }
 
-.home__panelcontainer {
+.home__panel-container {
   min-height: 270px;
   height: 100%;
   width: 100%;
@@ -235,21 +235,21 @@ html, body {
   width: 0;
 }
 
-.home__selectoption {
+.home__select-option {
   font-family: "Poppins-medium";
   font-size: 15px;
   color: #001E4D;
   padding: 0 0 0 5px;
 }
 
-.home__selectoption--disable {
+.home__select-option--disable {
   font-family: "Poppins-medium";
   font-size: 15px;
   color: #9098BD;
   padding: 0 0 0 5px;
 }
 
-.home__rightcontainer {
+.home__right-container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -263,17 +263,17 @@ html, body {
   background-color: #1F223F;
 }
 
-.home__calendarcontainer {
+.home__calendar-container {
   height: 30%;
   width: 100%;
 }
 
-.home__schedulecontainer {
+.home__schedule-container {
   height: 45%;
   width: 100%;
 }
 
-.home__remindercontainer {
+.home__reminder-container {
   height: 25%;
   width: 100%;
 }

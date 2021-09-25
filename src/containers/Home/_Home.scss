@@ -5,7 +5,7 @@
     margin: 0;
     height: 100%;
 
-    &__leftcontainer{
+    &__left-container{
         display: flex;
         flex-direction: column;
         width: 80%;
@@ -14,7 +14,7 @@
         overflow-x: hidden;
     }
 
-    &__publicitycontainer{
+    &__publicity-container{
         min-height: 206px;
         height: 33.3%;
         margin-top: 30px;
@@ -23,7 +23,7 @@
         background-color: $magenta;
     }
 
-    &__modulescontainer{
+    &__modules-container{
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         grid-column-gap: 35px;
@@ -36,7 +36,7 @@
         margin-right: $main-margin;
     }
 
-    &__panelcontainer{
+    &__panel-container{
         min-height: 270px;
         height: 100%;
         width: 100%;
@@ -44,11 +44,11 @@
         background-color: $magenta;
     }
 
-    &__selectcontainer{
+    &__select-container{
         
     }
 
-    &__paneltitle{
+    &__panel-title{
 
     }
 
@@ -71,7 +71,7 @@
         
     }
 
-    &__selectoption{
+    &__select-option{
         font-family: $secondary-font-family;
         font-size: 15px;
         color: $darkblue;
@@ -86,7 +86,7 @@
 
     }
     
-    &__rightcontainer{
+    &__right-container{
         display: flex;
         flex-direction: column;
         width: 20%;
@@ -95,17 +95,17 @@
         background-color: $darkgray;
     }
 
-    &__calendarcontainer{
+    &__calendar-container{
         height: 30%;
         width: 100%;
     }
 
-    &__schedulecontainer{
+    &__schedule-container{
         height: 45%;
         width: 100%;
     }
 
-    &__remindercontainer{
+    &__reminder-container{
         height: 25%;
         width: 100%;
         
