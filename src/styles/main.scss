@@ -9,6 +9,11 @@
 }
 
 @font-face{
+    font-family: Poppins-semiBold;
+    src: url("../fonts/poppins/Poppins-SemiBold.ttf");
+}
+
+@font-face{
     font-family: Poppins-bold;
     src: url("../fonts/poppins/Poppins-Bold.ttf");
 }
@@ -19,6 +24,8 @@ $tertiary-font-family: "Poppins-bold";
 
 $main-margin: 40px;
 
+$panelsborderradius: 10px;
+
 $darkblue: #001E4D;
 $blue: #00367C;
 $purple: #6F447A;
@@ -27,6 +34,8 @@ $darkgray: #1F223F;
 $gray: #9098BD;
 $yellow: #FFB508;
 $darkbackground: #090B22;
+$white: #FFFFFF;
+$panelsbackground: #101935;
 
 
 @import '../containers/App/App';
@@ -35,3 +44,6 @@ $darkbackground: #090B22;
 @import '../containers/Schedule/Schedule';
 @import '../containers/Profile/Profile';
 @import '../containers/Chat/Chat';
+
+@import '../components/IndividualCourse/IndividualCourse';
+@import '../components/TimeLineItem/TimeLineItem'
