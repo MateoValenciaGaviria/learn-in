@@ -1,0 +1,94 @@
+.upcoming-activities{
+
+    display: flex;
+    flex-direction: column;
+    border-radius: 25px;
+    background-color: $panelbackground;
+    height: 100%;
+
+    &__header{
+        display: grid;
+        grid-template-columns: 25% 25% 30% 20%;
+        border-top-right-radius: 25px;
+        border-top-left-radius: 25px;
+        background-color: $panelheaderbackground;
+        height: 25%;
+        padding: 0 20px;
+        align-items: center;
+    }
+
+    &__titles{
+        margin: 0;
+        font-family: $tertiary-font-family;
+        color: white;
+        font-size: 15px;
+    }
+
+    &__rows-container{
+        display: flex;
+        flex-direction: column;
+        height: 75%;
+        padding: 0 20px;
+        justify-content: space-evenly;
+    }
+
+    &__row{
+        display: grid;
+        grid-template-columns: 25% 25% 30% 20%;
+        align-items: center;
+    }
+
+    &__info{
+        color: white;
+        font-size: 15px;
+
+        &--finished{
+            color: #23DF41;
+        }
+
+        &--pending{
+            color: #BDC4FF;
+        }
+
+        &--in-progress{
+            color: #FFEDBD;
+        }
+
+        &--yellow{
+            margin: 0;
+            padding: 5px;
+            height: fit-content;
+            width: 85%;
+            border-radius: 5px;
+            color: white;
+            background-color: $yellow;
+        }
+
+        &--purple{
+            margin: 0;
+            padding: 5px;
+            height: fit-content;
+            width: 85%;
+            border-radius: 5px;
+            color: white;
+            background-color: $purple;
+        }
+
+        &--gray{
+            margin: 0;
+            padding: 5px;
+            height: fit-content;
+            width: 85%;
+            border-radius: 5px;
+            color: white;
+            background-color: $gray;
+        }
+        
+    }
+}
+
+hr{
+    width: 100%;
+    margin: 0;
+    border-color: #ffffff20;
+}

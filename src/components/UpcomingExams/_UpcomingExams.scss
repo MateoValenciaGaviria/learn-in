@@ -1,0 +1,51 @@
+.upcoming-exams{
+
+    display: flex;
+    flex-direction: column;
+    border-radius: 25px;
+    background-color: $panelbackground;
+    height: 100%;
+
+    &__header{
+        display: grid;
+        grid-template-columns: 30% 20% 25% 20% 5%;
+        border-top-right-radius: 25px;
+        border-top-left-radius: 25px;
+        background-color: $panelheaderbackground;
+        height: 25%;
+        padding: 0 20px;
+        align-items: center;
+    }
+
+    &__titles{
+        margin: 0;
+        font-family: $tertiary-font-family;
+        color: white;
+        font-size: 15px;
+    }
+
+    &__rows-container{
+        display: flex;
+        flex-direction: column;
+        height: 75%;
+        padding: 0 20px;
+        justify-content: space-evenly;
+    }
+
+    &__row{
+        display: grid;
+        grid-template-columns: 30% 20% 25% 20% 5%;
+    }
+
+    &__info{
+        color: white;
+        font-size: 15px;
+        
+    }
+}
+
+hr{
+    width: 100%;
+    margin: 0;
+    border-color: #ffffff20;
+}

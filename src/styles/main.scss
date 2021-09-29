@@ -13,9 +13,15 @@
     src: url("../fonts/poppins/Poppins-Bold.ttf");
 }
 
+@font-face{
+    font-family: Poppins-light-italic;
+    src: url("../fonts/poppins/Poppins-LightItalic.ttf");
+}
+
 $primary-font-family: "Poppins-regular"; 
 $secondary-font-family: "Poppins-medium";
 $tertiary-font-family: "Poppins-bold";
+$poppins-light-italic: "Poppins-light-italic";
 
 $main-margin: 40px;
 
@@ -28,6 +34,9 @@ $gray: #9098BD;
 $yellow: #FFB508;
 $darkbackground: #090B22;
 
+$panelbackground: #101935;
+$panelheaderbackground: #212B4A;
+
 
 @import '../containers/App/App';
 @import '../containers/Home/Home';
@@ -35,3 +44,8 @@ $darkbackground: #090B22;
 @import '../containers/Schedule/Schedule';
 @import '../containers/Profile/Profile';
 @import '../containers/Chat/Chat';
+
+@import '../components/UpcomingExams/UpcomingExams';
+@import '../components/UpcomingActivities/UpcomingActivities';
+@import '../components/CoursesProgress/CoursesProgress';
+@import '../components/TaskList/TaskList';

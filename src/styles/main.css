@@ -13,6 +13,11 @@
   src: url("../fonts/poppins/Poppins-Bold.ttf");
 }
 
+@font-face {
+  font-family: Poppins-light-italic;
+  src: url("../fonts/poppins/Poppins-LightItalic.ttf");
+}
+
 html, body {
   margin: 0;
   padding: 0;
@@ -189,9 +194,10 @@ html, body {
   min-height: 206px;
   height: 33.3%;
   margin-top: 30px;
+  border-radius: 25px;
   margin-left: 40px;
   margin-right: 40px;
-  background-color: #F73C57;
+  background-color: #101935;
 }
 
 .home__modules-container {
@@ -201,8 +207,8 @@ html, body {
       grid-template-columns: repeat(2, 1fr);
   grid-column-gap: 35px;
   row-gap: 30px;
-  grid-auto-rows: minmax(auto, auto);
-  height: auto;
+  grid-auto-rows: minmax(auto, 50%);
+  height: 100%;
   margin-top: 30px;
   margin-bottom: 30px;
   margin-left: 40px;
@@ -210,12 +216,18 @@ html, body {
 }
 
 .home__panel-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   min-height: 270px;
   height: 100%;
   width: 100%;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  background-color: #F73C57;
 }
 
 .home__select {
@@ -284,7 +296,7 @@ html, body {
   padding: 20px;
   height: 100%;
   width: 100%;
-  background-color: #F73C57;
+  background-color: #101935;
 }
 
 .home__schedule {
@@ -293,7 +305,6 @@ html, body {
   padding: 20px;
   height: 100%;
   width: 100%;
-  background-color: #9098BD;
 }
 
 .home__reminder {
@@ -302,6 +313,314 @@ html, body {
   padding: 20px;
   height: 100%;
   width: 100%;
-  background-color: #F73C57;
+  background-color: #101935;
+}
+
+.upcoming-exams {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  border-radius: 25px;
+  background-color: #101935;
+  height: 100%;
+}
+
+.upcoming-exams__header {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 30% 20% 25% 20% 5%;
+      grid-template-columns: 30% 20% 25% 20% 5%;
+  border-top-right-radius: 25px;
+  border-top-left-radius: 25px;
+  background-color: #212B4A;
+  height: 25%;
+  padding: 0 20px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.upcoming-exams__titles {
+  margin: 0;
+  font-family: "Poppins-bold";
+  color: white;
+  font-size: 15px;
+}
+
+.upcoming-exams__rows-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: 75%;
+  padding: 0 20px;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+.upcoming-exams__row {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 30% 20% 25% 20% 5%;
+      grid-template-columns: 30% 20% 25% 20% 5%;
+}
+
+.upcoming-exams__info {
+  color: white;
+  font-size: 15px;
+}
+
+hr {
+  width: 100%;
+  margin: 0;
+  border-color: #ffffff20;
+}
+
+.upcoming-activities {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  border-radius: 25px;
+  background-color: #101935;
+  height: 100%;
+}
+
+.upcoming-activities__header {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 25% 25% 30% 20%;
+      grid-template-columns: 25% 25% 30% 20%;
+  border-top-right-radius: 25px;
+  border-top-left-radius: 25px;
+  background-color: #212B4A;
+  height: 25%;
+  padding: 0 20px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.upcoming-activities__titles {
+  margin: 0;
+  font-family: "Poppins-bold";
+  color: white;
+  font-size: 15px;
+}
+
+.upcoming-activities__rows-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: 75%;
+  padding: 0 20px;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+.upcoming-activities__row {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 25% 25% 30% 20%;
+      grid-template-columns: 25% 25% 30% 20%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.upcoming-activities__info {
+  color: white;
+  font-size: 15px;
+}
+
+.upcoming-activities__info--finished {
+  color: #23DF41;
+}
+
+.upcoming-activities__info--pending {
+  color: #BDC4FF;
+}
+
+.upcoming-activities__info--in-progress {
+  color: #FFEDBD;
+}
+
+.upcoming-activities__info--yellow {
+  margin: 0;
+  padding: 5px;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  width: 85%;
+  border-radius: 5px;
+  color: white;
+  background-color: #FFB508;
+}
+
+.upcoming-activities__info--purple {
+  margin: 0;
+  padding: 5px;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  width: 85%;
+  border-radius: 5px;
+  color: white;
+  background-color: #6F447A;
+}
+
+.upcoming-activities__info--gray {
+  margin: 0;
+  padding: 5px;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  width: 85%;
+  border-radius: 5px;
+  color: white;
+  background-color: #9098BD;
+}
+
+hr {
+  width: 100%;
+  margin: 0;
+  border-color: #ffffff20;
+}
+
+.courses-progress {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  height: 100%;
+}
+
+.courses-progress__row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  padding: 13px 25px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 25px;
+  background-color: #161A30;
+}
+
+.courses-progress__progress-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.courses-progress__course-information {
+  margin-left: 20px;
+}
+
+.courses-progress__text {
+  margin: 0;
+  color: white;
+  font-family: "Poppins-bold";
+}
+
+.courses-progress__text--title {
+  margin: 0;
+  color: white;
+  font-family: "Poppins-bold";
+}
+
+.courses-progress__text--description {
+  margin: 0;
+  color: white;
+  font-family: "Poppins-light-italic";
+  font-size: 13px;
+}
+
+.task-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  height: 100%;
+  color: white;
+}
+
+.task-list__row {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 10% 55% 25% 10%;
+      grid-template-columns: 10% 55% 25% 10%;
+  padding: 13px 25px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 25px;
+  background-color: #161A30;
+}
+
+.task-list__sign {
+  margin: 0;
+  font-family: "Poppins-medium";
+  font-size: 30px;
+  color: #F73C57;
+  margin-left: 5px;
+}
+
+.task-list__info {
+  margin: 0;
+}
+
+.task-list__title {
+  margin: 0;
+  font-family: "Poppins-bold";
+}
+
+.task-list__description {
+  margin: 0;
+  font-size: 14px;
+}
+
+.task-list__deadline {
+  margin: 0;
+}
+
+.task-list__check-img {
+  margin-left: auto;
 }
 /*# sourceMappingURL=main.css.map */

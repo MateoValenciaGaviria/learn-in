@@ -18,9 +18,10 @@
         min-height: 206px;
         height: 33.3%;
         margin-top: 30px;
+        border-radius: 25px;
         margin-left: $main-margin;
         margin-right: $main-margin;
-        background-color: $magenta;
+        background-color: $panelbackground;
     }
 
     &__modules-container{
@@ -28,8 +29,8 @@
         grid-template-columns: repeat(2, 1fr);
         grid-column-gap: 35px;
         row-gap: 30px;
-        grid-auto-rows: minmax(auto, auto);
-        height: auto;
+        grid-auto-rows: minmax(auto, 50%);
+        height: 100%;
         margin-top: 30px;
         margin-bottom: 30px;
         margin-left: $main-margin;
@@ -37,11 +38,12 @@
     }
 
     &__panel-container{
+        display: flex;
+        flex-direction: column;
         min-height: 270px;
         height: 100%;
         width: 100%;
         box-sizing: border-box;
-        background-color: $magenta;
     }
 
     &__select-container{
@@ -108,7 +110,6 @@
     &__reminder-container{
         height: 25%;
         width: 100%;
-        
     }
 
     &__calendar{
@@ -116,7 +117,7 @@
         padding: 20px;
         height: 100%;
         width: 100%;
-        background-color: $magenta;
+        background-color: $panelbackground;
     }
 
     &__schedule{
@@ -124,7 +125,6 @@
         padding: 20px;
         height: 100%;
         width: 100%;
-        background-color: $gray;
     }
 
     &__reminder{
@@ -132,6 +132,6 @@
         padding: 20px;
         height: 100%;
         width: 100%;
-        background-color: $magenta;
+        background-color: $panelbackground;
     }
 }

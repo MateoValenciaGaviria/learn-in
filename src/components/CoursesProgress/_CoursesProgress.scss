@@ -1,0 +1,52 @@
+.courses-progress{
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+
+    &__row{
+        display: flex;
+        flex-direction: row;
+        padding: 13px 25px;
+        align-items: center;
+        border-radius: 25px;
+        background-color: #161A30;
+    }
+
+    &__progress-container{
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__course-information{
+        margin-left: 20px;
+    }
+
+    &__course{
+
+    }
+
+    &__unity{
+
+    }
+
+    &__text{
+        margin: 0;
+        color: white;
+        font-family: $tertiary-font-family;
+
+        &--title{
+            margin: 0;
+            color: white;
+            font-family: $tertiary-font-family;
+        }
+
+        &--description{
+            margin: 0;
+            color: white;
+            font-family: $poppins-light-italic;
+            font-size: 13px;
+        }
+    }
+}

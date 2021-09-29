@@ -1,4 +1,8 @@
 import React, { useState } from 'react';
+import { CoursesProgress } from '../../components/CoursesProgress/CoursesProgress';
+import { TaskList } from '../../components/TaskList/TaskList';
+import { UpcomingActivities } from '../../components/UpcomingActivities/UpcomingActivities';
+import { UpcomingExams } from '../../components/UpcomingExams/UpcomingExams';
 
 export const Home = () => {
 
@@ -109,6 +113,10 @@ export const Home = () => {
                 <option value="playlist" className="home__select-option">Lista de reproducción</option>
               </select>
             </div>
+            {(panel1 === "exams") ? <UpcomingExams></UpcomingExams> : null}
+            {(panel1 === "activities") ? <UpcomingActivities></UpcomingActivities> : null}
+            {(panel1 === "progress") ? <CoursesProgress></CoursesProgress> : null}
+            {(panel1 === "tasks") ? <TaskList></TaskList> : null}
           </div>
           <div className="home__panel-container">
             <div className="home__select-container">
@@ -126,6 +134,10 @@ export const Home = () => {
                 <option value="playlist" className="home__select-option">Lista de reproducción</option>
               </select>
             </div>
+            {(panel2 === "exams") ? <UpcomingExams></UpcomingExams> : null}
+            {(panel2 === "activities") ? <UpcomingActivities></UpcomingActivities> : null}
+            {(panel2 === "progress") ? <CoursesProgress></CoursesProgress> : null}
+            {(panel2 === "tasks") ? <TaskList></TaskList> : null}
           </div>
           <div className="home__panel-container">
             <div className="home__select-container">
@@ -143,6 +155,10 @@ export const Home = () => {
                 <option value="playlist" className="home__select-option">Lista de reproducción</option>
               </select>
             </div>
+            {(panel3 === "exams") ? <UpcomingExams></UpcomingExams> : null}
+            {(panel3 === "activities") ? <UpcomingActivities></UpcomingActivities> : null}
+            {(panel3 === "progress") ? <CoursesProgress></CoursesProgress> : null}
+            {(panel3 === "tasks") ? <TaskList></TaskList> : null}
           </div>
           <div className="home__panel-container">
             <div className="home__select-container">
@@ -160,6 +176,10 @@ export const Home = () => {
                 <option value="playlist" className="home__select-option">Lista de reproducción</option>
               </select>
             </div>
+            {(panel4 === "exams") ? <UpcomingExams></UpcomingExams> : null}
+            {(panel4 === "activities") ? <UpcomingActivities></UpcomingActivities> : null}
+            {(panel4 === "progress") ? <CoursesProgress></CoursesProgress> : null}
+            {(panel4 === "tasks") ? <TaskList></TaskList> : null}
           </div>
         </div>
       </div>
