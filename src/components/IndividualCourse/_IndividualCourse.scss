@@ -1,0 +1,48 @@
+.individual-course {
+    background-color: $panelsbackground;
+    width: 480px;
+    padding: 5px 20px;
+    border-radius: $panelsborderradius;
+    position: relative;
+
+    &::before {
+        content: "";
+        width: 25px;
+        height: 100%;
+        top: 0;
+        right: 30px;
+        position: absolute;
+        background-color: $purple;
+    }
+
+    .icon:first-child{
+        margin-left: 0px;
+        margin-right: 7px;
+    }
+
+    &__text-progress{
+        opacity: .8;
+    }
+
+    &__progress-bar{
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        border: none;
+        display: block;
+        margin-top: 10px;
+        width: 330px;
+        height: 10px;
+
+        &::-webkit-progress-value {
+            border-top-right-radius: 0%;
+            border-bottom-right-radius: 0px;
+            border-radius: 8px;
+            background: $purple;
+        }
+        &::-webkit-progress-bar {
+            border-radius: 8px;
+            background: #273049;
+        }
+    }
+}
