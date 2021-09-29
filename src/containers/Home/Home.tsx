@@ -190,13 +190,16 @@ export const Home = () => {
           </div>
         </div>
         <div className="home__schedule-container">
+          <hr />
           <div className="home__schedule">
 
           </div>
+          <hr />
         </div>
         <div className="home__reminder-container">
-          <div className="home__reminder">
-
+          <div className="home__card">
+              <p className="home__card-title">Recordatorio</p>
+              <textarea className="home__card-text-area" maxLength={100}></textarea>
           </div>
         </div>
       </div>

@@ -6,6 +6,12 @@ html, body{
     background-color: $darkbackground;
 }
 
+hr{
+    width: 100%;
+    margin: 0;
+    border-color: #ffffff20;
+}
+
 ::-webkit-scrollbar {
     /* width of the entire scrollbar */
     width: 17px;             

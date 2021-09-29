@@ -4,6 +4,7 @@
     flex-direction: row;
     margin: 0;
     height: 100%;
+    overflow-x: hidden;
 
     &__left-container{
         display: flex;
@@ -65,7 +66,6 @@
         cursor: pointer;
         color: white;
         outline: none;
-        display: block;
 
         &::-webkit-scrollbar { 
             width: 0;
@@ -108,8 +108,10 @@
     }
 
     &__reminder-container{
+        display: flex;
+        flex-direction: column;
         height: 25%;
-        width: 100%;
+        padding: 20px 15px;
     }
 
     &__calendar{
@@ -117,7 +119,6 @@
         padding: 20px;
         height: 100%;
         width: 100%;
-        background-color: $panelbackground;
     }
 
     &__schedule{
@@ -127,11 +128,33 @@
         width: 100%;
     }
 
-    &__reminder{
+    &__card{
+        display: flex;
+        flex-direction: column;
+        border-radius: 10px;
         box-sizing: border-box;
-        padding: 20px;
+        padding: 15px 20px;
         height: 100%;
+        background-color: rgba($color: $gray, $alpha: .2);
+    }
+
+    &__card-title{
+        color: white;
+        font-family: $tertiary-font-family;
+        font-size: 15px;
+        margin: 0;
+    }
+
+    &__card-text-area{
+        font-family: $primary-font-family;
+        font-size: 12px;
         width: 100%;
-        background-color: $panelbackground;
+        height: 100%;
+        outline: none;
+        background-color: transparent;
+        border-style: none;
+        color: white;
+        resize: none;
+        overflow-y: hidden;
     }
 }

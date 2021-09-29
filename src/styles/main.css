@@ -26,6 +26,12 @@ html, body {
   background-color: #090B22;
 }
 
+hr {
+  width: 100%;
+  margin: 0;
+  border-color: #ffffff20;
+}
+
 ::-webkit-scrollbar {
   /* width of the entire scrollbar */
   width: 17px;
@@ -174,6 +180,7 @@ html, body {
           flex-direction: row;
   margin: 0;
   height: 100%;
+  overflow-x: hidden;
 }
 
 .home__left-container {
@@ -240,7 +247,6 @@ html, body {
   cursor: pointer;
   color: white;
   outline: none;
-  display: block;
 }
 
 .home__select::-webkit-scrollbar {
@@ -286,8 +292,15 @@ html, body {
 }
 
 .home__reminder-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   height: 25%;
-  width: 100%;
+  padding: 20px 15px;
 }
 
 .home__calendar {
@@ -296,7 +309,6 @@ html, body {
   padding: 20px;
   height: 100%;
   width: 100%;
-  background-color: #101935;
 }
 
 .home__schedule {
@@ -307,13 +319,40 @@ html, body {
   width: 100%;
 }
 
-.home__reminder {
+.home__card {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  border-radius: 10px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  padding: 20px;
+  padding: 15px 20px;
   height: 100%;
+  background-color: rgba(144, 152, 189, 0.2);
+}
+
+.home__card-title {
+  color: white;
+  font-family: "Poppins-bold";
+  font-size: 15px;
+  margin: 0;
+}
+
+.home__card-text-area {
+  font-family: "Poppins-regular";
+  font-size: 12px;
   width: 100%;
-  background-color: #101935;
+  height: 100%;
+  outline: none;
+  background-color: transparent;
+  border-style: none;
+  color: white;
+  resize: none;
+  overflow-y: hidden;
 }
 
 .upcoming-exams {
@@ -495,12 +534,6 @@ hr {
   border-radius: 5px;
   color: white;
   background-color: #9098BD;
-}
-
-hr {
-  width: 100%;
-  margin: 0;
-  border-color: #ffffff20;
 }
 
 .courses-progress {
