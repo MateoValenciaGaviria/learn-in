@@ -1,0 +1,14 @@
+.courses{
+    display: flex;
+    flex-direction: row;
+
+    &__left-container{
+        width: 80%;
+        padding: 0px $main-margin;
+    }
+    &__right-container{
+        width: 20%;
+        padding: 0px 20px;
+        background-color: $darkgray;
+    }
+}

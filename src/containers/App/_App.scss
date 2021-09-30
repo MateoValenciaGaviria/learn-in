@@ -4,6 +4,23 @@ html, body{
     min-height:100vh;
     font-family: $primary-font-family;
     background-color: $darkbackground;
+    color: $white;
+}
+
+h1 {
+    font-size: 22px;
+    font-family: $tertiary-font-family;
+}
+
+a {
+    color: $white;
+}
+p, h2 {
+    margin: 10px 0px;
+}
+
+.icon{
+    margin: 0px 5px;
 }
 
 hr{
