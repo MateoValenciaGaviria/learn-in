@@ -4,20 +4,20 @@
     flex-direction: column;
     justify-content: space-between;
     height: 100%;
-    color: white;
+    color: $white;
 
     &__row{
         display: grid;
         grid-template-columns: 10% 55% 25% 10%;
         padding: 13px 25px;
         align-items: center;
-        border-radius: 25px;
+        border-radius: $panelsborderradius;
         background-color: #161A30;
     }
 
     &__sign{
         margin: 0;
-        font-family: $secondary-font-family;
+        font-family: $Poppins-medium;
         font-size: 30px;
         color: $magenta;
         margin-left: 5px;
@@ -29,7 +29,7 @@
 
     &__title{
         margin: 0;
-        font-family: $tertiary-font-family;
+        font-family: $Poppins-bold;
     }
 
     &__description{

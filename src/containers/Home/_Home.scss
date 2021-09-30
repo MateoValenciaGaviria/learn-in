@@ -19,10 +19,10 @@
         min-height: 206px;
         height: 33.3%;
         margin-top: 30px;
-        border-radius: 25px;
+        border-radius: $panelsborderradius;
         margin-left: $main-margin;
         margin-right: $main-margin;
-        background-color: $panelbackground;
+        background-color: $panelsbackground;
     }
 
     &__modules-container{
@@ -61,10 +61,10 @@
         border: none;
         margin: 0 0 15px 0;
         width: auto;
-        font-family: $tertiary-font-family;
+        font-family: $Poppins-bold;
         font-size: 20px;
         cursor: pointer;
-        color: white;
+        color:$white;
         outline: none;
 
         &::-webkit-scrollbar { 
@@ -74,13 +74,13 @@
     }
 
     &__select-option{
-        font-family: $secondary-font-family;
+        font-family: $Poppins-medium;
         font-size: 15px;
         color: $darkblue;
         padding: 0 0 0 5px;
 
         &--disable{
-            font-family: $secondary-font-family;
+            font-family: $Poppins-medium;
             font-size: 15px;
             color: $gray;
             padding: 0 0 0 5px;
@@ -131,7 +131,7 @@
     &__card{
         display: flex;
         flex-direction: column;
-        border-radius: 10px;
+        border-radius: $panelsborderradius;
         box-sizing: border-box;
         padding: 15px 20px;
         height: 100%;
@@ -139,14 +139,14 @@
     }
 
     &__card-title{
-        color: white;
-        font-family: $tertiary-font-family;
+        color: $white;
+        font-family: $Poppins-bold;
         font-size: 15px;
         margin: 0;
     }
 
     &__card-text-area{
-        font-family: $primary-font-family;
+        font-family: $Poppins-regular;
         font-size: 12px;
         width: 100%;
         height: 100%;

@@ -10,7 +10,7 @@
         flex-direction: row;
         padding: 13px 25px;
         align-items: center;
-        border-radius: 25px;
+        border-radius: $panelsborderradius;
         background-color: #161A30;
     }
 
@@ -33,18 +33,18 @@
 
     &__text{
         margin: 0;
-        color: white;
-        font-family: $tertiary-font-family;
+        color: $white;
+        font-family: $Poppins-bold;
 
         &--title{
             margin: 0;
-            color: white;
-            font-family: $tertiary-font-family;
+            color: $white;
+            font-family: $Poppins-bold;
         }
 
         &--description{
             margin: 0;
-            color: white;
+            color: $white;
             font-family: $poppins-light-italic;
             font-size: 13px;
         }

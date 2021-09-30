@@ -9,6 +9,11 @@
 }
 
 @font-face {
+  font-family: Poppins-semiBold;
+  src: url("../fonts/poppins/Poppins-SemiBold.ttf");
+}
+
+@font-face {
   font-family: Poppins-bold;
   src: url("../fonts/poppins/Poppins-Bold.ttf");
 }
@@ -24,6 +29,24 @@ html, body {
   min-height: 100vh;
   font-family: "Poppins-regular";
   background-color: #090B22;
+  color: #FFFFFF;
+}
+
+h1 {
+  font-size: 22px;
+  font-family: "Poppins-bold";
+}
+
+a {
+  color: #FFFFFF;
+}
+
+p, h2 {
+  margin: 10px 0px;
+}
+
+.icon {
+  margin: 0px 5px;
 }
 
 hr {
@@ -56,7 +79,7 @@ hr {
 }
 
 .app__navbar {
-  color: white;
+  color: #FFFFFF;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -97,7 +120,7 @@ hr {
 }
 
 .app__link {
-  color: white;
+  color: #FFFFFF;
   font-size: 14px;
   text-decoration: none;
 }
@@ -201,7 +224,7 @@ hr {
   min-height: 206px;
   height: 33.3%;
   margin-top: 30px;
-  border-radius: 25px;
+  border-radius: 10px;
   margin-left: 40px;
   margin-right: 40px;
   background-color: #101935;
@@ -245,7 +268,7 @@ hr {
   font-family: "Poppins-bold";
   font-size: 20px;
   cursor: pointer;
-  color: white;
+  color: #FFFFFF;
   outline: none;
 }
 
@@ -336,7 +359,7 @@ hr {
 }
 
 .home__card-title {
-  color: white;
+  color: #FFFFFF;
   font-family: "Poppins-bold";
   font-size: 15px;
   margin: 0;
@@ -355,6 +378,27 @@ hr {
   overflow-y: hidden;
 }
 
+.courses {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.courses__left-container {
+  width: 80%;
+  padding: 0px 40px;
+}
+
+.courses__right-container {
+  width: 20%;
+  padding: 0px 20px;
+  background-color: #1F223F;
+}
+
 .upcoming-exams {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -363,7 +407,7 @@ hr {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  border-radius: 25px;
+  border-radius: 10px;
   background-color: #101935;
   height: 100%;
 }
@@ -373,8 +417,8 @@ hr {
   display: grid;
   -ms-grid-columns: 30% 20% 25% 20% 5%;
       grid-template-columns: 30% 20% 25% 20% 5%;
-  border-top-right-radius: 25px;
-  border-top-left-radius: 25px;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
   background-color: #212B4A;
   height: 25%;
   padding: 0 20px;
@@ -386,7 +430,7 @@ hr {
 .upcoming-exams__titles {
   margin: 0;
   font-family: "Poppins-bold";
-  color: white;
+  color: #FFFFFF;
   font-size: 15px;
 }
 
@@ -413,7 +457,7 @@ hr {
 }
 
 .upcoming-exams__info {
-  color: white;
+  color: #FFFFFF;
   font-size: 15px;
 }
 
@@ -431,7 +475,7 @@ hr {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  border-radius: 25px;
+  border-radius: 10px;
   background-color: #101935;
   height: 100%;
 }
@@ -441,8 +485,8 @@ hr {
   display: grid;
   -ms-grid-columns: 25% 25% 30% 20%;
       grid-template-columns: 25% 25% 30% 20%;
-  border-top-right-radius: 25px;
-  border-top-left-radius: 25px;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
   background-color: #212B4A;
   height: 25%;
   padding: 0 20px;
@@ -454,7 +498,7 @@ hr {
 .upcoming-activities__titles {
   margin: 0;
   font-family: "Poppins-bold";
-  color: white;
+  color: #FFFFFF;
   font-size: 15px;
 }
 
@@ -484,7 +528,7 @@ hr {
 }
 
 .upcoming-activities__info {
-  color: white;
+  color: #FFFFFF;
   font-size: 15px;
 }
 
@@ -508,7 +552,7 @@ hr {
   height: fit-content;
   width: 85%;
   border-radius: 5px;
-  color: white;
+  color: #FFFFFF;
   background-color: #FFB508;
 }
 
@@ -520,7 +564,7 @@ hr {
   height: fit-content;
   width: 85%;
   border-radius: 5px;
-  color: white;
+  color: #FFFFFF;
   background-color: #6F447A;
 }
 
@@ -532,7 +576,7 @@ hr {
   height: fit-content;
   width: 85%;
   border-radius: 5px;
-  color: white;
+  color: #FFFFFF;
   background-color: #9098BD;
 }
 
@@ -562,7 +606,7 @@ hr {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  border-radius: 25px;
+  border-radius: 10px;
   background-color: #161A30;
 }
 
@@ -582,19 +626,19 @@ hr {
 
 .courses-progress__text {
   margin: 0;
-  color: white;
+  color: #FFFFFF;
   font-family: "Poppins-bold";
 }
 
 .courses-progress__text--title {
   margin: 0;
-  color: white;
+  color: #FFFFFF;
   font-family: "Poppins-bold";
 }
 
 .courses-progress__text--description {
   margin: 0;
-  color: white;
+  color: #FFFFFF;
   font-family: "Poppins-light-italic";
   font-size: 13px;
 }
@@ -611,7 +655,7 @@ hr {
       -ms-flex-pack: justify;
           justify-content: space-between;
   height: 100%;
-  color: white;
+  color: #FFFFFF;
 }
 
 .task-list__row {
@@ -623,7 +667,7 @@ hr {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  border-radius: 25px;
+  border-radius: 10px;
   background-color: #161A30;
 }
 
@@ -655,5 +699,65 @@ hr {
 
 .task-list__check-img {
   margin-left: auto;
+}
+
+.individual-course {
+  background-color: #101935;
+  width: 480px;
+  padding: 5px 20px;
+  border-radius: 10px;
+  position: relative;
+}
+
+.individual-course::before {
+  content: "";
+  width: 25px;
+  height: 100%;
+  top: 0;
+  right: 30px;
+  position: absolute;
+  background-color: #6F447A;
+}
+
+.individual-course .icon:first-child {
+  margin-left: 0px;
+  margin-right: 7px;
+}
+
+.individual-course__text-progress {
+  opacity: .8;
+}
+
+.individual-course__progress-bar {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: none;
+  display: block;
+  margin-top: 10px;
+  width: 330px;
+  height: 10px;
+}
+
+.individual-course__progress-bar::-webkit-progress-value {
+  border-top-right-radius: 0%;
+  border-bottom-right-radius: 0px;
+  border-radius: 8px;
+  background: #6F447A;
+}
+
+.individual-course__progress-bar::-webkit-progress-bar {
+  border-radius: 8px;
+  background: #273049;
+}
+
+.time-line-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
 }
 /*# sourceMappingURL=main.css.map */

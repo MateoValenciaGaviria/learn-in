@@ -2,15 +2,15 @@
 
     display: flex;
     flex-direction: column;
-    border-radius: 25px;
-    background-color: $panelbackground;
+    border-radius: $panelsborderradius;
+    background-color: $panelsbackground;
     height: 100%;
 
     &__header{
         display: grid;
         grid-template-columns: 25% 25% 30% 20%;
-        border-top-right-radius: 25px;
-        border-top-left-radius: 25px;
+        border-top-right-radius: $panelsborderradius;
+        border-top-left-radius: $panelsborderradius;
         background-color: $panelheaderbackground;
         height: 25%;
         padding: 0 20px;
@@ -19,8 +19,8 @@
 
     &__titles{
         margin: 0;
-        font-family: $tertiary-font-family;
-        color: white;
+        font-family: $Poppins-bold;
+        color: $white;
         font-size: 15px;
     }
 
@@ -39,7 +39,7 @@
     }
 
     &__info{
-        color: white;
+        color: $white;
         font-size: 15px;
 
         &--finished{
@@ -60,7 +60,7 @@
             height: fit-content;
             width: 85%;
             border-radius: 5px;
-            color: white;
+            color: $white;
             background-color: $yellow;
         }
 
@@ -70,7 +70,7 @@
             height: fit-content;
             width: 85%;
             border-radius: 5px;
-            color: white;
+            color: $white;
             background-color: $purple;
         }
 
@@ -80,7 +80,7 @@
             height: fit-content;
             width: 85%;
             border-radius: 5px;
-            color: white;
+            color: $white;
             background-color: $gray;
         }
         
