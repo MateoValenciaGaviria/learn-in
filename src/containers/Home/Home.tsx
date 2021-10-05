@@ -3,6 +3,7 @@ import { CoursesProgress } from '../../components/CoursesProgress/CoursesProgres
 import { TaskList } from '../../components/TaskList/TaskList';
 import { UpcomingActivities } from '../../components/UpcomingActivities/UpcomingActivities';
 import { UpcomingExams } from '../../components/UpcomingExams/UpcomingExams';
+import { HomeCalendar } from '../../components/HomeCalendar/HomeCalendar';
 
 export const Home = () => {
 
@@ -186,7 +187,7 @@ export const Home = () => {
       <div className="home__right-container">
         <div className="home__calendar-container">
           <div className="home__calendar">
-
+            <HomeCalendar></HomeCalendar>
           </div>
         </div>
         <div className="home__schedule-container">
