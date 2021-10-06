@@ -4,6 +4,7 @@ import { TaskList } from '../../components/TaskList/TaskList';
 import { UpcomingActivities } from '../../components/UpcomingActivities/UpcomingActivities';
 import { UpcomingExams } from '../../components/UpcomingExams/UpcomingExams';
 import { HomeCalendar } from '../../components/HomeCalendar/HomeCalendar';
+import { HomeSchedule } from '../../components/HomeSchedule/HomeSchedule';
 
 export const Home = () => {
 
@@ -193,7 +194,7 @@ export const Home = () => {
         <div className="home__schedule-container">
           <hr />
           <div className="home__schedule">
-
+              <HomeSchedule></HomeSchedule>
           </div>
           <hr />
         </div>

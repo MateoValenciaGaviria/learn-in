@@ -1,0 +1,89 @@
+.home-schedule{
+
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    overflow-y: scroll;
+    margin-left: 20px;
+
+    &::-webkit-scrollbar-thumb {
+        //display: none;
+        /* color of the scroll thumb */
+        background-color: rgba(144, 152, 189, 0.2);    
+        /* roundness of the scroll thumb */
+        border-radius: 20px;     
+        /* creates padding around scroll thumb */  
+        border: 5px solid $darkgray;  
+    }
+
+    &__title{
+        margin-top: 15px;
+        font-size: 20px;
+        margin-bottom: 20px;
+        font-family: $Poppins-bold;
+    }
+
+    &__row-container{
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+    }
+
+    &__row{
+        display: flex;
+        flex-direction: row;
+        height: auto;
+        margin-bottom: 20px;
+    }
+
+    &__course-icon{
+
+        position: relative;
+
+        padding: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: $Poppins-bold;
+        border-radius: 100%;
+        margin-right: 20px;
+
+        &--purple{
+            background-color: $purple;
+        }
+
+        &--gray{
+            background-color: $gray;
+        }
+
+        &--yellow{
+            background-color: $yellow;
+        }
+
+        &--magenta{
+            background-color: $magenta;
+        }
+    }
+
+    &__course-letter{
+        position: absolute;
+        font-size: 15px;
+    }
+
+    &__course-information{
+        display: flex;
+        flex-direction: column;
+        font-size: 14px;
+        justify-content: center;
+    }
+
+    &__course-name{
+        margin: 0;
+        font-family: $Poppins-bold;
+    }
+
+    &__course-schedule{
+        margin: 0;
+        font-family: $poppins-light-italic;
+    }
+}

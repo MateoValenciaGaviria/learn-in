@@ -50,6 +50,10 @@ p, h2 {
   margin: 10px 0px;
 }
 
+abbr {
+  text-decoration: none;
+}
+
 .icon {
   margin: 0px 5px;
 }
@@ -350,9 +354,15 @@ hr {
 }
 
 .home__schedule {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  padding: 20px;
   height: 100%;
   width: 100%;
 }
@@ -930,5 +940,119 @@ hr {
 .react-calendar__tile--active:enabled:hover,
 .react-calendar__tile--active:enabled:focus {
   background: rgba(144, 152, 189, 0.8);
+}
+
+.home-schedule {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: 100%;
+  overflow-y: scroll;
+  margin-left: 20px;
+}
+
+.home-schedule::-webkit-scrollbar-thumb {
+  /* color of the scroll thumb */
+  background-color: rgba(144, 152, 189, 0.2);
+  /* roundness of the scroll thumb */
+  border-radius: 20px;
+  /* creates padding around scroll thumb */
+  border: 5px solid #1F223F;
+}
+
+.home-schedule__title {
+  margin-top: 15px;
+  font-size: 20px;
+  margin-bottom: 20px;
+  font-family: "Poppins-bold";
+}
+
+.home-schedule__row-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: 100%;
+}
+
+.home-schedule__row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  height: auto;
+  margin-bottom: 20px;
+}
+
+.home-schedule__course-icon {
+  position: relative;
+  padding: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  font-family: "Poppins-bold";
+  border-radius: 100%;
+  margin-right: 20px;
+}
+
+.home-schedule__course-icon--purple {
+  background-color: #6F447A;
+}
+
+.home-schedule__course-icon--gray {
+  background-color: #9098BD;
+}
+
+.home-schedule__course-icon--yellow {
+  background-color: #FFB508;
+}
+
+.home-schedule__course-icon--magenta {
+  background-color: #F73C57;
+}
+
+.home-schedule__course-letter {
+  position: absolute;
+  font-size: 15px;
+}
+
+.home-schedule__course-information {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  font-size: 14px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.home-schedule__course-name {
+  margin: 0;
+  font-family: "Poppins-bold";
+}
+
+.home-schedule__course-schedule {
+  margin: 0;
+  font-family: "Poppins-light-italic";
 }
 /*# sourceMappingURL=main.css.map */
