@@ -1,7 +1,8 @@
-html, body{
-    margin:0; 
-    padding:0; 
-    min-height:100vh;
+html,
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
     font-family: $Poppins-regular;
     background-color: $darkbackground;
     color: $white;
@@ -15,15 +16,17 @@ h1 {
 a {
     color: $white;
 }
-p, h2 {
+p,
+h2 {
     margin: 10px 0px;
 }
 
-.icon{
+.icon {
     margin: 0px 5px;
 }
 
-hr{
+
+hr {
     width: 100%;
     margin: 0;
     border-color: #ffffff20;
@@ -31,36 +34,35 @@ hr{
 
 ::-webkit-scrollbar {
     /* width of the entire scrollbar */
-    width: 17px;             
+    width: 17px;
 }
-  
+
 ::-webkit-scrollbar-track {
     /* color of the tracking area */
-    background: transparent;        
+    background: transparent;
 }
-  
+
 ::-webkit-scrollbar-thumb {
     //display: none;
     /* color of the scroll thumb */
-    background-color: rgba(144, 152, 189, 0.2);    
+    background-color: rgba(144, 152, 189, 0.2);
     /* roundness of the scroll thumb */
-    border-radius: 20px;     
-    /* creates padding around scroll thumb */  
-    border: 5px solid $darkbackground;  
+    border-radius: 20px;
+    /* creates padding around scroll thumb */
+    border: 5px solid $darkbackground;
 
-    &:hover{
+    &:hover {
         //display: flex;
     }
 }
 
-.app{
-
-    &__content{
+.app {
+    &__content {
         height: 100%;
     }
 
-    &__navbar{
-        color:$white;
+    &__navbar {
+        color: $white;
         display: flex;
         flex-direction: row;
         min-height: 60px;
@@ -70,12 +72,12 @@ hr{
         align-items: center;
     }
 
-    &__logo{
+    &__logo {
         margin-left: $main-margin;
         height: 30%;
     }
 
-    &__links-container{
+    &__links-container {
         display: flex;
         flex-direction: row;
         width: 33%;
@@ -83,13 +85,12 @@ hr{
         align-items: center;
     }
 
-    &__link{
-
-        color:$white;
+    &__link {
+        color: $white;
         font-size: 14px;
         text-decoration: none;
 
-        &--selected{
+        &--selected {
             color: white;
             font-family: $Poppins-bold;
             font-size: 18px;
@@ -97,7 +98,7 @@ hr{
         }
     }
 
-    &__user-options-container{
+    &__user-options-container {
         display: flex;
         flex-direction: row;
         margin-right: $main-margin;
@@ -105,37 +106,37 @@ hr{
         height: 100%;
     }
 
-    &__notifications-icon{
+    &__notifications-icon {
         height: 30%;
     }
 
-    &__username-and-ocupation{
+    &__username-and-ocupation {
         display: flex;
         flex-direction: column;
         margin: 0 20px;
-        line-height:100%;
+        line-height: 100%;
     }
 
-    &__nav-username{
+    &__nav-username {
         margin: 0;
         font-size: 15px;
         font-family: $Poppins-bold;
     }
 
-    &__nav-user-ocupation{
+    &__nav-user-ocupation {
         margin: 0;
         font-size: 14px;
     }
 
-    &__user-avatar-container{
+    &__user-avatar-container {
         height: 70%;
     }
 
-    &__user-avatar{
+    &__user-avatar {
         height: 100%;
     }
 
-    &__sections-container{
+    &__sections-container {
         display: flex;
         flex-direction: column;
         height: 90%;

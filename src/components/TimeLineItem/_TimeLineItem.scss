@@ -1,4 +1,16 @@
-.time-line-item{
+.time-line-item {
     display: flex;
     flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+     * {
+        margin: 0px;
+    }
+    
 }
+.time-line-item-container {
+    background-color: $darkgray;
+    border-radius: $panelsborderradius;
+    padding: 20px;
+}
+
