@@ -6,7 +6,6 @@ import { Schedule } from '../Schedule/Schedule';
 import { Profile } from '../Profile/Profile';
 import { Chat } from '../Chat/Chat';
 import { getImage } from '../../utils/getImages';
-import './App.css';
 
 export const App = () => {
 

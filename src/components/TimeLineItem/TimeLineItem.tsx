@@ -1,15 +1,20 @@
-export const TimeLineItem = () => {
+import React from 'react';
+interface TimeLineItemProps {
+    isLast?: boolean;
+}
+
+export const TimeLineItem: React.FC<TimeLineItemProps> = ({isLast}) => {
     return (
-        <div className="time-line-item">
+        <div className={`time-line-item${isLast ? " time-line-item--last": ""}`}>
             <h3>Física</h3>
-            <p>Unidad 1:Fundamentos básicos de física</p>
+            <p className="unit">Unidad 1: Fundamentos básicos de física</p>
             <div>
                 <h4>Próxima clase:</h4>
                 <p>Revisión actividad 3</p>
             </div>
             <div>
                 <h4>Entregable:</h4>
-                <p>Actividad 3</p>
+                <p className="activity">Actividad 3</p>
             </div>
             <div>
                 <h4>Estado:</h4>
@@ -28,8 +33,8 @@ export const TimeLineItemContainer = () => {
         <>
             <h5>Lunes 13, Septiembre</h5>
             <div className="time-line-item-container">
-                <TimeLineItem />
-                <TimeLineItem />
+                <TimeLineItem/>
+                <TimeLineItem isLast={true}/>
             </div>
         </>
     );

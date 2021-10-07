@@ -4,6 +4,11 @@
 }
 
 @font-face{
+    font-family: Poppins-light;
+    src: url("../fonts/poppins/Poppins-Light.ttf");
+}
+
+@font-face{
     font-family: Poppins-medium;
     src: url("../fonts/poppins/Poppins-Medium.ttf");
 }
@@ -24,6 +29,7 @@
 }
 
 $Poppins-regular: "Poppins-regular"; 
+$Poppins-light: "Poppins-light"; 
 $Poppins-medium: "Poppins-medium";
 $Poppins-bold: "Poppins-bold";
 $poppins-light-italic: "Poppins-light-italic";

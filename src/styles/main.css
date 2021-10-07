@@ -4,6 +4,11 @@
 }
 
 @font-face {
+  font-family: Poppins-light;
+  src: url("../fonts/poppins/Poppins-Light.ttf");
+}
+
+@font-face {
   font-family: Poppins-medium;
   src: url("../fonts/poppins/Poppins-Medium.ttf");
 }
@@ -23,7 +28,8 @@
   src: url("../fonts/poppins/Poppins-LightItalic.ttf");
 }
 
-html, body {
+html,
+body {
   margin: 0;
   padding: 0;
   min-height: 100vh;
@@ -41,12 +47,20 @@ a {
   color: #FFFFFF;
 }
 
-p, h2 {
+p,
+h2 {
   margin: 10px 0px;
 }
 
 .icon {
   margin: 0px 5px;
+}
+
+.activity {
+  padding: 4px 8px;
+  border-radius: 5px;
+  color: #FFFFFF;
+  background-color: #FFB508;
 }
 
 hr {
@@ -759,5 +773,39 @@ hr {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  border-bottom: 1px solid #40475d;
+  padding: 10px 20px;
+}
+
+.time-line-item--last {
+  border-bottom: none;
+  padding-bottom: 0px;
+}
+
+.time-line-item * {
+  margin: 0px 5px 5px;
+}
+
+.time-line-item .unit {
+  max-width: 200px;
+}
+
+.time-line-item p {
+  font-family: "Poppins-light";
+  font-weight: 200;
+}
+
+.time-line-item h3 {
+  max-width: 150px;
+}
+
+.time-line-item-container {
+  background-color: #1F223F;
+  border-radius: 10px;
+  padding: 20px 0px;
+  width: 100%;
 }
 /*# sourceMappingURL=main.css.map */
