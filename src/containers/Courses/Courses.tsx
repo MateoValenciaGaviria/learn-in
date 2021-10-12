@@ -1,41 +1,57 @@
 import React, { useEffect } from 'react';
 import { IndividualCourse } from '../../components/IndividualCourse/IndividualCourse';
 import { TimeLineItemContainer } from '../../components/TimeLineItem/TimeLineItem';
-import { db } from '../../utils/firebase';
-import { getDocs, collection } from 'firebase/firestore';
-import { IndividualCourseType } from '../../utils/IndividualCourseType';
+import { collection, getDocs } from 'firebase/firestore/lite';
+import { IndividualCourseType } from '../../utils/types/IndividualCourseType';
+import { DATABASE } from "../../utils/firebase";
 
 
 export const Courses = () => {
-  const defaultCourses: IndividualCourseType[] = [];
-  /* {
-    id: 'x3234',
-    name: 'Matecho',
-    teacherName: 'Juli',
-    progress: 50,
-    calification: 4.0,
-  } */
 
-  const [coursesList, setCoursesList] = React.useState([]);
+  var [coursesList, setCoursesList] = React.useState<IndividualCourseType[]>([]);
 
-  async function getCourses() {
-    const coursesCollection = collection(db, 'courses');
+  const getCourses = async () => {
+    const coursesCollection = collection(DATABASE, 'courses');
     const coursesSnapshot = await getDocs(coursesCollection);
-    const coursesList = coursesSnapshot.forEach(doc => console.log((doc.data())));
-    return coursesList;
+    const list: IndividualCourseType[] = [];
+    coursesSnapshot.forEach(doc => {
+      list.push(doc.data() as IndividualCourseType);
+    });
+   setCoursesList(list); 
   }
 
-  useEffect(() => { getCourses() });
+/*   useEffect(() => { getCourses() }); */
 
   return (
     <div className="courses">
       <div className="courses__left-container">
         <h1 className="courses__title">Tus cursos</h1>
         <section className="courses__wrapper">
-          {/* {coursesList.map((id: string , name: string, teacherName: string, progress: number, calification : number) => {
-            return <IndividualCourse id={id} name={name} teacherName={teacherName} progress={progress} calification={calification}
+
+          {coursesList.map(course => {
+            
+            return <IndividualCourse key={course.id}
+              id={course.id}
+              name={course.name}
+              teacherName={course.teacherName}
+              progress={course.progress}
+              calification={course.calification}
+              important={course.important}
+              updates={course.updates}
+              mainColor={course.mainColor}
             />
-          })} */}
+
+          })}
+          <IndividualCourse
+              id='25234'
+              name="name"
+              teacherName="test"
+              progress={4}
+              calification={2.2}
+              important={true}
+              updates={1}
+              mainColor="#0DBEBE"
+            />
         </section>
         <h1 className="courses__time-line-title">Línea del tiempo</h1>
         <section className="courses__time-line-wrapper">

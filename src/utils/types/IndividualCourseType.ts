@@ -4,4 +4,7 @@ export interface IndividualCourseType {
     teacherName: string;
     progress: number;
     calification: number;
+    important: boolean;
+    updates: number;
+    mainColor: string;
   }
