@@ -11,4 +11,10 @@
         padding: 0px 20px;
         background-color: $darkgray;
     }
+
+    &__wrapper{
+        display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    }
 }

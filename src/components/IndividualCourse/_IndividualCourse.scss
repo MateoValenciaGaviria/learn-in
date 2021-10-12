@@ -5,6 +5,34 @@
     border-radius: $panelsborderradius;
     position: relative;
 
+    &__title-link {
+        text-decoration: none;
+
+        &--updates::after {
+            content: attr(data-content);
+            position: absolute;
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            text-align: center;
+            background-color: $magenta;
+            color: $white;
+            font-weight: 800;
+            top: -12px;
+            right: -12px;
+        }
+    }
+
+    &--important::after {
+        content: "!";
+        position: absolute;
+        font-size: 45px;
+        color: $magenta;
+        font-weight: 800;
+        top: 5px;
+        right: 100px;
+    }
+
     &::before {
         content: "";
         width: 25px;
@@ -12,19 +40,19 @@
         top: 0;
         right: 30px;
         position: absolute;
-        background-color: $purple;
+        background-color: var(--mainColor);
     }
 
-    .icon:first-child{
+    .icon:first-child {
         margin-left: 0px;
         margin-right: 7px;
     }
 
-    &__text-progress{
-        opacity: .8;
+    &__text-progress {
+        opacity: 0.8;
     }
 
-    &__progress-bar{
+    &__progress-bar {
         -webkit-appearance: none;
         -moz-appearance: none;
         appearance: none;
@@ -38,7 +66,7 @@
             border-top-right-radius: 0%;
             border-bottom-right-radius: 0px;
             border-radius: 8px;
-            background: $purple;
+            background: var(--mainColor);
         }
         &::-webkit-progress-bar {
             border-radius: 8px;

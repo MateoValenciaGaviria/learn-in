@@ -4,6 +4,11 @@
 }
 
 @font-face {
+  font-family: Poppins-light;
+  src: url("../fonts/poppins/Poppins-Light.ttf");
+}
+
+@font-face {
   font-family: Poppins-medium;
   src: url("../fonts/poppins/Poppins-Medium.ttf");
 }
@@ -28,7 +33,8 @@
   src: url("../fonts/poppins/Poppins-LightItalic.ttf");
 }
 
-html, body {
+html,
+body {
   margin: 0;
   padding: 0;
   min-height: 100vh;
@@ -46,6 +52,11 @@ a {
   color: #FFFFFF;
 }
 
+p,
+h2 {
+  margin: 10px 0px;
+}
+
 p, h2 {
   margin: 10px 0px;
 }
@@ -56,6 +67,43 @@ abbr {
 
 .icon {
   margin: 0px 5px;
+}
+
+.tooltip {
+  cursor: help;
+}
+
+.tooltip:hover::after {
+  content: attr(data-content);
+  background-color: #9098BD;
+  position: absolute;
+  max-width: 220px;
+  border-radius: 5px 5px 5px 0px;
+  padding: 10px;
+  bottom: 30px;
+  color: #FFFFFF;
+}
+
+.activity {
+  padding: 4px 8px;
+  border-radius: 5px;
+  color: #FFFFFF;
+  background-color: #FFB508;
+  position: relative;
+}
+
+.activity--important {
+  background-color: #F73C57;
+}
+
+.activity--important::after {
+  content: "!";
+  position: absolute;
+  font-size: 45px;
+  color: #F73C57;
+  font-weight: 800;
+  bottom: -19px;
+  right: -25px;
 }
 
 hr {
@@ -422,6 +470,16 @@ hr {
   width: 20%;
   padding: 0px 20px;
   background-color: #1F223F;
+}
+
+.courses__wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
 }
 
 .schedule {
@@ -1681,6 +1739,34 @@ hr {
   position: relative;
 }
 
+.individual-course__title-link {
+  text-decoration: none;
+}
+
+.individual-course__title-link--updates::after {
+  content: attr(data-content);
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  text-align: center;
+  background-color: #F73C57;
+  color: #FFFFFF;
+  font-weight: 800;
+  top: -12px;
+  right: -12px;
+}
+
+.individual-course--important::after {
+  content: "!";
+  position: absolute;
+  font-size: 45px;
+  color: #F73C57;
+  font-weight: 800;
+  top: 5px;
+  right: 100px;
+}
+
 .individual-course::before {
   content: "";
   width: 25px;
@@ -1688,7 +1774,7 @@ hr {
   top: 0;
   right: 30px;
   position: absolute;
-  background-color: #6F447A;
+  background-color: var(--mainColor);
 }
 
 .individual-course .icon:first-child {
@@ -1697,7 +1783,7 @@ hr {
 }
 
 .individual-course__text-progress {
-  opacity: .8;
+  opacity: 0.8;
 }
 
 .individual-course__progress-bar {
@@ -1715,7 +1801,7 @@ hr {
   border-top-right-radius: 0%;
   border-bottom-right-radius: 0px;
   border-radius: 8px;
-  background: #6F447A;
+  background: var(--mainColor);
 }
 
 .individual-course__progress-bar::-webkit-progress-bar {
@@ -1731,6 +1817,40 @@ hr {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  border-bottom: 1px solid #40475d;
+  padding: 10px 20px;
+}
+
+.time-line-item:last-child {
+  border-bottom: none;
+  padding-bottom: 0px;
+}
+
+.time-line-item * {
+  margin: 0px 5px 5px;
+}
+
+.time-line-item .unit {
+  max-width: 200px;
+}
+
+.time-line-item p {
+  font-family: "Poppins-light";
+  font-weight: 200;
+}
+
+.time-line-item h3 {
+  max-width: 150px;
+}
+
+.time-line-item-container {
+  background-color: #1F223F;
+  border-radius: 10px;
+  padding: 20px 0px;
+  width: 100%;
 }
 
 .home-calendar {
