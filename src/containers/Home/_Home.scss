@@ -115,15 +115,19 @@
     }
 
     &__calendar{
+        display: flex;
+        flex-direction: column;
         box-sizing: border-box;
-        padding: 20px;
+        padding: 15px 20px;
         height: 100%;
         width: 100%;
+        align-items: center;
     }
 
     &__schedule{
+        display: flex;
+        flex-direction: column;
         box-sizing: border-box;
-        padding: 20px;
         height: 100%;
         width: 100%;
     }
@@ -153,7 +157,7 @@
         outline: none;
         background-color: transparent;
         border-style: none;
-        color: white;
+        color: $white;
         resize: none;
         overflow-y: hidden;
     }

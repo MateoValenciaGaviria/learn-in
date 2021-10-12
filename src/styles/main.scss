@@ -24,6 +24,11 @@
 }
 
 @font-face{
+    font-family: Poppins-light;
+    src: url("../fonts/poppins/Poppins-Light.ttf");
+}
+
+@font-face{
     font-family: Poppins-light-italic;
     src: url("../fonts/poppins/Poppins-LightItalic.ttf");
 }
@@ -32,6 +37,7 @@ $Poppins-regular: "Poppins-regular";
 $Poppins-light: "Poppins-light"; 
 $Poppins-medium: "Poppins-medium";
 $Poppins-bold: "Poppins-bold";
+$poppins-light: "Poppins-light";
 $poppins-light-italic: "Poppins-light-italic";
 
 $main-margin: 40px;
@@ -62,4 +68,6 @@ $panelheaderbackground: #212B4A;
 @import '../components/CoursesProgress/CoursesProgress';
 @import '../components/TaskList/TaskList';
 @import '../components/IndividualCourse/IndividualCourse';
-@import '../components/TimeLineItem/TimeLineItem'
+@import '../components/TimeLineItem/TimeLineItem';
+@import '../components/HomeCalendar/HomeCalendar';
+@import '../components/HomeSchedule/HomeSchedule';
