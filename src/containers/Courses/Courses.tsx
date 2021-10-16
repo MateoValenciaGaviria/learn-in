@@ -10,6 +10,8 @@ export const Courses = () => {
 
   var [coursesList, setCoursesList] = React.useState<IndividualCourseType[]>([]);
 
+  var [timeLineItems, setTimeLineItems] = React.useState([]);
+
   const getCourses = async () => {
     const coursesCollection = collection(DATABASE, 'courses');
     const coursesSnapshot = await getDocs(coursesCollection);
@@ -55,7 +57,7 @@ export const Courses = () => {
         </section>
         <h1 className="courses__time-line-title">Línea del tiempo</h1>
         <section className="courses__time-line-wrapper">
-          <TimeLineItemContainer></TimeLineItemContainer>
+          <TimeLineItemContainer date={''} timeLineItem={[]} ></TimeLineItemContainer>
         </section>
       </div>
       <div className="courses__right-container">

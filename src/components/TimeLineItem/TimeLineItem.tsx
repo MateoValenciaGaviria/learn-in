@@ -1,40 +1,57 @@
-import React from 'react';
+import React, { CSSProperties } from 'react';
+import { ActivityType } from '../../utils/types/ActivityType';
+import { Activity } from '../Activity/Activity';
 interface TimeLineItemProps {
-    important: boolean;
+    courseName: string,
+    unit: string,
+    nextClass: string[],
+    tasks: ActivityType[],
+    details: string
 }
 
-export const TimeLineItem: React.FC<TimeLineItemProps> = ({important}) => {
+
+export const TimeLineItem: React.FC<TimeLineItemProps> = ({ courseName, unit, nextClass, tasks, details}) => {
     return (
         <div className="time-line-item">
-            <h3>Física</h3>
-            <p className="unit">Unidad 1: Fundamentos básicos de física</p>
+            <h3>{courseName}</h3>
+            <p className="unit">{unit}</p>
             <div>
                 <h4>Próxima clase:</h4>
-                <p>Revisión actividad 3</p>
+                {nextClass.map(activity => {return <p>{activity}</p>})}
             </div>
             <div>
                 <h4>Entregable:</h4>
-                <p className={`activity ${important===true? ' activity--important':''}`}>Actividad 3</p>
+                {tasks.map(task => {
+                    return <Activity text={task.text} important={task.important} bgColor={task.bgColor} state={task.state}></Activity>
+                })}
             </div>
             <div>
                 <h4>Estado:</h4>
-                <p>Finalizada</p>
+                {tasks.map(task => {
+                    return <p>{task.state}</p>
+                })}
             </div>
             <div>
                 <h4>Detalles:</h4>
-                <p>Veremos los conceptos básicos</p>
+                <p>{details}</p>
             </div>
         </div >
     );
 }
 
-export const TimeLineItemContainer = () => {
+interface TimeLineItemContainerProps {
+    date: string,
+    timeLineItem: TimeLineItemProps[],
+}
+
+export const TimeLineItemContainer: React.FC<TimeLineItemContainerProps> = ({date, timeLineItem}) => {
     return (
         <>
-            <h5>Lunes 13, Septiembre</h5>
+            <h5>{date}</h5>
             <div className="time-line-item-container">
-                <TimeLineItem important={false}/>
-                <TimeLineItem important={true}/>
+            {timeLineItem.map(item => {
+                    return <TimeLineItem courseName={item.courseName} unit={item.unit} nextClass={item.nextClass} tasks={item.tasks} details={item.details}/>
+                })}
             </div>
         </>
     );
