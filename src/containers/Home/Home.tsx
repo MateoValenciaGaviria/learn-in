@@ -5,6 +5,7 @@ import { UpcomingActivities } from '../../components/UpcomingActivities/Upcoming
 import { UpcomingExams } from '../../components/UpcomingExams/UpcomingExams';
 import { HomeCalendar } from '../../components/HomeCalendar/HomeCalendar';
 import { HomeSchedule } from '../../components/HomeSchedule/HomeSchedule';
+import { SpotifyPanel } from '../../components/SpotifyPanel/SpotifyPanel';
 
 export const Home = () => {
 
@@ -119,6 +120,7 @@ export const Home = () => {
             {(panel1 === "activities") ? <UpcomingActivities></UpcomingActivities> : null}
             {(panel1 === "progress") ? <CoursesProgress></CoursesProgress> : null}
             {(panel1 === "tasks") ? <TaskList></TaskList> : null}
+            {(panel1 === "playlist") ? <SpotifyPanel></SpotifyPanel> : null}
           </div>
           <div className="home__panel-container">
             <div className="home__select-container">
@@ -140,6 +142,7 @@ export const Home = () => {
             {(panel2 === "activities") ? <UpcomingActivities></UpcomingActivities> : null}
             {(panel2 === "progress") ? <CoursesProgress></CoursesProgress> : null}
             {(panel2 === "tasks") ? <TaskList></TaskList> : null}
+            {(panel2 === "playlist") ? <SpotifyPanel></SpotifyPanel> : null}
           </div>
           <div className="home__panel-container">
             <div className="home__select-container">
@@ -161,6 +164,7 @@ export const Home = () => {
             {(panel3 === "activities") ? <UpcomingActivities></UpcomingActivities> : null}
             {(panel3 === "progress") ? <CoursesProgress></CoursesProgress> : null}
             {(panel3 === "tasks") ? <TaskList></TaskList> : null}
+            {(panel3 === "playlist") ? <SpotifyPanel></SpotifyPanel> : null}
           </div>
           <div className="home__panel-container">
             <div className="home__select-container">
@@ -182,6 +186,7 @@ export const Home = () => {
             {(panel4 === "activities") ? <UpcomingActivities></UpcomingActivities> : null}
             {(panel4 === "progress") ? <CoursesProgress></CoursesProgress> : null}
             {(panel4 === "tasks") ? <TaskList></TaskList> : null}
+            {(panel4 === "playlist") ? <SpotifyPanel></SpotifyPanel> : null}
           </div>
         </div>
       </div>

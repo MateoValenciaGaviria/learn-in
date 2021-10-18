@@ -2337,6 +2337,10 @@ hr {
   width: 100%;
 }
 
+.profile__spotify {
+  border-radius: 10px;
+}
+
 .ranking-panel {
   display: -webkit-box;
   display: -ms-flexbox;
