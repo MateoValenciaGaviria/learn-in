@@ -1,0 +1,161 @@
+$easing: cubic-bezier(0.5,2,0.5,0.75);
+
+.profile{
+
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    overflow-y: scroll;
+
+    &__top-container{
+        display: flex;
+        flex-direction: column;
+        height: 33%;
+        background: rgba($color: black, $alpha: .2);
+    }
+
+    &__bottom-container{
+        display: flex;
+        flex-direction: row;
+        height: 67%;
+        padding: 0 10%;
+    }
+
+    &__user-information-container{
+        position: relative;
+        width: 20%;
+    }
+
+    &__user-information{
+        position: absolute;
+        width: 100%;
+        top: -20%;
+    }
+
+    &__avatar-container{
+        position: relative;
+        width: 100%;
+    }
+
+    &__emojis-container {
+        position: absolute;
+        width: auto;
+        right: -20px;
+        bottom: -20px;
+    }
+
+    &__emojis-btn {
+        background: none;
+        border: none;
+        outline: none;
+        font-size: 30px;
+        padding: 0;
+        width: auto;
+        outline: none;
+        cursor: pointer;
+     }
+        
+    &__emojis-dropdown {
+        position: relative;
+    }
+
+    &__emojis-dropdown-options {
+        position: absolute;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: none;
+
+        &--open{
+            display: flex;
+            flex-direction: row;
+            position: absolute;
+            left: 47px;
+            bottom: -26px;
+            padding: 0;
+            background: rgba($color: $white, $alpha: .4);
+            border-radius: 50px;
+        }
+    }
+              
+    &__emojis-option {
+        display: inline-block;  
+        cursor: pointer;
+    }
+
+    &__emojis-option-text {
+        text-decoration: none;
+        display: inline-block;
+        padding: 5px 7px;
+        border-radius: 100%;
+        font-size: 30px;
+
+        &--active {
+            display: inline-block;
+            font-size: 30px;
+            padding: 5px 7px;
+            border-radius: 100%;
+            background: rgba($color: $magenta, $alpha: 1);
+        }
+
+        &:hover {
+            background: rgba($color: black, $alpha: .6);
+        }
+    }
+
+    &__avatar-img{
+        width: 100%;
+    }
+
+    &__information{
+        display: flex;
+        flex-direction: column;
+        margin-top: 20px;
+    }
+
+    &__info{
+
+        font-size: 15px;
+        margin: 0;
+
+        &--title{
+
+        }
+
+        &--text{
+            margin-bottom: 15px;
+            font-family: $poppins-light;
+        }
+    }
+    
+    &__user-stats{
+        width: 80%;
+        padding-left: 40px;
+    }
+
+    &__username-container{
+        display: flex;
+        flex-direction: row;
+        margin-top: 30px;
+    }
+
+    &__username{
+
+    }
+
+    &__user-status{
+        
+    }
+
+    &__panels-container{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-column-gap: 35px;
+        row-gap: 40px;
+        grid-auto-rows: 50% 50%;
+        height: 100%;
+        margin-top: 30px;
+        padding-bottom: 100px;
+        margin-left: $main-margin;
+    }
+}

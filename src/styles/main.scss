@@ -55,6 +55,9 @@ $white: #FFFFFF;
 $panelsbackground: #101935;
 $panelheaderbackground: #212B4A;
 
+$diamond: #0DBEBE;
+$pearl: #F862B3;
+
 
 @import '../containers/App/App';
 @import '../containers/Home/Home';
@@ -71,3 +74,7 @@ $panelheaderbackground: #212B4A;
 @import '../components/TimeLineItem/TimeLineItem';
 @import '../components/HomeCalendar/HomeCalendar';
 @import '../components/HomeSchedule/HomeSchedule';
+@import '../components/SpotifyPanel/SpotifyPanel';
+@import '../components/RankingPanel/RankingPanel';
+@import '../components/AchievementsPanel/AchievementsPanel';
+@import '../components/RewardsPanel/RewardsPanel';

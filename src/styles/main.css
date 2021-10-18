@@ -106,6 +106,30 @@ abbr {
   right: -25px;
 }
 
+.purple {
+  background-color: #6F447A;
+}
+
+.gray {
+  background-color: #9098BD;
+}
+
+.yellow {
+  background-color: #FFB508;
+}
+
+.magenta {
+  background-color: #F73C57;
+}
+
+.diamond {
+  background-color: #0DBEBE;
+}
+
+.pearl {
+  background-color: #F862B3;
+}
+
 hr {
   width: 100%;
   margin: 0;
@@ -1429,6 +1453,184 @@ hr {
   color: #f44336;
 }
 
+.profile {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: 100%;
+  overflow-y: scroll;
+}
+
+.profile__top-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: 33%;
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.profile__bottom-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  height: 67%;
+  padding: 0 10%;
+}
+
+.profile__user-information-container {
+  position: relative;
+  width: 20%;
+}
+
+.profile__user-information {
+  position: absolute;
+  width: 100%;
+  top: -20%;
+}
+
+.profile__avatar-container {
+  position: relative;
+  width: 100%;
+}
+
+.profile__emojis-container {
+  position: absolute;
+  width: auto;
+  right: -20px;
+  bottom: -20px;
+}
+
+.profile__emojis-btn {
+  background: none;
+  border: none;
+  outline: none;
+  font-size: 30px;
+  padding: 0;
+  width: auto;
+  outline: none;
+  cursor: pointer;
+}
+
+.profile__emojis-dropdown {
+  position: relative;
+}
+
+.profile__emojis-dropdown-options {
+  position: absolute;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: none;
+}
+
+.profile__emojis-dropdown-options--open {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  position: absolute;
+  left: 47px;
+  bottom: -26px;
+  padding: 0;
+  background: rgba(255, 255, 255, 0.4);
+  border-radius: 50px;
+}
+
+.profile__emojis-option {
+  display: inline-block;
+  cursor: pointer;
+}
+
+.profile__emojis-option-text {
+  text-decoration: none;
+  display: inline-block;
+  padding: 5px 7px;
+  border-radius: 100%;
+  font-size: 30px;
+}
+
+.profile__emojis-option-text--active {
+  display: inline-block;
+  font-size: 30px;
+  padding: 5px 7px;
+  border-radius: 100%;
+  background: #f73c57;
+}
+
+.profile__emojis-option-text:hover {
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.profile__avatar-img {
+  width: 100%;
+}
+
+.profile__information {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-top: 20px;
+}
+
+.profile__info {
+  font-size: 15px;
+  margin: 0;
+}
+
+.profile__info--text {
+  margin-bottom: 15px;
+  font-family: "Poppins-light";
+}
+
+.profile__user-stats {
+  width: 80%;
+  padding-left: 40px;
+}
+
+.profile__username-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  margin-top: 30px;
+}
+
+.profile__panels-container {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[2];
+      grid-template-columns: repeat(2, 1fr);
+  grid-column-gap: 35px;
+  row-gap: 40px;
+  grid-auto-rows: 50% 50%;
+  height: 100%;
+  margin-top: 30px;
+  padding-bottom: 100px;
+  margin-left: 40px;
+}
+
 .upcoming-exams {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -2121,5 +2323,222 @@ hr {
 .home-schedule__course-schedule {
   margin: 0;
   font-family: "Poppins-light-italic";
+}
+
+.spotify-panel {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: 100%;
+  width: 100%;
+}
+
+.ranking-panel {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: 100%;
+  width: 100%;
+}
+
+.ranking-panel__title {
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-size: 18px;
+}
+
+.ranking-panel__ranks-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  height: 100%;
+}
+
+.ranking-panel__rank {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-top: auto;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.ranking-panel__rank--middle {
+  margin-top: 0;
+}
+
+.ranking-panel__rank-icon {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  border-radius: 100%;
+  padding: 30px;
+}
+
+.ranking-panel__rank-icon--middle {
+  padding: 40px;
+}
+
+.ranking-panel__course-letter {
+  position: absolute;
+  font-size: 20px;
+}
+
+.ranking-panel__course-letter--middle {
+  font-size: 30px;
+}
+
+.ranking-panel__course-name {
+  margin-top: 8px;
+  margin-bottom: 0;
+  font-size: 15px;
+}
+
+.ranking-panel__rank-name {
+  font-family: "Poppins-light";
+  font-size: 13px;
+  margin: 0;
+}
+
+.achievements-panel {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: auto;
+  width: 100%;
+}
+
+.achievements-panel__title {
+  margin-top: 0;
+  margin-bottom: 20px;
+  font-size: 18px;
+}
+
+.achievements-panel__container {
+  height: 100%;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: auto auto auto;
+      grid-template-columns: auto auto auto;
+  grid-auto-rows: 40%;
+  row-gap: 30px;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+.achievements-panel__achievement {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: 100%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.achievements-panel__achievement-img-container {
+  padding: 30%;
+  background: gray;
+}
+
+.achievements-panel__achievement-name {
+  margin-top: 10px;
+  font-size: 13px;
+  font-family: "Poppins-light";
+}
+
+.rewards-panel {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: 100%;
+  width: 100%;
+}
+
+.rewards-panel__title {
+  margin-top: 0;
+  margin-bottom: 20px;
+  font-size: 18px;
+}
+
+.rewards-panel__container {
+  height: 100%;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: auto auto auto;
+      grid-template-columns: auto auto auto;
+  grid-auto-rows: 40%;
+  row-gap: 30px;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+.rewards-panel__achievement {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: 100%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.rewards-panel__achievement-img-container {
+  padding: 30%;
+  background: gray;
+}
+
+.rewards-panel__achievement-name {
+  margin-top: 10px;
+  font-size: 13px;
+  font-family: "Poppins-light";
 }
 /*# sourceMappingURL=main.css.map */
