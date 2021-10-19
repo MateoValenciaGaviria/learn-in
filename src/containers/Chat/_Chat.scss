@@ -1,0 +1,270 @@
+.chat{
+  display: block;
+  overflow-y: auto;
+  height: 100%;
+  font-family: $Poppins-regular;
+  background-color: $darkbackground !important;
+  stroke: none !important;
+}
+
+.ce-chat-engine{
+  outline: none !important;
+}
+
+//Left section
+.ce-chat-form-container{
+  font-family: $Poppins-regular;
+  background: $darkgray !important;
+
+  form{
+    input{
+      background: $white !important;
+      color: $darkbackground !important;
+    } 
+  }
+}
+
+#new-chat-plus-button{
+  background-color: $magenta !important;
+}
+
+.ce-chat-list{
+  border: none !important;
+  background: $darkgray !important;
+  padding: 0 !important;
+  //change scrollbar
+  overflow-y: auto !important;
+  padding-right: auto !important;
+  box-sizing: content-box !important;
+
+  &::-webkit-scrollbar-thumb {
+    //display: none;
+    /* color of the scroll thumb */
+    background-color: rgba(144, 152, 189, 0.2);    
+    /* roundness of the scroll thumb */
+    border-radius: 20px;     
+    /* creates padding around scroll thumb */  
+    border: 5px solid $darkgray;  
+  }
+}
+
+.ce-chats-container{
+  width: 100% !important;
+  background: $darkgray !important;
+}
+
+.ce-chat-form-container{
+  font-family: $Poppins-regular;
+}
+
+.ce-chat-card{
+  background: $darkgray !important;
+  border-radius: 0 !important;
+} 
+
+.ce-active-chat-card{
+  background: $darkbackground !important;
+}
+
+.ce-chat-title-text{
+  font-family: $Poppins-regular;
+}
+
+//Parent
+.ce-chat-subtitle-text{
+  font-family: $Poppins-regular;
+}
+
+.ce-chat-subtitle-message{
+
+}
+
+.ce-chat-subtitle-date{
+
+}
+
+//Middle section
+
+.ce-chat-feed-column{
+  background-color: $darkbackground !important;
+}
+
+#ce-ice-breaker-text{
+  color: $white !important;
+}
+
+#ce-feed-container{
+  background-color: $darkbackground !important;
+}
+
+.ce-chat-feed-container{
+
+  //Hide scrollbar
+  overflow-y: scroll !important;
+  padding-right: 17px !important;
+  box-sizing: content-box !important;
+}
+
+.ce-feed-container-top{
+  
+}
+
+.ce-chat-title-container{
+  color: $white !important;
+}
+
+.ce-chat-title{
+  background-color: $panelheaderbackground !important;
+}
+
+.ce-chat-title-text{
+  
+}
+
+.ce-message-and-date{
+  background-color: $darkbackground !important;
+}
+
+.ce-message-date-text{
+  font-size: 13px !important;
+  font-family: $Poppins-light;
+  color: $white !important;
+}
+
+.ce-feed-container-bottom{
+  background-color: $darkbackground !important;
+}
+
+.ce-avatar-dot{
+  background: $magenta !important;
+}
+
+.ce-quill-container{
+  background-color: $panelheaderbackground!important;
+}
+
+.ql-editor{
+  font-family: $Poppins-regular;
+  p{
+    background-color: rgba($color: $gray, $alpha: .2);
+    border-radius: 20px;
+    padding: 5px 10px !important;
+  }
+}
+
+.ql-container{
+  border: none !important;
+}
+
+#toolbar{
+  border: none !important;
+  svg{
+    filter: brightness(0) invert(1) !important;
+
+    &:hover{
+      filter: brightness(1) invert(0) !important;
+    }
+  }
+
+  .ql-active{
+    svg{
+      filter: brightness(1) invert(0) !important;
+    }
+  }
+
+}
+
+#ce-send-message-button{
+  background: $magenta !important;
+  &:hover{
+    opacity: 0.66 !important;
+  }
+}
+
+//Right section
+
+.ce-settings{
+  border: none !important;
+  background: $darkgray !important;
+  overflow-y: auto !important;
+
+  &::-webkit-scrollbar-thumb {
+    //display: none;
+    /* color of the scroll thumb */
+    background-color: rgba(144, 152, 189, 0.2);    
+    /* roundness of the scroll thumb */
+    border-radius: 20px;     
+    /* creates padding around scroll thumb */  
+    border: 5px solid $darkgray;  
+  }
+}
+
+.ce-settings-container{
+  font-family: $Poppins-regular;
+}
+
+.ce-chat-settings-container{
+  margin-bottom: 10px;
+}
+
+.ce-avatar{
+  background: $magenta !important;  
+}
+
+.ce-input{
+  background-color: rgba($color: $gray, $alpha: .2);
+  color: $white;
+}
+
+.ce-section-title-container{
+  background-color: rgba($color: $gray, $alpha: .2) !important;
+  color: $white;
+  font-size: 13px !important;
+
+  div{
+    font-family: $Poppins-light !important;
+    font-size: 13px !important;
+  }
+}
+
+.ce-person-container{
+  display: flex;
+  flex-direction: row;
+}
+
+.ce-person-avatar{
+  padding: 0 !important;
+}
+
+.ce-person-text{
+  padding: 0 !important;
+  margin-right: auto;
+  margin-left: 10px;
+}
+
+#ce-add-username-input{
+  background-color: $white !important;
+  font-family: $Poppins-regular !important;
+  font-size: 15px !important;
+}
+
+#ce-options-drop-down{
+  background-color: rgba($color: $gray, $alpha: .2) !important;
+  color: $white;
+  font-size: 13px !important;
+  border-top: 1px solid $magenta !important;
+  div{
+    font-family: $Poppins-light !important;
+  }
+}
+
+#ce-delete-chat-button{
+  background: $magenta !important;  
+  color: $white !important;
+  border: none !important;
+}
+
+#ce-connecting-popup{
+  background-color: $yellow !important;
+}
+

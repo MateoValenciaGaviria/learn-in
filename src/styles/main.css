@@ -1631,6 +1631,258 @@ hr {
   margin-left: 40px;
 }
 
+.chat {
+  display: block;
+  overflow-y: auto;
+  height: 100%;
+  font-family: "Poppins-regular";
+  background-color: #090B22 !important;
+  stroke: none !important;
+}
+
+.ce-chat-engine {
+  outline: none !important;
+}
+
+.ce-chat-form-container {
+  font-family: "Poppins-regular";
+  background: #1F223F !important;
+}
+
+.ce-chat-form-container form input {
+  background: #FFFFFF !important;
+  color: #090B22 !important;
+}
+
+#new-chat-plus-button {
+  background-color: #F73C57 !important;
+}
+
+.ce-chat-list {
+  border: none !important;
+  background: #1F223F !important;
+  padding: 0 !important;
+  overflow-y: auto !important;
+  padding-right: auto !important;
+  -webkit-box-sizing: content-box !important;
+          box-sizing: content-box !important;
+}
+
+.ce-chat-list::-webkit-scrollbar-thumb {
+  /* color of the scroll thumb */
+  background-color: rgba(144, 152, 189, 0.2);
+  /* roundness of the scroll thumb */
+  border-radius: 20px;
+  /* creates padding around scroll thumb */
+  border: 5px solid #1F223F;
+}
+
+.ce-chats-container {
+  width: 100% !important;
+  background: #1F223F !important;
+}
+
+.ce-chat-form-container {
+  font-family: "Poppins-regular";
+}
+
+.ce-chat-card {
+  background: #1F223F !important;
+  border-radius: 0 !important;
+}
+
+.ce-active-chat-card {
+  background: #090B22 !important;
+}
+
+.ce-chat-title-text {
+  font-family: "Poppins-regular";
+}
+
+.ce-chat-subtitle-text {
+  font-family: "Poppins-regular";
+}
+
+.ce-chat-feed-column {
+  background-color: #090B22 !important;
+}
+
+#ce-ice-breaker-text {
+  color: #FFFFFF !important;
+}
+
+#ce-feed-container {
+  background-color: #090B22 !important;
+}
+
+.ce-chat-feed-container {
+  overflow-y: scroll !important;
+  padding-right: 17px !important;
+  -webkit-box-sizing: content-box !important;
+          box-sizing: content-box !important;
+}
+
+.ce-chat-title-container {
+  color: #FFFFFF !important;
+}
+
+.ce-chat-title {
+  background-color: #212B4A !important;
+}
+
+.ce-message-and-date {
+  background-color: #090B22 !important;
+}
+
+.ce-message-date-text {
+  font-size: 13px !important;
+  font-family: "Poppins-light";
+  color: #FFFFFF !important;
+}
+
+.ce-feed-container-bottom {
+  background-color: #090B22 !important;
+}
+
+.ce-avatar-dot {
+  background: #F73C57 !important;
+}
+
+.ce-quill-container {
+  background-color: #212B4A !important;
+}
+
+.ql-editor {
+  font-family: "Poppins-regular";
+}
+
+.ql-editor p {
+  background-color: rgba(144, 152, 189, 0.2);
+  border-radius: 20px;
+  padding: 5px 10px !important;
+}
+
+.ql-container {
+  border: none !important;
+}
+
+#toolbar {
+  border: none !important;
+}
+
+#toolbar svg {
+  -webkit-filter: brightness(0) invert(1) !important;
+          filter: brightness(0) invert(1) !important;
+}
+
+#toolbar svg:hover {
+  -webkit-filter: brightness(1) invert(0) !important;
+          filter: brightness(1) invert(0) !important;
+}
+
+#toolbar .ql-active svg {
+  -webkit-filter: brightness(1) invert(0) !important;
+          filter: brightness(1) invert(0) !important;
+}
+
+#ce-send-message-button {
+  background: #F73C57 !important;
+}
+
+#ce-send-message-button:hover {
+  opacity: 0.66 !important;
+}
+
+.ce-settings {
+  border: none !important;
+  background: #1F223F !important;
+  overflow-y: auto !important;
+}
+
+.ce-settings::-webkit-scrollbar-thumb {
+  /* color of the scroll thumb */
+  background-color: rgba(144, 152, 189, 0.2);
+  /* roundness of the scroll thumb */
+  border-radius: 20px;
+  /* creates padding around scroll thumb */
+  border: 5px solid #1F223F;
+}
+
+.ce-settings-container {
+  font-family: "Poppins-regular";
+}
+
+.ce-chat-settings-container {
+  margin-bottom: 10px;
+}
+
+.ce-avatar {
+  background: #F73C57 !important;
+}
+
+.ce-input {
+  background-color: rgba(144, 152, 189, 0.2);
+  color: #FFFFFF;
+}
+
+.ce-section-title-container {
+  background-color: rgba(144, 152, 189, 0.2) !important;
+  color: #FFFFFF;
+  font-size: 13px !important;
+}
+
+.ce-section-title-container div {
+  font-family: "Poppins-light" !important;
+  font-size: 13px !important;
+}
+
+.ce-person-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.ce-person-avatar {
+  padding: 0 !important;
+}
+
+.ce-person-text {
+  padding: 0 !important;
+  margin-right: auto;
+  margin-left: 10px;
+}
+
+#ce-add-username-input {
+  background-color: #FFFFFF !important;
+  font-family: "Poppins-regular" !important;
+  font-size: 15px !important;
+}
+
+#ce-options-drop-down {
+  background-color: rgba(144, 152, 189, 0.2) !important;
+  color: #FFFFFF;
+  font-size: 13px !important;
+  border-top: 1px solid #F73C57 !important;
+}
+
+#ce-options-drop-down div {
+  font-family: "Poppins-light" !important;
+}
+
+#ce-delete-chat-button {
+  background: #F73C57 !important;
+  color: #FFFFFF !important;
+  border: none !important;
+}
+
+#ce-connecting-popup {
+  background-color: #FFB508 !important;
+}
+
 .upcoming-exams {
   display: -webkit-box;
   display: -ms-flexbox;
