@@ -1816,10 +1816,6 @@ hr {
   margin-bottom: 10px;
 }
 
-.ce-avatar {
-  background: #F73C57 !important;
-}
-
 .ce-input {
   background-color: rgba(144, 152, 189, 0.2);
   color: #FFFFFF;
@@ -1857,6 +1853,22 @@ hr {
 }
 
 #ce-add-username-input {
+  color: #090B22 !important;
+  font-family: "Poppins-regular" !important;
+  margin-bottom: 10px;
+}
+
+.ce-autocomplete-option {
+  color: #090B22 !important;
+  font-family: "Poppins-regular" !important;
+  border-radius: 10px !important;
+}
+
+.ce-autocomplete-close {
+  color: #FFFFFF !important;
+}
+
+#ce-add-username-input {
   background-color: #FFFFFF !important;
   font-family: "Poppins-regular" !important;
   font-size: 15px !important;
@@ -1866,10 +1878,10 @@ hr {
   background-color: rgba(144, 152, 189, 0.2) !important;
   color: #FFFFFF;
   font-size: 13px !important;
-  border-top: 1px solid #F73C57 !important;
 }
 
 #ce-options-drop-down div {
+  font-size: 13px !important;
   font-family: "Poppins-light" !important;
 }
 
@@ -1881,6 +1893,101 @@ hr {
 
 #ce-connecting-popup {
   background-color: #FFB508 !important;
+}
+
+.login {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  overflow-y: hidden;
+  height: 100%;
+}
+
+.login__platform-title {
+  font-size: 30px;
+  position: absolute;
+  left: 40px;
+  top: 15px;
+}
+
+.login__container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 54px 40px;
+  height: 45%;
+  width: 20%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.2);
+  margin: auto;
+}
+
+.login__title {
+  font-size: 30px;
+  font-family: "Poppins-bold";
+  margin: 10px 0 20px;
+}
+
+.login__input {
+  font-family: "Poppins-medium";
+  color: #090B22;
+  border-radius: 20px;
+  width: 90%;
+  margin-bottom: 20px;
+  height: 30px;
+  border: none;
+  outline: none;
+  padding: 0 15px;
+  padding-top: 3px;
+}
+
+.login__btn {
+  font-family: "Poppins-medium";
+  border-radius: 20px;
+  width: 100%;
+  margin-bottom: 10px;
+  height: 35px;
+  background: #F73C57;
+  color: #FFFFFF;
+  border: none;
+  padding: 0 20px;
+}
+
+.login__btn:hover {
+  opacity: 0.66;
+  cursor: pointer;
+}
+
+.login__password-lost {
+  font-family: "Poppins-light";
+  font-size: 15px;
+  text-decoration: underline;
+}
+
+.login__password-lost:hover {
+  cursor: pointer;
+}
+
+.login__error {
+  color: #FFB508;
+  text-align: center;
+  font-family: "Poppins-light";
+  font-size: 15px;
 }
 
 .upcoming-exams {

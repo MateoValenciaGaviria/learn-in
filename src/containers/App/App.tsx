@@ -5,10 +5,13 @@ import { Courses } from '../Courses/Courses';
 import { Schedule } from '../Schedule/Schedule';
 import { Profile } from '../Profile/Profile';
 import { Chat } from '../Chat/Chat';
+import { Login } from '../Login/Login';
 import { getImage } from '../../utils/getImages';
 
 export const App = () => {
 
+  //const [ logged, setLogged ] = React.useState(false);
+  
   const [ activeLink, setactiveLink ] = React.useState(1);
 
   //Set the active link
@@ -38,7 +41,8 @@ export const App = () => {
 
   return (
     <HashRouter basename={process.env.PUBLIC_URL}>
-      <div className="app__content">
+      {(!localStorage.getItem('username')) ? <Login></Login> : null}
+      {(localStorage.getItem('username')) ? <div className="app__content">
         <div className="app__navbar">
           <img className="app__logo" src={learnInLogo} alt="learn-in logo" />
           <div className="app__links-container">
@@ -79,7 +83,7 @@ export const App = () => {
               <Chat></Chat>}>
           </Route>
         </div>
-      </div>
+      </div> : null}
     </HashRouter>
   );
 }

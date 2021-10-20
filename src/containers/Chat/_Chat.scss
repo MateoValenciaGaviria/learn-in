@@ -208,7 +208,7 @@
 }
 
 .ce-avatar{
-  background: $magenta !important;  
+  //background: $magenta !important;  
 }
 
 .ce-input{
@@ -243,6 +243,22 @@
 }
 
 #ce-add-username-input{
+  color: $darkbackground !important;
+  font-family: $Poppins-regular !important;
+  margin-bottom: 10px;
+}
+
+.ce-autocomplete-option{
+  color: $darkbackground !important;
+  font-family: $Poppins-regular !important;
+  border-radius: $panelsborderradius !important;
+}
+
+.ce-autocomplete-close{
+  color: $white !important;
+}
+
+#ce-add-username-input{
   background-color: $white !important;
   font-family: $Poppins-regular !important;
   font-size: 15px !important;
@@ -252,8 +268,8 @@
   background-color: rgba($color: $gray, $alpha: .2) !important;
   color: $white;
   font-size: 13px !important;
-  border-top: 1px solid $magenta !important;
   div{
+    font-size: 13px !important;
     font-family: $Poppins-light !important;
   }
 }

@@ -8,8 +8,8 @@ export const Chat = () => {
       <ChatEngine
         height= "90vh"
         projectID="7a20b47a-8235-45bd-a653-6b7379fd4039"
-        userName="Mateo"
-        userSecret="matthew123"
+        userName={localStorage.getItem('username')}
+        userSecret={localStorage.getItem('password')}
         //renderChatFeed={(chatAppProps: any) => <ChatFeed {...chatAppProps}></ChatFeed>}
       ></ChatEngine>
     </div>
