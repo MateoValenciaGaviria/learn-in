@@ -29,7 +29,7 @@
 }
 
 .ce-chat-list{
-  border: none !important;
+  border-right: 1px solid rgba($color: $white, $alpha: .4) !important;
   background: $darkgray !important;
   padding: 0 !important;
   //change scrollbar
@@ -55,11 +55,13 @@
 
 .ce-chat-form-container{
   font-family: $Poppins-regular;
+  border-bottom: 1px solid rgba($color: $white, $alpha: .2) !important;
 }
 
 .ce-chat-card{
   background: $darkgray !important;
   border-radius: 0 !important;
+  border-bottom: 1px solid rgba($color: $white, $alpha: .2) !important;
 } 
 
 .ce-active-chat-card{
@@ -103,6 +105,7 @@
   overflow-y: scroll !important;
   padding-right: 17px !important;
   box-sizing: content-box !important;
+  padding-left: 5px !important;
 }
 
 .ce-feed-container-top{
@@ -136,7 +139,19 @@
 }
 
 .ce-avatar-dot{
-  background: $magenta !important;
+  //background: $magenta !important;
+}
+
+.ce-their-message-sender{
+  color: $white !important;
+}
+
+.ce-message-timestamp{
+  //color: $white !important;
+}
+
+.ce-their-message-timestamp{
+  color: $white !important;
 }
 
 .ce-quill-container{
@@ -229,7 +244,9 @@
 
 .ce-person-container{
   display: flex;
+  width: 100% !important;
   flex-direction: row;
+  margin-bottom: 5px;
 }
 
 .ce-person-avatar{
@@ -240,6 +257,10 @@
   padding: 0 !important;
   margin-right: auto;
   margin-left: 10px;
+}
+
+.ce-delete-chat{
+  bottom: -4px !important;
 }
 
 #ce-add-username-input{
