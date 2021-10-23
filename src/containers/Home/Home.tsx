@@ -6,15 +6,16 @@ import { UpcomingExams } from '../../components/UpcomingExams/UpcomingExams';
 import { HomeCalendar } from '../../components/HomeCalendar/HomeCalendar';
 import { HomeSchedule } from '../../components/HomeSchedule/HomeSchedule';
 import { SpotifyPanel } from '../../components/SpotifyPanel/SpotifyPanel';
+import { EmptyPanel } from '../../components/EmptyPanel/EmptyPanel';
 
 export const Home = () => {
 
   var currentPanel: string = "";
 
-  const  [panel1, setpanel1] = useState("select");
-  const  [panel2, setpanel2] = useState("select");
-  const  [panel3, setpanel3] = useState("select");
-  const  [panel4, setpanel4] = useState("select");
+  const  [panel1, setpanel1] = useState("empty");
+  const  [panel2, setpanel2] = useState("empty");
+  const  [panel3, setpanel3] = useState("empty");
+  const  [panel4, setpanel4] = useState("empty");
 
   const handleSelectedPanel = (numberPanel:number, selectedPanel: string) => {
     //Sets the current panel selected
@@ -107,7 +108,7 @@ export const Home = () => {
                 const selectedPanel = e.target.value;
                 handleSelectedPanel(1, selectedPanel);
               }} name="panels" id="panels">
-                <option value="select" disabled selected className="home__select-option--disable">Selecciona un panel</option>
+                <option value="empty" disabled selected className="home__select-option--disable">Selecciona un panel</option>
                 <option value="exams" className="home__select-option">Exámenes próximos</option>
                 <option value="activities" className="home__select-option">Actividades próximas</option>
                 <option value="progress" className="home__select-option">Progreso del curso</option>
@@ -116,6 +117,7 @@ export const Home = () => {
                 <option value="playlist" className="home__select-option">Lista de reproducción</option>
               </select>
             </div>
+            {(panel1 === "empty") ? <EmptyPanel></EmptyPanel> : null}
             {(panel1 === "exams") ? <UpcomingExams></UpcomingExams> : null}
             {(panel1 === "activities") ? <UpcomingActivities></UpcomingActivities> : null}
             {(panel1 === "progress") ? <CoursesProgress></CoursesProgress> : null}
@@ -129,7 +131,7 @@ export const Home = () => {
                 const selectedPanel = e.target.value;
                 handleSelectedPanel(2, selectedPanel);
               }} name="panels" id="panels">
-                <option value="select" disabled selected className="home__select-option--disable">Selecciona un panel</option>
+                <option value="empty" disabled selected className="home__select-option--disable">Selecciona un panel</option>
                 <option value="exams" className="home__select-option">Exámenes próximos</option>
                 <option value="activities" className="home__select-option">Actividades próximas</option>
                 <option value="progress" className="home__select-option">Progreso del curso</option>
@@ -138,6 +140,7 @@ export const Home = () => {
                 <option value="playlist" className="home__select-option">Lista de reproducción</option>
               </select>
             </div>
+            {(panel2 === "empty") ? <EmptyPanel></EmptyPanel> : null}
             {(panel2 === "exams") ? <UpcomingExams></UpcomingExams> : null}
             {(panel2 === "activities") ? <UpcomingActivities></UpcomingActivities> : null}
             {(panel2 === "progress") ? <CoursesProgress></CoursesProgress> : null}
@@ -151,7 +154,7 @@ export const Home = () => {
                 const selectedPanel = e.target.value;
                 handleSelectedPanel(3, selectedPanel);
               }} name="panels" id="panels">
-                <option value="select" disabled selected className="home__select-option--disable">Selecciona un panel</option>
+                <option value="empty" disabled selected className="home__select-option--disable">Selecciona un panel</option>
                 <option value="exams" className="home__select-option">Exámenes próximos</option>
                 <option value="activities" className="home__select-option">Actividades próximas</option>
                 <option value="progress" className="home__select-option">Progreso del curso</option>
@@ -160,6 +163,7 @@ export const Home = () => {
                 <option value="playlist" className="home__select-option">Lista de reproducción</option>
               </select>
             </div>
+            {(panel3 === "empty") ? <EmptyPanel></EmptyPanel> : null}
             {(panel3 === "exams") ? <UpcomingExams></UpcomingExams> : null}
             {(panel3 === "activities") ? <UpcomingActivities></UpcomingActivities> : null}
             {(panel3 === "progress") ? <CoursesProgress></CoursesProgress> : null}
@@ -173,7 +177,7 @@ export const Home = () => {
                 const selectedPanel = e.target.value;
                 handleSelectedPanel(4, selectedPanel);
               }} name="panels" id="panels">
-                <option value="select" disabled selected className="home__select-option--disable">Selecciona un panel</option>
+                <option value="empty" disabled selected className="home__select-option--disable">Selecciona un panel</option>
                 <option value="exams" className="home__select-option">Exámenes próximos</option>
                 <option value="activities" className="home__select-option">Actividades próximas</option>
                 <option value="progress" className="home__select-option">Progreso del curso</option>
@@ -182,6 +186,7 @@ export const Home = () => {
                 <option value="playlist" className="home__select-option">Lista de reproducción</option>
               </select>
             </div>
+            {(panel4 === "empty") ? <EmptyPanel></EmptyPanel> : null}
             {(panel4 === "exams") ? <UpcomingExams></UpcomingExams> : null}
             {(panel4 === "activities") ? <UpcomingActivities></UpcomingActivities> : null}
             {(panel4 === "progress") ? <CoursesProgress></CoursesProgress> : null}

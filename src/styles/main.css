@@ -2917,4 +2917,41 @@ hr {
   font-size: 13px;
   font-family: "Poppins-light";
 }
+
+.empty-panel {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  border-radius: 10px;
+  background-color: #101935;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 100%;
+  opacity: 0.8;
+}
+
+.empty-panel__text {
+  font-family: "Poppins-light";
+  color: #FFFFFF;
+  text-align: center;
+  margin: 0;
+}
+
+.empty-panel__text--title {
+  font-family: "Poppins-bold";
+  font-size: 25px;
+  color: #F73C57;
+}
+
+.empty-panel__img-container {
+  margin: 10px 0;
+}
 /*# sourceMappingURL=main.css.map */
