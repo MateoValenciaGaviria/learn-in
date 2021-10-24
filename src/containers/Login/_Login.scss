@@ -1,0 +1,80 @@
+.login{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    overflow-y: hidden;
+    height: 100%;
+
+    &__platform-title{
+        font-size: 30px;
+        position: absolute;
+        left: $main-margin;
+        top: 15px;
+    }
+
+    &__container{
+        display: flex;
+        flex-direction: column;
+        padding: 54px 40px;
+        height: 45%;
+        width: 20%;
+        align-items: center;
+        justify-content: center;
+        border-radius: $panelsborderradius;
+        background: rgba($color: $white, $alpha: .2);
+        margin: auto;
+    }
+
+    &__title{
+        font-size: 30px;
+        font-family: $Poppins-bold;
+        margin: 10px 0 20px;
+    }
+
+    &__input{
+        font-family: $Poppins-medium;
+        color: $darkbackground;
+        border-radius: 20px;
+        width: 90%;
+        margin-bottom: 20px;
+        height: 30px;
+        border: none;
+        outline: none;
+        padding: 0 15px;
+        padding-top: 3px;
+    }
+
+    &__btn{
+        font-family: $Poppins-medium;
+        border-radius: 20px;
+        width: 100%;
+        margin-bottom: 10px;
+        height: 35px;
+        background: $magenta;
+        color: $white;
+        border: none;
+        padding: 0 20px;
+
+        &:hover{
+            opacity: 0.66;
+            cursor: pointer;
+        }
+    }
+
+    &__password-lost{
+        font-family: $Poppins-light;
+        font-size: 15px;
+        text-decoration: underline;
+
+        &:hover{
+            cursor: pointer;
+        }
+    }
+
+    &__error{
+        color: $yellow;
+        text-align: center;
+        font-family: $Poppins-light;
+        font-size: 15px;
+    }
+}

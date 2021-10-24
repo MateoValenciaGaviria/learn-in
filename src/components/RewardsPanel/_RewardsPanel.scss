@@ -1,0 +1,39 @@
+.rewards-panel{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+
+    &__title{
+        margin-top: 0;
+        margin-bottom: 20px;
+        font-size: 18px;
+    }
+
+    &__container{
+        height: 100%;
+        display: grid;
+        grid-template-columns: auto auto auto;
+        grid-auto-rows: 40%;
+        row-gap: 30px;
+        justify-content: space-evenly;
+    }
+
+    &__achievement{
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        align-items: center;
+    }
+
+    &__achievement-img-container{
+        padding: 30%;
+        background: gray;
+    }
+
+    &__achievement-name{
+        margin-top: 10px;
+        font-size: 13px;
+        font-family: $poppins-light;
+    }
+}

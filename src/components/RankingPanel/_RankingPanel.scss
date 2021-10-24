@@ -1,0 +1,66 @@
+.ranking-panel{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+
+    &__title{
+        margin-top: 0;
+        margin-bottom: 10px;
+        font-size: 18px;
+    }
+
+    &__ranks-container{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        height: 100%;
+    }
+
+    &__rank{
+        display: flex;
+        flex-direction: column;
+        margin-top: auto;
+        align-items: center;
+        &--middle{
+            margin-top: 0;
+        }
+    }
+
+    &__rank-icon{
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: fit-content;
+        border-radius: 100%;
+        padding: 30px;
+
+        &--middle{
+            padding: 40px;
+        }
+    }
+
+    &__course-letter{
+        position: absolute;
+        font-size: 20px;
+
+        &--middle{
+            font-size: 30px;
+        }
+    }
+
+    &__course-name{
+        margin-top: 8px;
+        margin-bottom: 0;
+        font-size: 15px;
+    }
+
+    &__rank-name{
+        font-family: $poppins-light;
+        font-size: 13px;
+        margin: 0;
+    }
+
+
+}

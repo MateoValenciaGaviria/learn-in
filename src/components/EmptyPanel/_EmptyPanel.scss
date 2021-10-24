@@ -1,0 +1,29 @@
+.empty-panel{
+
+    display: flex;
+    flex-direction: column;
+    border-radius: $panelsborderradius;
+    background-color: $panelsbackground;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    opacity: 0.8;
+
+    &__text{
+        font-family: $Poppins-light;
+        color: $white;
+        text-align: center;
+        margin: 0;
+
+        &--title{
+            font-family: $Poppins-bold;
+            font-size: 25px;
+            color: $magenta;
+        }
+    }
+
+    &__img-container{
+        margin: 10px 0;
+    }
+
+}

@@ -55,6 +55,21 @@ $white: #FFFFFF;
 $panelsbackground: #101935;
 $panelheaderbackground: #212B4A;
 
+$diamond: #0DBEBE;
+$pearl: #F862B3;
+
+$religion: #C07643;
+$english: #F73C3C;
+$chemistry: #43C486;
+$physics: #6BCCD2;
+$mathematics: #142A50;
+$arts: #FF7D2E;
+$philosophy: #FFDF38;
+$spanish: #FFB921;
+$systems: #4F5D78;
+$sports: #255AE1;
+$biology: #46C443;
+$ethics: #6F447A;
 
 @import '../containers/App/App';
 @import '../containers/Home/Home';
@@ -62,6 +77,7 @@ $panelheaderbackground: #212B4A;
 @import '../containers/Schedule/Schedule';
 @import '../containers/Profile/Profile';
 @import '../containers/Chat/Chat';
+@import '../containers/Login/Login';
 
 @import '../components/UpcomingExams/UpcomingExams';
 @import '../components/UpcomingActivities/UpcomingActivities';
@@ -71,3 +87,8 @@ $panelheaderbackground: #212B4A;
 @import '../components/TimeLineItem/TimeLineItem';
 @import '../components/HomeCalendar/HomeCalendar';
 @import '../components/HomeSchedule/HomeSchedule';
+@import '../components/SpotifyPanel/SpotifyPanel';
+@import '../components/RankingPanel/RankingPanel';
+@import '../components/AchievementsPanel/AchievementsPanel';
+@import '../components/RewardsPanel/RewardsPanel';
+@import '../components/EmptyPanel/EmptyPanel';
