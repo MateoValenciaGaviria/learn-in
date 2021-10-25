@@ -113,7 +113,7 @@ export const Home: React.FC<HomeProps> = ( {daySelected, onCurrentDayChange} ) =
                 const selectedPanel = e.target.value;
                 handleSelectedPanel(1, selectedPanel);
               }} name="panels" id="panels">
-                <option value="empty" disabled selected className="home__select-option--disable">Selecciona un panel</option>
+                <option value="empty" disabled className="home__select-option--disable">Selecciona un panel</option>
                 <option value="exams" className="home__select-option">Exámenes próximos</option>
                 <option value="activities" className="home__select-option">Actividades próximas</option>
                 <option value="progress" className="home__select-option">Progreso del curso</option>
@@ -136,7 +136,7 @@ export const Home: React.FC<HomeProps> = ( {daySelected, onCurrentDayChange} ) =
                 const selectedPanel = e.target.value;
                 handleSelectedPanel(2, selectedPanel);
               }} name="panels" id="panels">
-                <option value="empty" disabled selected className="home__select-option--disable">Selecciona un panel</option>
+                <option value="empty" disabled className="home__select-option--disable">Selecciona un panel</option>
                 <option value="exams" className="home__select-option">Exámenes próximos</option>
                 <option value="activities" className="home__select-option">Actividades próximas</option>
                 <option value="progress" className="home__select-option">Progreso del curso</option>
@@ -159,7 +159,7 @@ export const Home: React.FC<HomeProps> = ( {daySelected, onCurrentDayChange} ) =
                 const selectedPanel = e.target.value;
                 handleSelectedPanel(3, selectedPanel);
               }} name="panels" id="panels">
-                <option value="empty" disabled selected className="home__select-option--disable">Selecciona un panel</option>
+                <option value="empty" disabled className="home__select-option--disable">Selecciona un panel</option>
                 <option value="exams" className="home__select-option">Exámenes próximos</option>
                 <option value="activities" className="home__select-option">Actividades próximas</option>
                 <option value="progress" className="home__select-option">Progreso del curso</option>
@@ -182,7 +182,7 @@ export const Home: React.FC<HomeProps> = ( {daySelected, onCurrentDayChange} ) =
                 const selectedPanel = e.target.value;
                 handleSelectedPanel(4, selectedPanel);
               }} name="panels" id="panels">
-                <option value="empty" disabled selected className="home__select-option--disable">Selecciona un panel</option>
+                <option value="empty" disabled className="home__select-option--disable">Selecciona un panel</option>
                 <option value="exams" className="home__select-option">Exámenes próximos</option>
                 <option value="activities" className="home__select-option">Actividades próximas</option>
                 <option value="progress" className="home__select-option">Progreso del curso</option>

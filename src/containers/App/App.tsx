@@ -28,7 +28,7 @@ export const App = () => {
   //const [ logged, setLogged ] = React.useState(false);
   
   const [ activeLink, setactiveLink ] = React.useState(1);
-  const [ currentDay, setcurrentDay ] = React.useState(new Date);
+  const [ currentDay, setcurrentDay ] = React.useState(new Date());
 
   //Set the active link
   const handleHome = () => {

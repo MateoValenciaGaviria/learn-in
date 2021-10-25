@@ -1572,18 +1572,17 @@ hr {
 }
 
 .profile__emojis-option-text {
+  background: none;
+  border: none;
   text-decoration: none;
   display: inline-block;
-  padding: 5px 7px;
+  padding: 7px 7px;
   border-radius: 100%;
   font-size: 30px;
+  cursor: pointer;
 }
 
 .profile__emojis-option-text--active {
-  display: inline-block;
-  font-size: 30px;
-  padding: 5px 7px;
-  border-radius: 100%;
   background: #f73c57;
 }
 
