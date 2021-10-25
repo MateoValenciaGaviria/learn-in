@@ -8,7 +8,12 @@ import { HomeSchedule } from '../../components/HomeSchedule/HomeSchedule';
 import { SpotifyPanel } from '../../components/SpotifyPanel/SpotifyPanel';
 import { EmptyPanel } from '../../components/EmptyPanel/EmptyPanel';
 
-export const Home = () => {
+interface HomeProps{
+  daySelected: Date,
+  onCurrentDayChange: (day: Date) => void,
+}
+
+export const Home: React.FC<HomeProps> = ( {daySelected, onCurrentDayChange} ) => {
 
   var currentPanel: string = "";
 
@@ -198,13 +203,16 @@ export const Home = () => {
       <div className="home__right-container">
         <div className="home__calendar-container">
           <div className="home__calendar">
-            <HomeCalendar></HomeCalendar>
+            <HomeCalendar 
+            daySelected={daySelected} 
+            onCurrentDayChange={onCurrentDayChange}></HomeCalendar>
           </div>
         </div>
         <div className="home__schedule-container">
           <hr />
           <div className="home__schedule">
-              <HomeSchedule></HomeSchedule>
+              <HomeSchedule 
+              daySelected={daySelected}></HomeSchedule>
           </div>
           <hr />
         </div>

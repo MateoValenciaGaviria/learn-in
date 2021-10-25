@@ -198,19 +198,30 @@ hr {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  height: 100%;
 }
 
 .app__link {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   color: #FFFFFF;
   font-size: 14px;
   text-decoration: none;
+  height: 100%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .app__link--selected {
-  color: white;
   font-family: "Poppins-bold";
   font-size: 18px;
-  text-decoration: none;
+  color: #FFB508;
+  border-bottom: 5px solid #FFB508;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 0 20px;
 }
 
 .app__user-options-container {
@@ -257,6 +268,10 @@ hr {
 
 .app__user-avatar-container {
   height: 70%;
+}
+
+.app__user-avatar-container .app__link--selected {
+  border: none;
 }
 
 .app__user-avatar {
@@ -2620,7 +2635,7 @@ hr {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  height: 100%;
+  height: auto;
 }
 
 .home-schedule__row {
@@ -2637,7 +2652,6 @@ hr {
 
 .home-schedule__course-icon {
   position: relative;
-  padding: 20px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2648,7 +2662,6 @@ hr {
       -ms-flex-pack: center;
           justify-content: center;
   font-family: "Poppins-bold";
-  border-radius: 100%;
   margin-right: 20px;
 }
 
@@ -2671,6 +2684,7 @@ hr {
 .home-schedule__course-letter {
   position: absolute;
   font-size: 15px;
+  bottom: 22px;
 }
 
 .home-schedule__course-information {
@@ -2695,6 +2709,63 @@ hr {
 .home-schedule__course-schedule {
   margin: 0;
   font-family: "Poppins-light-italic";
+}
+
+.home-schedule__no-class {
+  color: #F73C57;
+  text-align: center;
+}
+
+.home-schedule__emoji {
+  font-size: 50px;
+}
+
+.book-svg--religion {
+  fill: #C07643 !important;
+}
+
+.book-svg--english {
+  fill: #F73C3C !important;
+}
+
+.book-svg--chemistry {
+  fill: #43C486 !important;
+}
+
+.book-svg--physics {
+  fill: #6BCCD2 !important;
+}
+
+.book-svg--mathematics {
+  fill: #142A50 !important;
+}
+
+.book-svg--arts {
+  fill: #FF7D2E !important;
+}
+
+.book-svg--philosophy {
+  fill: #FFDF38 !important;
+}
+
+.book-svg--spanish {
+  fill: #FFB921 !important;
+}
+
+.book-svg--systems {
+  fill: #4F5D78 !important;
+}
+
+.book-svg--sports {
+  fill: #255AE1 !important;
+}
+
+.book-svg--biology {
+  fill: #46C443 !important;
+}
+
+.book-svg--ethic {
+  fill: #6F447A !important;
 }
 
 .spotify-panel {
