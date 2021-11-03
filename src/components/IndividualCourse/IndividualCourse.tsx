@@ -1,6 +1,7 @@
 import React, { CSSProperties } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Route } from 'react-router-dom';
 import { IndividualCourseType } from '../../utils/types/IndividualCourseType';
+import { CourseDetail } from '../CourseDetail/CourseDetail';
 
 export interface CSSPropertiesWithVars extends CSSProperties {
     '--mainColor': string;
@@ -9,7 +10,7 @@ export const IndividualCourse: React.FC<IndividualCourseType> = ({name, teacherN
 
     return (
         <div className={`individual-course ${important===true? ' individual-course--important':''}`} style={{ '--mainColor': mainColor} as React.CSSProperties} >
-            <Link to="/" className={`individual-course__title-link ${updates? ' individual-course__title-link--updates':''}`} data-content={`${updates? updates:''}`}><h2 className="individual-course__title">{name}</h2></Link>
+            <Link to={`/course-detail/${name}/&color=${mainColor}`} className={`individual-course__title-link ${updates? ' individual-course__title-link--updates':''}`} data-content={`${updates? updates:''}`}><h2 className="individual-course__title">{name}</h2></Link>
             <Link to="/" className="individual-course__teacher-name">
                 <svg className="icon" width="19" height="19" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <circle cx="8.22428" cy="4.88969" r="4.16667" stroke="white" />

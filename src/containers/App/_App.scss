@@ -97,6 +97,39 @@ hr {
     border-color: #ffffff20;
 }
 
+input[type="checkbox"] {
+    position: relative;
+    appearance: none;
+    background-color: transparent;
+    margin: 0;
+    width: 2em;
+    height: 2em;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+input[type="checkbox"]::before {
+    position: absolute;
+    content: " ";
+    transform: scale(0);
+    transition: transform 0.3s ease;
+    height:  5px; 
+    width:  12px; 
+    border-radius: 1.5px;
+    background:  none; 
+    transform: rotate(-45deg) scale(0);
+    transition:  transform .1s ease, opacity .1s ease;
+    transform-origin: center center; 
+    margin-top: -3px;
+}
+
+input[type="checkbox"]:checked::before {
+    opacity: 1;
+    transform: rotate(-45deg) scale(0.8);
+}
+
 ::-webkit-scrollbar {
     /* width of the entire scrollbar */
     width: 17px;
