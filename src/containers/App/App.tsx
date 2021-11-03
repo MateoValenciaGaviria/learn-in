@@ -7,6 +7,7 @@ import { Profile } from '../Profile/Profile';
 import { Chat } from '../Chat/Chat';
 import { Login } from '../Login/Login';
 import { getImage } from '../../utils/getImages';
+import { CourseDetail } from '../../components/CourseDetail/CourseDetail';
 
 const user = [
   {
@@ -104,6 +105,7 @@ export const App = () => {
           <Route path='/chat' render={() => 
               <Chat></Chat>}>
           </Route>
+          <Route path="/course-detail/:name" render={() => <CourseDetail teacherView />} />
         </div>
       </div> : null}
     </HashRouter>

@@ -1,0 +1,16 @@
+.grades-view{
+    border-top: 5px solid var(--mainCourseColor);
+
+    &__title{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    &__item{
+        border-top: 1px solid #626478;
+        padding: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+}

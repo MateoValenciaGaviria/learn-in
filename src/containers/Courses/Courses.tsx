@@ -4,13 +4,19 @@ import { TimeLineItemContainer } from '../../components/TimeLineItem/TimeLineIte
 import { collection, getDocs } from 'firebase/firestore/lite';
 import { IndividualCourseType } from '../../utils/types/IndividualCourseType';
 import { DATABASE } from "../../utils/firebase";
+import { Route } from 'react-router-dom';
+import { CourseDetail } from '../../components/CourseDetail/CourseDetail';
 
 
 export const Courses = () => {
 
+
   var [coursesList, setCoursesList] = React.useState<IndividualCourseType[]>([]);
 
+  var [timeLineItems, setTimeLineItems] = React.useState([]);
+
   const getCourses = async () => {
+    console.log("cursos fire");
     const coursesCollection = collection(DATABASE, 'courses');
     const coursesSnapshot = await getDocs(coursesCollection);
     const list: IndividualCourseType[] = [];
@@ -20,7 +26,7 @@ export const Courses = () => {
    setCoursesList(list); 
   }
 
-/*   useEffect(() => { getCourses() }); */
+  useEffect(() => { getCourses() }, []);
 
   return (
     <div className="courses">
@@ -40,6 +46,7 @@ export const Courses = () => {
               updates={course.updates}
               mainColor={course.mainColor}
             />
+            
 
           })}
           <IndividualCourse
@@ -55,7 +62,7 @@ export const Courses = () => {
         </section>
         <h1 className="courses__time-line-title">Línea del tiempo</h1>
         <section className="courses__time-line-wrapper">
-          <TimeLineItemContainer></TimeLineItemContainer>
+          <TimeLineItemContainer date={''} timeLineItem={[]} ></TimeLineItemContainer>
         </section>
       </div>
       <div className="courses__right-container">
