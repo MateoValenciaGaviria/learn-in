@@ -26,7 +26,7 @@
     &__row-container{
         display: flex;
         flex-direction: column;
-        height: 100%;
+        height: auto;
     }
 
     &__row{
@@ -40,12 +40,12 @@
 
         position: relative;
 
-        padding: 20px;
+        //padding: 20px;
         display: flex;
         align-items: center;
         justify-content: center;
         font-family: $Poppins-bold;
-        border-radius: 100%;
+        //border-radius: 100%;
         margin-right: 20px;
 
         &--purple{
@@ -68,6 +68,7 @@
     &__course-letter{
         position: absolute;
         font-size: 15px;
+        bottom: 22px;
     }
 
     &__course-information{
@@ -85,5 +86,58 @@
     &__course-schedule{
         margin: 0;
         font-family: $poppins-light-italic;
+    }
+
+    &__svg{
+        
+    }
+
+    &__no-class{
+        color: $magenta;
+        text-align: center;
+    }
+
+    &__emoji{
+        font-size: 50px;
+    }
+}
+
+.book-svg{
+
+    &--religion{
+        fill: #C07643 !important;
+    }
+    &--english{
+        fill: #F73C3C !important;
+    }
+    &--chemistry{
+        fill: #43C486 !important;
+    }
+    &--physics{
+        fill: #6BCCD2 !important;
+    }
+    &--mathematics{
+        fill: #142A50 !important;
+    } 
+    &--arts{
+        fill: #FF7D2E !important;
+    } 
+    &--philosophy{
+        fill: #FFDF38 !important;
+    } 
+    &--spanish{
+        fill: #FFB921 !important;
+    } 
+    &--systems{
+        fill: #4F5D78 !important;
+    } 
+    &--sports{
+        fill: #255AE1 !important;
+    } 
+    &--biology{
+        fill: #46C443 !important;
+    } 
+    &--ethic{
+        fill: #6F447A !important;
     }
 }

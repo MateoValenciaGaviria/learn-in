@@ -8,7 +8,12 @@ import { HomeSchedule } from '../../components/HomeSchedule/HomeSchedule';
 import { SpotifyPanel } from '../../components/SpotifyPanel/SpotifyPanel';
 import { EmptyPanel } from '../../components/EmptyPanel/EmptyPanel';
 
-export const Home = () => {
+interface HomeProps{
+  daySelected: Date,
+  onCurrentDayChange: (day: Date) => void,
+}
+
+export const Home: React.FC<HomeProps> = ( {daySelected, onCurrentDayChange} ) => {
 
   var currentPanel: string = "";
 
@@ -108,7 +113,7 @@ export const Home = () => {
                 const selectedPanel = e.target.value;
                 handleSelectedPanel(1, selectedPanel);
               }} name="panels" id="panels">
-                <option value="empty" disabled selected className="home__select-option--disable">Selecciona un panel</option>
+                <option value="empty" disabled className="home__select-option--disable">Selecciona un panel</option>
                 <option value="exams" className="home__select-option">Exámenes próximos</option>
                 <option value="activities" className="home__select-option">Actividades próximas</option>
                 <option value="progress" className="home__select-option">Progreso del curso</option>
@@ -131,7 +136,7 @@ export const Home = () => {
                 const selectedPanel = e.target.value;
                 handleSelectedPanel(2, selectedPanel);
               }} name="panels" id="panels">
-                <option value="empty" disabled selected className="home__select-option--disable">Selecciona un panel</option>
+                <option value="empty" disabled className="home__select-option--disable">Selecciona un panel</option>
                 <option value="exams" className="home__select-option">Exámenes próximos</option>
                 <option value="activities" className="home__select-option">Actividades próximas</option>
                 <option value="progress" className="home__select-option">Progreso del curso</option>
@@ -154,7 +159,7 @@ export const Home = () => {
                 const selectedPanel = e.target.value;
                 handleSelectedPanel(3, selectedPanel);
               }} name="panels" id="panels">
-                <option value="empty" disabled selected className="home__select-option--disable">Selecciona un panel</option>
+                <option value="empty" disabled className="home__select-option--disable">Selecciona un panel</option>
                 <option value="exams" className="home__select-option">Exámenes próximos</option>
                 <option value="activities" className="home__select-option">Actividades próximas</option>
                 <option value="progress" className="home__select-option">Progreso del curso</option>
@@ -177,7 +182,7 @@ export const Home = () => {
                 const selectedPanel = e.target.value;
                 handleSelectedPanel(4, selectedPanel);
               }} name="panels" id="panels">
-                <option value="empty" disabled selected className="home__select-option--disable">Selecciona un panel</option>
+                <option value="empty" disabled className="home__select-option--disable">Selecciona un panel</option>
                 <option value="exams" className="home__select-option">Exámenes próximos</option>
                 <option value="activities" className="home__select-option">Actividades próximas</option>
                 <option value="progress" className="home__select-option">Progreso del curso</option>
@@ -198,13 +203,16 @@ export const Home = () => {
       <div className="home__right-container">
         <div className="home__calendar-container">
           <div className="home__calendar">
-            <HomeCalendar></HomeCalendar>
+            <HomeCalendar 
+            daySelected={daySelected} 
+            onCurrentDayChange={onCurrentDayChange}></HomeCalendar>
           </div>
         </div>
         <div className="home__schedule-container">
           <hr />
           <div className="home__schedule">
-              <HomeSchedule></HomeSchedule>
+              <HomeSchedule 
+              daySelected={daySelected}></HomeSchedule>
           </div>
           <hr />
         </div>

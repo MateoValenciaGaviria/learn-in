@@ -181,18 +181,24 @@ input[type="checkbox"]:checked::before {
         width: 33%;
         justify-content: space-around;
         align-items: center;
+        height: 100%;
     }
 
     &__link {
+        display: flex;
         color: $white;
         font-size: 14px;
         text-decoration: none;
+        height: 100%;
+        align-items: center;
 
         &--selected {
-            color: white;
             font-family: $Poppins-bold;
             font-size: 18px;
-            text-decoration: none;
+            color: $yellow;
+            border-bottom: 5px solid $yellow;
+            box-sizing: border-box;
+            padding: 0 20px;
         }
     }
 
@@ -228,6 +234,10 @@ input[type="checkbox"]:checked::before {
 
     &__user-avatar-container {
         height: 70%;
+
+        .app__link--selected{
+            border: none;
+        }
     }
 
     &__user-avatar {

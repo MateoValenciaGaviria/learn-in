@@ -1,4 +1,4 @@
-import Reac, { useState } from 'react';
+import React, { useState } from 'react';
 import { getImage } from '../../utils/getImages';
 import { SpotifyPanel } from '../../components/SpotifyPanel/SpotifyPanel';
 import { RankingPanel } from '../../components/RankingPanel/RankingPanel';
@@ -42,34 +42,34 @@ export const Profile = () => {
                     {(emoji === 10) ? <button className="profile__emojis-btn" disabled={dropdownOpen} onClick={(e) => setDropdownOpen(true)}>&#129314;</button>: null}
                     <ul className={`${dropdownOpen ? "profile__emojis-dropdown-options--open" : "profile__emojis-dropdown-options"}`}>
                       <li className="profile__emojis-option" onClick={(e) => handleEmojiChange(1)}>
-                        <a className={`${emoji == 1 ? "profile__emojis-option-text--active" : "profile__emojis-option-text"}`}>&#128516;</a>
+                        <button className={`${emoji === 1 ? "profile__emojis-option-text profile__emojis-option-text--active" : "profile__emojis-option-text"}`}>&#128516;</button>
                       </li>
                       <li className="profile__emojis-option" onClick={(e) => handleEmojiChange(2)}>
-                        <a className={`${emoji == 2 ? "profile__emojis-option-text--active" : "profile__emojis-option-text"}`}>&#128528;</a>
+                        <button className={`${emoji === 2 ? "profile__emojis-option-text profile__emojis-option-text--active" : "profile__emojis-option-text"}`}>&#128528;</button>
                       </li>
                       <li className="profile__emojis-option" onClick={(e) => handleEmojiChange(3)}>
-                        <a className={`${emoji == 3 ? "profile__emojis-option-text--active" : "profile__emojis-option-text"}`}>&#128529;</a>
+                        <button className={`${emoji === 3 ? "profile__emojis-option-text profile__emojis-option-text--active" : "profile__emojis-option-text"}`}>&#128529;</button>
                       </li>
                       <li className="profile__emojis-option" onClick={(e) => handleEmojiChange(4)}>
-                        <a className={`${emoji == 4 ? "profile__emojis-option-text--active" : "profile__emojis-option-text"}`}>&#128533;</a>
+                        <button className={`${emoji === 4 ? "profile__emojis-option-text profile__emojis-option-text--active" : "profile__emojis-option-text"}`}>&#128533;</button>
                       </li>
                       <li className="profile__emojis-option" onClick={(e) => handleEmojiChange(5)}>
-                        <a className={`${emoji == 5 ? "profile__emojis-option-text--active" : "profile__emojis-option-text"}`}>&#128531;</a>
+                        <button className={`${emoji === 5 ? "profile__emojis-option-text profile__emojis-option-text--active" : "profile__emojis-option-text"}`}>&#128531;</button>
                       </li>
                       <li className="profile__emojis-option" onClick={(e) => handleEmojiChange(6)}>
-                        <a className={`${emoji == 6 ? "profile__emojis-option-text--active" : "profile__emojis-option-text"}`}>&#128532;</a>
+                        <button className={`${emoji === 6 ? "profile__emojis-option-text profile__emojis-option-text--active" : "profile__emojis-option-text"}`}>&#128532;</button>
                       </li>
                       <li className="profile__emojis-option" onClick={(e) => handleEmojiChange(7)}>
-                        <a className={`${emoji == 7 ? "profile__emojis-option-text--active" : "profile__emojis-option-text"}`}>&#128545;</a>
+                        <button className={`${emoji === 7 ? "profile__emojis-option-text profile__emojis-option-text--active" : "profile__emojis-option-text"}`}>&#128545;</button>
                       </li>
                       <li className="profile__emojis-option" onClick={(e) => handleEmojiChange(8)}>
-                        <a className={`${emoji == 8 ? "profile__emojis-option-text--active" : "profile__emojis-option-text"}`}>&#128546;</a>
+                        <button className={`${emoji === 8 ? "profile__emojis-option-text profile__emojis-option-text--active" : "profile__emojis-option-text"}`}>&#128546;</button>
                       </li>
                       <li className="profile__emojis-option" onClick={(e) => handleEmojiChange(9)}>
-                        <a className={`${emoji == 9 ? "profile__emojis-option-text--active" : "profile__emojis-option-text"}`}>&#128549;</a>
+                        <button className={`${emoji === 9 ? "profile__emojis-option-text profile__emojis-option-text--active" : "profile__emojis-option-text"}`}>&#128549;</button>
                       </li>
                       <li className="profile__emojis-option" onClick={(e) => handleEmojiChange(10)}>
-                        <a className={`${emoji == 10 ? "profile__emojis-option-text--active" : "profile__emojis-option-text"}`}>&#129314;</a>
+                        <button className={`${emoji === 10 ? "profile__emojis-option-text profile__emojis-option-text--active" : "profile__emojis-option-text"}`}>&#129314;</button>
                       </li>
                     </ul>
                 </div>

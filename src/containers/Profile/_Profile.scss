@@ -79,22 +79,21 @@ $easing: cubic-bezier(0.5,2,0.5,0.75);
     }
               
     &__emojis-option {
-        display: inline-block;  
+        display: inline-block;     
         cursor: pointer;
     }
 
     &__emojis-option-text {
+        background: none;
+        border: none;
         text-decoration: none;
         display: inline-block;
-        padding: 5px 7px;
+        padding: 7px 7px;
         border-radius: 100%;
         font-size: 30px;
+        cursor: pointer;
 
         &--active {
-            display: inline-block;
-            font-size: 30px;
-            padding: 5px 7px;
-            border-radius: 100%;
             background: rgba($color: $magenta, $alpha: 1);
         }
 
