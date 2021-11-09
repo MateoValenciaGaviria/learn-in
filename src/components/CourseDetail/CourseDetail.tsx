@@ -88,7 +88,7 @@ export const CourseDetail: React.FC<CourseDetailProps> = ({teacherView}) => {
                     <summary className="course-detail__unit-summary">
                         Unidad {unitNumber}
                     </summary>
-                    <article className="course-detail__unit-info"  contentEditable={teacherView==true ? "true" : "false"}  >
+                    <article className="course-detail__unit-info"  contentEditable={teacherView===true ? "true" : "false"}  >
                         <p>Estaremos viendo los conceptos de loremp insum dolor its :v:</p>
                         <ol>
                             <li>Esto</li>

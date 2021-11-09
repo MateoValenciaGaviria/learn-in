@@ -6,6 +6,7 @@ import { IndividualCourseType } from '../../utils/types/IndividualCourseType';
 import { DATABASE } from "../../utils/firebase";
 import { Route } from 'react-router-dom';
 import { CourseDetail } from '../../components/CourseDetail/CourseDetail';
+import { RankingPanel } from '../../components/RankingPanel/RankingPanel';
 
 
 export const Courses = () => {
@@ -49,7 +50,7 @@ export const Courses = () => {
             
 
           })}
-          <IndividualCourse
+          {/* <IndividualCourse
               id='25234'
               name="name"
               teacherName="test"
@@ -58,15 +59,18 @@ export const Courses = () => {
               important={true}
               updates={1}
               mainColor="#0DBEBE"
-            />
+            /> */}
         </section>
         <h1 className="courses__time-line-title">Línea del tiempo</h1>
         <section className="courses__time-line-wrapper">
-          <TimeLineItemContainer date={''} timeLineItem={[]} ></TimeLineItemContainer>
+          <TimeLineItemContainer date={"Lunes 1, Noviembre"} timeLineItem={[]} ></TimeLineItemContainer>
         </section>
       </div>
       <div className="courses__right-container">
-        <h1 className="courses__ranking-title">Ranking global</h1>
+        <div className="courses__rank-wrapper">
+
+        <RankingPanel></RankingPanel>
+        </div>
       </div>
     </div>
   );
