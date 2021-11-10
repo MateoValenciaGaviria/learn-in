@@ -4,12 +4,16 @@ import { SpotifyPanel } from '../../components/SpotifyPanel/SpotifyPanel';
 import { RankingPanel } from '../../components/RankingPanel/RankingPanel';
 import { AchievementsPanel } from '../../components/AchievementsPanel/AchievementsPanel';
 import { RewardsPanel } from '../../components/RewardsPanel/RewardsPanel';
+import { UserType } from '../../utils/types/UserType';
 
-export const Profile = () => {
+interface ProfileProps{
+  user: UserType,
+}
 
-  var userAvatar = getImage("useravatar");
+export const Profile: React.FC<ProfileProps> = ( { user } ) => {
 
-  const [emoji, setEmoji] = useState(1);
+  //var userAvatar = getImage(user[0].img);
+  const [emoji, setEmoji] = useState(user.state);
   const [dropdownOpen, setDropdownOpen] = useState(false);
 
   const handleEmojiChange = (emojiIndex:number) => {
@@ -27,7 +31,7 @@ export const Profile = () => {
         <div className="profile__user-information-container">
           <div className="profile__user-information">
             <div className="profile__avatar-container">
-              <img className="profile__avatar-img" src={userAvatar} alt="User avatar" />
+              <img className="profile__avatar-img" src={user.img} alt="User avatar" />
               <div className="profile__emojis-container">
                 <div className="profile__emojis-dropdown">
                     {(emoji === 1) ? <button className="profile__emojis-btn" disabled={dropdownOpen} onClick={(e) => setDropdownOpen(true)}>&#128516;</button>: null}
@@ -87,28 +91,28 @@ export const Profile = () => {
                 Correo electrónico
               </h3>
               <p className="profile__info profile__info--text">
-                camilor1220@gmail.com
+                {user.email}
               </p>
 
               <h3 className="profile__info profile__info--title">
                 Cumpleaños
               </h3>
               <p className="profile__info profile__info--text">
-                5 Septiembre
+                {user.birthday}
               </p>
 
               <h3 className="profile__info profile__info--title">
                 Celular
               </h3>
               <p className="profile__info profile__info--text">
-                315 475 8569
+                {user.phone}
               </p>
             </div>
           </div>
         </div>
         <div className="profile__user-stats">
           <div className="profile__username-container">
-            <h1 className="profile__username">Username</h1>
+            <h1 className="profile__username">{user.name}</h1>
             <div className="profile__user-status">
       
             </div>

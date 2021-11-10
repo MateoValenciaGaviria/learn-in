@@ -327,6 +327,7 @@ input[type="checkbox"]:checked::before {
 
 .app__user-avatar {
   height: 100%;
+  border-radius: 100%;
 }
 
 .app__sections-container {
@@ -1579,7 +1580,7 @@ input[type="checkbox"]:checked::before {
   position: absolute;
   width: auto;
   right: -20px;
-  bottom: -20px;
+  bottom: -10px;
 }
 
 .profile__emojis-btn {
@@ -1647,6 +1648,7 @@ input[type="checkbox"]:checked::before {
 
 .profile__avatar-img {
   width: 100%;
+  border-radius: 10px;
 }
 
 .profile__information {

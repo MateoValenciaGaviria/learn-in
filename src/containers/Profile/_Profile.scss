@@ -41,7 +41,7 @@ $easing: cubic-bezier(0.5,2,0.5,0.75);
         position: absolute;
         width: auto;
         right: -20px;
-        bottom: -20px;
+        bottom: -10px;
     }
 
     &__emojis-btn {
@@ -104,6 +104,7 @@ $easing: cubic-bezier(0.5,2,0.5,0.75);
 
     &__avatar-img{
         width: 100%;
+        border-radius: 10px;
     }
 
     &__information{
