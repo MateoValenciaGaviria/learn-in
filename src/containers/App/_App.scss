@@ -50,7 +50,7 @@ abbr{
     padding: 4px 8px;
     border-radius: 5px;
     color: $white;
-    background-color: $yellow;
+    background-color: var(--bgColor);
     position: relative;
 
     &--important {

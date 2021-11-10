@@ -1,7 +1,6 @@
 import React, { CSSProperties } from 'react';
 import { Link, Route } from 'react-router-dom';
 import { IndividualCourseType } from '../../utils/types/IndividualCourseType';
-import { CourseDetail } from '../CourseDetail/CourseDetail';
 
 export interface CSSPropertiesWithVars extends CSSProperties {
     '--mainColor': string;
