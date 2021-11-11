@@ -375,7 +375,11 @@ input[type="checkbox"]:checked::before {
   border-radius: 10px;
   margin-left: 40px;
   margin-right: 40px;
-  background-color: #101935;
+}
+
+.home__publicity-img {
+  border-radius: 10px;
+  width: 100%;
 }
 
 .home__modules-container {

@@ -22,7 +22,13 @@
         border-radius: $panelsborderradius;
         margin-left: $main-margin;
         margin-right: $main-margin;
-        background-color: $panelsbackground;
+        //background-color: $panelsbackground;
+    }
+
+    &__publicity-img{
+        border-radius: $panelsborderradius;
+        width: 100%;
+        //height: 100%;
     }
 
     &__modules-container{

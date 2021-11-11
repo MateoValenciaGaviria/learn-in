@@ -7,6 +7,7 @@ import { HomeCalendar } from '../../components/HomeCalendar/HomeCalendar';
 import { HomeSchedule } from '../../components/HomeSchedule/HomeSchedule';
 import { SpotifyPanel } from '../../components/SpotifyPanel/SpotifyPanel';
 import { EmptyPanel } from '../../components/EmptyPanel/EmptyPanel';
+import { getImage } from '../../utils/getImages';
 
 interface HomeProps{
   daySelected: Date,
@@ -16,6 +17,7 @@ interface HomeProps{
 export const Home: React.FC<HomeProps> = ( {daySelected, onCurrentDayChange} ) => {
 
   var currentPanel: string = "";
+  var publicity = getImage("publicity");
 
   const  [panel1, setpanel1] = useState("empty");
   const  [panel2, setpanel2] = useState("empty");
@@ -103,7 +105,7 @@ export const Home: React.FC<HomeProps> = ( {daySelected, onCurrentDayChange} ) =
     <div className="home">
       <div className="home__left-container">
         <div className="home__publicity-container">
-
+          <img className="home__publicity-img" src={publicity} alt="School publicity" />
         </div>
         <div className="home__modules-container">
           <div className="home__panel-container">
