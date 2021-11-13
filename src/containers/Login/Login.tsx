@@ -3,10 +3,10 @@ import axios from 'axios';
 import { UserType } from '../../utils/types/UserType';
 
 interface LoginProps {
-    onUserChange: (user: UserType) => void;
+    
 }
 
-export const Login: React.FC<LoginProps> = ({ onUserChange }) => {
+export const Login: React.FC<LoginProps> = () => {
 
     const [username, setUsername] = React.useState("");
     const [password, setPassword] = React.useState("");

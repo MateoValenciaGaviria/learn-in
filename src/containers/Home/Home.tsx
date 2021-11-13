@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { CoursesProgress } from '../../components/CoursesProgress/CoursesProgress';
 import { TaskList } from '../../components/TaskList/TaskList';
 import { UpcomingActivities } from '../../components/UpcomingActivities/UpcomingActivities';
@@ -8,30 +8,87 @@ import { HomeSchedule } from '../../components/HomeSchedule/HomeSchedule';
 import { SpotifyPanel } from '../../components/SpotifyPanel/SpotifyPanel';
 import { EmptyPanel } from '../../components/EmptyPanel/EmptyPanel';
 import { getImage } from '../../utils/getImages';
+import { PlatformType } from '../../utils/types/PlatformType';
+import { DATABASE } from "../../utils/firebase";
+import { doc, getDoc, setDoc } from 'firebase/firestore/lite';
 
-interface HomeProps{
+var platformObj = {
+  panel1: "empty",
+  panel2: "empty",
+  panel3: "empty",
+  panel4: "empty",
+};
+
+interface HomeProps {
   daySelected: Date,
   onCurrentDayChange: (day: Date) => void,
+  reminder: string,
+  onReminderChange: (reminder: string) => void
 }
 
-export const Home: React.FC<HomeProps> = ( {daySelected, onCurrentDayChange} ) => {
+export const Home: React.FC<HomeProps> = ({ daySelected, onCurrentDayChange, reminder, onReminderChange }) => {
 
   var currentPanel: string = "";
   var publicity = getImage("publicity");
 
-  const  [panel1, setpanel1] = useState("empty");
-  const  [panel2, setpanel2] = useState("empty");
-  const  [panel3, setpanel3] = useState("empty");
-  const  [panel4, setpanel4] = useState("empty");
+  //Platform
+  const [mainPlatform, setMainPlatform] = React.useState<PlatformType>(platformObj);
 
-  const handleSelectedPanel = (numberPanel:number, selectedPanel: string) => {
+  const [panel1, setpanel1] = useState(platformObj.panel1);
+  const [panel2, setpanel2] = useState(platformObj.panel2);
+  const [panel3, setpanel3] = useState(platformObj.panel3);
+  const [panel4, setpanel4] = useState(platformObj.panel4);
+
+  //Update platform from firebase
+  const getPlatformInfo = async () => {
+    if (localStorage.getItem('username')) {
+      const userNameFromLocalStorage = localStorage.getItem("username")!;
+      const docRef = doc(DATABASE, 'platforms', userNameFromLocalStorage);
+      const docSnap = await getDoc(docRef);
+
+      platformObj = docSnap.data() as PlatformType;
+
+      setMainPlatform(platformObj);
+
+      setpanel1(platformObj.panel1);
+      setpanel2(platformObj.panel2);
+      setpanel3(platformObj.panel3);
+      setpanel4(platformObj.panel4);
+    }
+
+  }
+
+  console.log(mainPlatform);
+
+  //Update platform firebase collection
+  const updatePlatformInfo = async () => {
+    if (localStorage.getItem('username')) {
+      const userNameFromLocalStorage = localStorage.getItem("username")!;
+      await setDoc(doc(DATABASE, "platforms", userNameFromLocalStorage), mainPlatform);
+    }
+  }
+
+  const handleSelectedPanel = (numberPanel: number, selectedPanel: string) => {
     //Sets the current panel selected
     currentPanel = selectedPanel;
     sortPanels(numberPanel);
   }
 
-  function sortPanels(indexPanelChanged: number){
-    
+  const handlePanelsChanged = () => {
+    platformObj.panel1 = panel1;
+    platformObj.panel2 = panel2;
+    platformObj.panel3 = panel3;
+    platformObj.panel4 = panel4;
+
+    updatePlatformInfo();
+  }
+
+  useEffect(() => { handlePanelsChanged() }, [panel1, panel2, panel3, panel4]);
+  useEffect(() => { getPlatformInfo() }, []);
+
+
+  function sortPanels(indexPanelChanged: number) {
+
     //Sets a new panel if the container is empty
     //Sorts the panels if the user change its order
     switch (indexPanelChanged) {
@@ -90,16 +147,20 @@ export const Home: React.FC<HomeProps> = ( {daySelected, onCurrentDayChange} ) =
             break;
         }
         setpanel4(currentPanel);
-        break;    
+        break;
     }
 
     currentPanel = "";
-    
+
   }
 
-  // React.useEffect(() => {
-  //   sortPanels();
-  // }, [ currentPanel1, currentPanel2, currentPanel3, currentPanel4 ]);
+  const updateReminder = async (reminder: string) => {
+    if (localStorage.getItem('username')) {
+      const userNameFromLocalStorage = localStorage.getItem("username")!;
+      const userRef = doc(DATABASE, 'users', userNameFromLocalStorage);
+      setDoc(userRef, { reminder: reminder }, { merge: true });
+    }
+  }
 
   return (
     <div className="home">
@@ -205,23 +266,27 @@ export const Home: React.FC<HomeProps> = ( {daySelected, onCurrentDayChange} ) =
       <div className="home__right-container">
         <div className="home__calendar-container">
           <div className="home__calendar">
-            <HomeCalendar 
-            daySelected={daySelected} 
-            onCurrentDayChange={onCurrentDayChange}></HomeCalendar>
+            <HomeCalendar
+              daySelected={daySelected}
+              onCurrentDayChange={onCurrentDayChange}></HomeCalendar>
           </div>
         </div>
         <div className="home__schedule-container">
           <hr />
           <div className="home__schedule">
-              <HomeSchedule 
+            <HomeSchedule
               daySelected={daySelected}></HomeSchedule>
           </div>
           <hr />
         </div>
         <div className="home__reminder-container">
           <div className="home__card">
-              <p className="home__card-title">Recordatorio</p>
-              <textarea className="home__card-text-area" maxLength={100}></textarea>
+            <p className="home__card-title">Recordatorio</p>
+            <textarea className="home__card-text-area" maxLength={100} defaultValue={reminder} onChange={(e) => {
+              const reminder = e.target.value;
+              onReminderChange(reminder);
+              updateReminder(reminder);
+            }}></textarea>
           </div>
         </div>
       </div>

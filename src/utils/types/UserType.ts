@@ -7,5 +7,6 @@ export interface UserType {
     state: number,
     birthday: string,
     phone: number,
-    ocupation: string
+    ocupation: string,
+    reminder: string,
 }

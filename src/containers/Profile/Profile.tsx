@@ -5,20 +5,33 @@ import { RankingPanel } from '../../components/RankingPanel/RankingPanel';
 import { AchievementsPanel } from '../../components/AchievementsPanel/AchievementsPanel';
 import { RewardsPanel } from '../../components/RewardsPanel/RewardsPanel';
 import { UserType } from '../../utils/types/UserType';
+import { DATABASE } from "../../utils/firebase";
+import { doc, setDoc } from 'firebase/firestore/lite';
 
 interface ProfileProps{
   user: UserType,
+  onStateChanged: (state: number) => void;
 }
 
-export const Profile: React.FC<ProfileProps> = ( { user } ) => {
+export const Profile: React.FC<ProfileProps> = ( { user, onStateChanged } ) => {
 
   //var userAvatar = getImage(user[0].img);
   const [emoji, setEmoji] = useState(user.state);
   const [dropdownOpen, setDropdownOpen] = useState(false);
 
+  const updateState = async (stateIndex: number) => {
+    if(localStorage.getItem('username')){
+      const userNameFromLocalStorage =  localStorage.getItem("username")!;
+      const userRef = doc(DATABASE, 'users', userNameFromLocalStorage);
+      setDoc(userRef, {state: stateIndex}, { merge: true });
+    }
+  }
+
   const handleEmojiChange = (emojiIndex:number) => {
     //Sets the current emoji
     setEmoji(emojiIndex);
+    onStateChanged(emojiIndex);
+    updateState(emojiIndex);
     setDropdownOpen(false);
   }
   

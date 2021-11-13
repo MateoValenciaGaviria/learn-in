@@ -9,36 +9,46 @@ import { Login } from '../Login/Login';
 import { getImage } from '../../utils/getImages';
 import { CourseDetail } from '../../components/CourseDetail/CourseDetail';
 import { UserType } from '../../utils/types/UserType';
+import { PlatformType } from '../../utils/types/PlatformType';
 import { DATABASE } from "../../utils/firebase";
-import { doc, getDoc } from 'firebase/firestore/lite';
+import { doc, getDoc, setDoc } from 'firebase/firestore/lite';
 
-const userObj = {
-    name: "",
-    password: "",
-    email: "",
-    img: "https://firebasestorage.googleapis.com/v0/b/learn-in-3a072.appspot.com/o/profilepic%20-%20copia.jpg?alt=media&token=ba89592f-13a8-4967-b014-ccd31cf3d49f",
-    playlist: "",
-    state: 1,
-    birthday: "",
-    phone: 0,
-    ocupation: ""
+var userObj = {
+  name: "",
+  password: "",
+  email: "",
+  img: "",
+  playlist: "",
+  state: 1,
+  birthday: "",
+  phone: 0,
+  ocupation: "",
+  reminder: "",
 };
-
-const platform = [
-  {
-    daySelected: "",
-  }
-];
 
 export const App = () => {
 
   //const [ logged, setLogged ] = React.useState(false);
-  
-  const [ activeLink, setactiveLink ] = React.useState(1);
-  const [ currentDay, setcurrentDay ] = React.useState(new Date());
+
+  const [activeLink, setactiveLink] = React.useState(1);
+  const [currentDay, setcurrentDay] = React.useState(new Date());
 
   //User
-  const [ mainUser, setMainUser ] = React.useState(userObj);
+  const [mainUser, setMainUser] = React.useState<UserType>(userObj);
+
+  //Update user form firebase
+  const getUser = async () => {
+    if (localStorage.getItem('username')) {
+      const userNameFromLocalStorage = localStorage.getItem("username")!;
+      const docRef = doc(DATABASE, 'users', userNameFromLocalStorage);
+      const docSnap = await getDoc(docRef);
+
+      userObj = docSnap.data() as UserType;
+      setMainUser(userObj);
+    }
+  }
+  
+  console.log(mainUser);
 
   //Set the active link
   const handleHome = () => {
@@ -69,30 +79,31 @@ export const App = () => {
     setMainUser(user);
   }
 
+  const handleStateChanged = (state: number) => {
+    mainUser.state = state;
+  }
+
+  const handleReminderChanged = (reminder: string) => {
+    mainUser.reminder = reminder;
+  }
+
   //var userAvatar = getImage("useravatar");
   var notificationsicon = getImage("notificationsicon");
   var learnInLogo = getImage("learninlogo");
 
-  //Update user form firebase
-  const getUser = async () => {
-
-    if(localStorage.getItem('username')){
-      const userNameFromLocalStorage =  localStorage.getItem("username")!;
-      const docRef = doc(DATABASE, 'users', userNameFromLocalStorage);
-      const docSnap = await getDoc(docRef);
-      const user = docSnap.data() as UserType;
-      console.log(user);
-      
-      setMainUser(user);
+  const updateUserInfo = async () => {
+    if (localStorage.getItem('username')) {
+      const userNameFromLocalStorage = localStorage.getItem("username")!;
+      await setDoc(doc(DATABASE, "users", userNameFromLocalStorage), mainUser);
     }
   }
 
-  //Sets user locally
-  useEffect(() => { getUser() }, []);
-
+  useEffect(() => { getUser(); }, []);
+  //useEffect(() => { updateUserInfo() }, [mainUser]);
+  
   return (
     <HashRouter basename={process.env.PUBLIC_URL}>
-      {(!localStorage.getItem('username')) ? <Login onUserChange={handleCurrentUser}></Login> : null}
+      {(!localStorage.getItem('username')) ? <Login></Login> : null}
       {(localStorage.getItem('username')) ? <div className="app__content">
         <div className="app__navbar">
           <img className="app__logo" src={learnInLogo} alt="learn-in logo" />
@@ -118,23 +129,26 @@ export const App = () => {
         </div>
         <Redirect to='/home'></Redirect>
         <div className="app__sections-container">
-          <Route path='/home' render={() => 
-              <Home 
+          <Route path='/home' render={() =>
+            <Home
               daySelected={currentDay}
-              onCurrentDayChange={handleCurrentDay}> </Home>}>
+              onCurrentDayChange={handleCurrentDay}
+              reminder={mainUser.reminder}
+              onReminderChange={handleReminderChanged}> </Home>}>
           </Route>
-          <Route path='/courses' render={() => 
-              <Courses></Courses>}>
+          <Route path='/courses' render={() =>
+            <Courses></Courses>}>
           </Route>
-          <Route path='/schedule' render={() => 
-              <Schedule></Schedule>}>
+          <Route path='/schedule' render={() =>
+            <Schedule></Schedule>}>
           </Route>
-          <Route path='/profile' render={() => 
-              <Profile 
-              user={mainUser}></Profile>}>
+          <Route path='/profile' render={() =>
+            <Profile
+              user={mainUser}
+              onStateChanged={handleStateChanged}></Profile>}>
           </Route>
-          <Route path='/chat' render={() => 
-              <Chat></Chat>}>
+          <Route path='/chat' render={() =>
+            <Chat></Chat>}>
           </Route>
           <Route path="/course-detail/:name" render={() => <CourseDetail teacherView />} />
         </div>
