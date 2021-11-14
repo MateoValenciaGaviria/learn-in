@@ -1,10 +1,69 @@
+.profile__spotify{
+    border-radius: $panelsborderradius;
+}
+
 .spotify-panel{
     display: flex;
     flex-direction: column;
     height: 100%;
     width: 100%;
-}
-
-.profile__spotify{
+    background-color: rgba($color: $panelsbackground, $alpha: .8);
     border-radius: $panelsborderradius;
+    align-items: center;
+    justify-content: center;
+
+    &__container{
+        width: 70%;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__title{
+        color: $white;
+        text-align: center;
+        font-size: 20px;
+        font-family: $Poppins-bold;
+        margin-top: 0;
+        margin-bottom: 20px;
+    }
+
+    &__input{
+        margin-bottom: 20px;
+        height: 20px;
+        width: auto;
+        outline: none;
+        border-style: none;
+        border-radius: 5px;
+        padding-left: 10px;
+    }
+
+    &__buttons-container{
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    &__btn{
+        height: 40px;
+        width: 48%;
+        border-radius: 20px;
+        outline: none;
+        background: $magenta;
+        color: $white;
+        border-style: none;
+        cursor: pointer;
+        font-family: $Poppins-medium;
+
+        &:hover{
+            opacity: 0.8;
+        }
+
+        &--secondary{
+            background: transparent;
+            color: $magenta;
+            border: $magenta solid 1px;
+        }
+    }
 }

@@ -10,9 +10,9 @@ import { EmptyPanel } from '../../components/EmptyPanel/EmptyPanel';
 import { getImage } from '../../utils/getImages';
 import { PlatformType } from '../../utils/types/PlatformType';
 import { DATABASE } from "../../utils/firebase";
-import { doc, getDoc, setDoc } from 'firebase/firestore/lite';
+import { doc, setDoc } from 'firebase/firestore/lite';
 
-var platformObj = {
+var panelsObj = {
   panel1: "empty",
   panel2: "empty",
   panel3: "empty",
@@ -23,48 +23,67 @@ interface HomeProps {
   daySelected: Date,
   onCurrentDayChange: (day: Date) => void,
   reminder: string,
-  onReminderChange: (reminder: string) => void
+  onReminderChange: (reminder: string) => void,
+  url: string,
+  onUrlChange: (url: string) => void,
+  platformObj: PlatformType
 }
 
-export const Home: React.FC<HomeProps> = ({ daySelected, onCurrentDayChange, reminder, onReminderChange }) => {
+export const Home: React.FC<HomeProps> = ({ daySelected, onCurrentDayChange, reminder, onReminderChange, url, onUrlChange, platformObj }) => {
 
   var currentPanel: string = "";
   var publicity = getImage("publicity");
 
-  //Platform
-  const [mainPlatform, setMainPlatform] = React.useState<PlatformType>(platformObj);
+  //Sets default panels "empty"
+  const [panel1, setpanel1] = useState(panelsObj.panel1);
+  const [panel2, setpanel2] = useState(panelsObj.panel2);
+  const [panel3, setpanel3] = useState(panelsObj.panel3);
+  const [panel4, setpanel4] = useState(panelsObj.panel4);
 
-  const [panel1, setpanel1] = useState(platformObj.panel1);
-  const [panel2, setpanel2] = useState(platformObj.panel2);
-  const [panel3, setpanel3] = useState(platformObj.panel3);
-  const [panel4, setpanel4] = useState(platformObj.panel4);
+  //Sets panelsObj with the panels from firebase
+  panelsObj = platformObj;
 
-  //Update platform from firebase
-  const getPlatformInfo = async () => {
-    if (localStorage.getItem('username')) {
-      const userNameFromLocalStorage = localStorage.getItem("username")!;
-      const docRef = doc(DATABASE, 'platforms', userNameFromLocalStorage);
-      const docSnap = await getDoc(docRef);
-
-      platformObj = docSnap.data() as PlatformType;
-
-      setMainPlatform(platformObj);
-
-      setpanel1(platformObj.panel1);
-      setpanel2(platformObj.panel2);
-      setpanel3(platformObj.panel3);
-      setpanel4(platformObj.panel4);
-    }
-
+  //Sets the panels state with the firebase info
+  const loadPanels = () => {
+    setpanel1(platformObj.panel1);
+    setpanel2(platformObj.panel2);
+    setpanel3(platformObj.panel3);
+    setpanel4(platformObj.panel4);
   }
 
-  console.log(mainPlatform);
-
-  //Update platform firebase collection
-  const updatePlatformInfo = async () => {
+  //Update firebase panel1 
+  const updatePanel1 = async () => {
     if (localStorage.getItem('username')) {
       const userNameFromLocalStorage = localStorage.getItem("username")!;
-      await setDoc(doc(DATABASE, "platforms", userNameFromLocalStorage), mainPlatform);
+      const userRef = doc(DATABASE, 'platforms', userNameFromLocalStorage);
+      setDoc(userRef, { panel1: panel1 }, { merge: true });
+    }
+  }
+
+  //Update firebase panel2
+  const updatePanel2 = async () => {
+    if (localStorage.getItem('username')) {
+      const userNameFromLocalStorage = localStorage.getItem("username")!;
+      const userRef = doc(DATABASE, 'platforms', userNameFromLocalStorage);
+      setDoc(userRef, { panel2: panel2 }, { merge: true });
+    }
+  }
+
+  //Update firebase panel3 
+  const updatePanel3 = async () => {
+    if (localStorage.getItem('username')) {
+      const userNameFromLocalStorage = localStorage.getItem("username")!;
+      const userRef = doc(DATABASE, 'platforms', userNameFromLocalStorage);
+      setDoc(userRef, { panel3: panel3 }, { merge: true });
+    }
+  }
+
+  //Update firebase panel4 
+  const updatePanel4 = async () => {
+    if (localStorage.getItem('username')) {
+      const userNameFromLocalStorage = localStorage.getItem("username")!;
+      const userRef = doc(DATABASE, 'platforms', userNameFromLocalStorage);
+      setDoc(userRef, { panel4: panel4 }, { merge: true });
     }
   }
 
@@ -74,18 +93,11 @@ export const Home: React.FC<HomeProps> = ({ daySelected, onCurrentDayChange, rem
     sortPanels(numberPanel);
   }
 
-  const handlePanelsChanged = () => {
-    platformObj.panel1 = panel1;
-    platformObj.panel2 = panel2;
-    platformObj.panel3 = panel3;
-    platformObj.panel4 = panel4;
-
-    updatePlatformInfo();
-  }
-
-  useEffect(() => { handlePanelsChanged() }, [panel1, panel2, panel3, panel4]);
-  useEffect(() => { getPlatformInfo() }, []);
-
+  useEffect(() => { updatePanel1() }, [panel1]);
+  useEffect(() => { updatePanel2() }, [panel2]);
+  useEffect(() => { updatePanel3() }, [panel3]);
+  useEffect(() => { updatePanel4() }, [panel4]);
+  useEffect(() => { loadPanels() }, [platformObj]);
 
   function sortPanels(indexPanelChanged: number) {
 
@@ -181,7 +193,7 @@ export const Home: React.FC<HomeProps> = ({ daySelected, onCurrentDayChange, rem
                 <option value="activities" className="home__select-option">Actividades próximas</option>
                 <option value="progress" className="home__select-option">Progreso del curso</option>
                 <option value="tasks" className="home__select-option">Lista de tareas</option>
-                <option value="messages" className="home__select-option">Últimos mensajes</option>
+                {/* <option value="messages" className="home__select-option">Últimos mensajes</option> */}
                 <option value="playlist" className="home__select-option">Lista de reproducción</option>
               </select>
             </div>
@@ -190,7 +202,9 @@ export const Home: React.FC<HomeProps> = ({ daySelected, onCurrentDayChange, rem
             {(panel1 === "activities") ? <UpcomingActivities></UpcomingActivities> : null}
             {(panel1 === "progress") ? <CoursesProgress></CoursesProgress> : null}
             {(panel1 === "tasks") ? <TaskList></TaskList> : null}
-            {(panel1 === "playlist") ? <SpotifyPanel></SpotifyPanel> : null}
+            {(panel1 === "playlist") ? <SpotifyPanel
+              url={url}
+              onUrlChange={onUrlChange}></SpotifyPanel> : null}
           </div>
           <div className="home__panel-container">
             <div className="home__select-container">
@@ -204,7 +218,7 @@ export const Home: React.FC<HomeProps> = ({ daySelected, onCurrentDayChange, rem
                 <option value="activities" className="home__select-option">Actividades próximas</option>
                 <option value="progress" className="home__select-option">Progreso del curso</option>
                 <option value="tasks" className="home__select-option">Lista de tareas</option>
-                <option value="messages" className="home__select-option">Últimos mensajes</option>
+                {/* <option value="messages" className="home__select-option">Últimos mensajes</option> */}
                 <option value="playlist" className="home__select-option">Lista de reproducción</option>
               </select>
             </div>
@@ -213,7 +227,9 @@ export const Home: React.FC<HomeProps> = ({ daySelected, onCurrentDayChange, rem
             {(panel2 === "activities") ? <UpcomingActivities></UpcomingActivities> : null}
             {(panel2 === "progress") ? <CoursesProgress></CoursesProgress> : null}
             {(panel2 === "tasks") ? <TaskList></TaskList> : null}
-            {(panel2 === "playlist") ? <SpotifyPanel></SpotifyPanel> : null}
+            {(panel2 === "playlist") ? <SpotifyPanel
+              url={url}
+              onUrlChange={onUrlChange}></SpotifyPanel> : null}
           </div>
           <div className="home__panel-container">
             <div className="home__select-container">
@@ -227,7 +243,7 @@ export const Home: React.FC<HomeProps> = ({ daySelected, onCurrentDayChange, rem
                 <option value="activities" className="home__select-option">Actividades próximas</option>
                 <option value="progress" className="home__select-option">Progreso del curso</option>
                 <option value="tasks" className="home__select-option">Lista de tareas</option>
-                <option value="messages" className="home__select-option">Últimos mensajes</option>
+                {/* <option value="messages" className="home__select-option">Últimos mensajes</option> */}
                 <option value="playlist" className="home__select-option">Lista de reproducción</option>
               </select>
             </div>
@@ -236,7 +252,9 @@ export const Home: React.FC<HomeProps> = ({ daySelected, onCurrentDayChange, rem
             {(panel3 === "activities") ? <UpcomingActivities></UpcomingActivities> : null}
             {(panel3 === "progress") ? <CoursesProgress></CoursesProgress> : null}
             {(panel3 === "tasks") ? <TaskList></TaskList> : null}
-            {(panel3 === "playlist") ? <SpotifyPanel></SpotifyPanel> : null}
+            {(panel3 === "playlist") ? <SpotifyPanel
+              url={url}
+              onUrlChange={onUrlChange}></SpotifyPanel> : null}
           </div>
           <div className="home__panel-container">
             <div className="home__select-container">
@@ -250,7 +268,7 @@ export const Home: React.FC<HomeProps> = ({ daySelected, onCurrentDayChange, rem
                 <option value="activities" className="home__select-option">Actividades próximas</option>
                 <option value="progress" className="home__select-option">Progreso del curso</option>
                 <option value="tasks" className="home__select-option">Lista de tareas</option>
-                <option value="messages" className="home__select-option">Últimos mensajes</option>
+                {/* <option value="messages" className="home__select-option">Últimos mensajes</option> */}
                 <option value="playlist" className="home__select-option">Lista de reproducción</option>
               </select>
             </div>
@@ -259,7 +277,9 @@ export const Home: React.FC<HomeProps> = ({ daySelected, onCurrentDayChange, rem
             {(panel4 === "activities") ? <UpcomingActivities></UpcomingActivities> : null}
             {(panel4 === "progress") ? <CoursesProgress></CoursesProgress> : null}
             {(panel4 === "tasks") ? <TaskList></TaskList> : null}
-            {(panel4 === "playlist") ? <SpotifyPanel></SpotifyPanel> : null}
+            {(panel4 === "playlist") ? <SpotifyPanel
+              url={url}
+              onUrlChange={onUrlChange}></SpotifyPanel> : null}
           </div>
         </div>
       </div>

@@ -1710,6 +1710,29 @@ input[type="checkbox"]:checked::before {
   margin-left: 40px;
 }
 
+.profile__log-out {
+  margin-top: 30px;
+  background: #F73C57;
+  color: #FFFFFF;
+  outline: none;
+  border-style: none;
+  border-radius: 10px;
+  height: 30px;
+  cursor: pointer;
+}
+
+.profile__log-out:hover {
+  opacity: 0.8;
+}
+
+.profile .spotify-panel__container {
+  width: 85%;
+}
+
+.profile .spotify-panel__btn {
+  font-size: 12px;
+}
+
 .chat {
   display: block;
   overflow-y: auto;
@@ -2833,6 +2856,10 @@ hr {
   fill: #6F447A !important;
 }
 
+.profile__spotify {
+  border-radius: 10px;
+}
+
 .spotify-panel {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -2843,10 +2870,81 @@ hr {
           flex-direction: column;
   height: 100%;
   width: 100%;
+  background-color: rgba(16, 25, 53, 0.8);
+  border-radius: 10px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
-.profile__spotify {
-  border-radius: 10px;
+.spotify-panel__container {
+  width: 70%;
+  height: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.spotify-panel__title {
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 20px;
+  font-family: "Poppins-bold";
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+.spotify-panel__input {
+  margin-bottom: 20px;
+  height: 20px;
+  width: auto;
+  outline: none;
+  border-style: none;
+  border-radius: 5px;
+  padding-left: 10px;
+}
+
+.spotify-panel__buttons-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  width: 100%;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.spotify-panel__btn {
+  height: 40px;
+  width: 48%;
+  border-radius: 20px;
+  outline: none;
+  background: #F73C57;
+  color: #FFFFFF;
+  border-style: none;
+  cursor: pointer;
+  font-family: "Poppins-medium";
+}
+
+.spotify-panel__btn:hover {
+  opacity: 0.8;
+}
+
+.spotify-panel__btn--secondary {
+  background: transparent;
+  color: #F73C57;
+  border: #F73C57 solid 1px;
 }
 
 .ranking-panel {

@@ -26,6 +26,13 @@ var userObj = {
   reminder: "",
 };
 
+var platformObj = {
+  panel1: "empty",
+  panel2: "empty",
+  panel3: "empty",
+  panel4: "empty",
+};
+
 export const App = () => {
 
   //const [ logged, setLogged ] = React.useState(false);
@@ -35,6 +42,9 @@ export const App = () => {
 
   //User
   const [mainUser, setMainUser] = React.useState<UserType>(userObj);
+
+  //Platform
+  const [mainPlatform, setMainPlatform] = React.useState<PlatformType>(platformObj);
 
   //Update user form firebase
   const getUser = async () => {
@@ -47,8 +57,22 @@ export const App = () => {
       setMainUser(userObj);
     }
   }
-  
-  console.log(mainUser);
+
+  //Update platform from firebase
+  const getPlatformInfo = async () => {
+    if (localStorage.getItem('username')) {
+      const userNameFromLocalStorage = localStorage.getItem("username")!;
+      const docRef = doc(DATABASE, 'platforms', userNameFromLocalStorage);
+      const docSnap = await getDoc(docRef);
+
+      platformObj = docSnap.data() as PlatformType;
+      setMainPlatform(platformObj);
+      // setpanel1(platformObj.panel1);
+      // setpanel2(platformObj.panel2);
+      // setpanel3(platformObj.panel3);
+      // setpanel4(platformObj.panel4);
+    }
+  }
 
   //Set the active link
   const handleHome = () => {
@@ -87,6 +111,10 @@ export const App = () => {
     mainUser.reminder = reminder;
   }
 
+  const handleUrlChange = (url: string) => {
+    mainUser.playlist = url;
+  }
+
   //var userAvatar = getImage("useravatar");
   var notificationsicon = getImage("notificationsicon");
   var learnInLogo = getImage("learninlogo");
@@ -97,8 +125,9 @@ export const App = () => {
       await setDoc(doc(DATABASE, "users", userNameFromLocalStorage), mainUser);
     }
   }
-
+ 
   useEffect(() => { getUser(); }, []);
+  useEffect(() => { getPlatformInfo(); }, []);
   //useEffect(() => { updateUserInfo() }, [mainUser]);
   
   return (
@@ -134,7 +163,10 @@ export const App = () => {
               daySelected={currentDay}
               onCurrentDayChange={handleCurrentDay}
               reminder={mainUser.reminder}
-              onReminderChange={handleReminderChanged}> </Home>}>
+              onReminderChange={handleReminderChanged}
+              url={mainUser.playlist}
+              onUrlChange={handleUrlChange}
+              platformObj={mainPlatform}> </Home>}>
           </Route>
           <Route path='/courses' render={() =>
             <Courses></Courses>}>
@@ -145,7 +177,8 @@ export const App = () => {
           <Route path='/profile' render={() =>
             <Profile
               user={mainUser}
-              onStateChanged={handleStateChanged}></Profile>}>
+              onStateChanged={handleStateChanged}
+              onUrlChange={handleUrlChange}></Profile>}>
           </Route>
           <Route path='/chat' render={() =>
             <Chat></Chat>}>
