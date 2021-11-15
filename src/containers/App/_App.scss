@@ -157,6 +157,7 @@ input[type="checkbox"]:checked::before {
 .app {
     &__content {
         height: 100%;
+        width: 100%;
         position: relative;
     }
 
@@ -250,6 +251,7 @@ input[type="checkbox"]:checked::before {
         display: flex;
         flex-direction: column;
         height: 90%;
+        width: 100%;
     }
 
 }

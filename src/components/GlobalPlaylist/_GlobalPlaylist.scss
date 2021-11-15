@@ -1,25 +1,28 @@
 .globalPlaylist{
     height: 100%;
     position: absolute;
-    top: 0;
+    bottom: 0;
+    right: 0;
 
     &__playlist-container{
         display: flex;
-        flex-direction: row;
+        flex-direction: row-reverse;
         position: absolute;
-        top: 10%;
+        bottom: 0;
         height: 45%;
         width: auto;
-        left: 0;
+        right: 0;
     }
 
     &__playlist-main{
         height: auto;
         width: 500px;
         overflow: hidden;
+        transition: 0.5s ease-in-out;
 
         &--hidden{
             width: 0;
+            transition: 0.5s ease-in-out;
         }
     }
 
@@ -30,7 +33,7 @@
     &__playlist-btn{
         display: flex;
         height: 40px;
-        right: -40px;
+        align-self: flex-end;
         background: rgba($color: black, $alpha: .5);
         outline: none;
         border-style: none;
@@ -38,7 +41,7 @@
         padding: 2px 4px;
         justify-content: center;
         align-items: center;
-        border-bottom-right-radius: 5px;
+        border-top-left-radius: 5px;
     }
 
     &__playlist-btn-img{
@@ -49,5 +52,15 @@
             opacity: 1;
             cursor: pointer;
         }
+    }
+    
+}
+
+@keyframes reducetime {
+    0% {
+      width: 0;
+    }
+    100% {
+      width: 100%;
     }
 }
