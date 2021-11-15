@@ -3,6 +3,7 @@ export interface UserType {
     password: string,
     email: string,
     img: string,
+    background: string,
     playlist: string,
     state: number,
     birthday: string,

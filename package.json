@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "@ant-design/icons": "^4.7.0",
+    "@firebase/storage": "^0.8.3",
     "@syncfusion/ej2-react-schedule": "^19.3.44",
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^11.2.7",
@@ -48,6 +49,7 @@
     ]
   },
   "devDependencies": {
+    "@types/firebase": "^3.2.1",
     "@types/react-calendar": "^3.4.3",
     "@types/react-router-dom": "^5.1.9",
     "sass": "^1.42.1"

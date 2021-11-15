@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { getImage } from '../../utils/getImages';
 import { SpotifyPanel } from '../../components/SpotifyPanel/SpotifyPanel';
 import { RankingPanel } from '../../components/RankingPanel/RankingPanel';
@@ -8,6 +8,7 @@ import { UserType } from '../../utils/types/UserType';
 import { DATABASE } from "../../utils/firebase";
 import { doc, setDoc } from 'firebase/firestore/lite';
 
+var localBackground = "";
 interface ProfileProps {
   user: UserType,
   onStateChanged: (state: number) => void,
@@ -18,6 +19,7 @@ export const Profile: React.FC<ProfileProps> = ({ user, onStateChanged, onUrlCha
 
   //var userAvatar = getImage(user[0].img);
   const [emoji, setEmoji] = useState(user.state);
+  const [userBackground, setUserBackground] = useState(user.background);
   const [dropdownOpen, setDropdownOpen] = useState(false);
 
   const updateState = async (stateIndex: number) => {
@@ -36,10 +38,34 @@ export const Profile: React.FC<ProfileProps> = ({ user, onStateChanged, onUrlCha
     setDropdownOpen(false);
   }
 
+  const updateUrlBackground = async () => {
+    if (localStorage.getItem('username')) {
+      const userNameFromLocalStorage = localStorage.getItem("username")!;
+      const userRef = doc(DATABASE, 'users', userNameFromLocalStorage);
+      setDoc(userRef, { background: userBackground }, { merge: true });
+    }
+  }
+
+  useEffect(() => { updateUrlBackground() }, [userBackground]);
+
   return (
     <div className="profile">
       <div className="profile__top-container">
-
+        {(userBackground !== "") ?
+          <div className="profile__image-change">
+            <img className="profile__background-img" src={userBackground} alt="User backgrund" />
+            <button className="profile__upload-btn profile__upload-btn--image-change" onClick={(e) => {
+              localBackground = "";
+              setUserBackground(localBackground);
+            }}>Cargar Imagen</button>
+          </div> :
+          <div className="profile__upload-container">
+            <input type="text" className="profile__upload-input" onChange={(e) => localBackground = e.target.value} />
+            <button className="profile__upload-btn" onClick={(e) => {
+              setUserBackground(localBackground);
+            }}>Cambiar Imagen</button>
+          </div>
+        }
       </div>
       <div className="profile__bottom-container">
         <div className="profile__user-information-container">

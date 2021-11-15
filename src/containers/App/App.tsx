@@ -18,6 +18,7 @@ var userObj = {
   password: "",
   email: "",
   img: "",
+  background: "",
   playlist: "",
   state: 1,
   birthday: "",
