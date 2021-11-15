@@ -26,10 +26,14 @@ interface HomeProps {
   onReminderChange: (reminder: string) => void,
   url: string,
   onUrlChange: (url: string) => void,
-  platformObj: PlatformType
+  platformObj: PlatformType,
+  onPanel1Change: (panel: string) => void,
+  onPanel2Change: (panel: string) => void,
+  onPanel3Change: (panel: string) => void,
+  onPanel4Change: (panel: string) => void
 }
 
-export const Home: React.FC<HomeProps> = ({ daySelected, onCurrentDayChange, reminder, onReminderChange, url, onUrlChange, platformObj }) => {
+export const Home: React.FC<HomeProps> = ({ daySelected, onCurrentDayChange, reminder, onReminderChange, url, onUrlChange, platformObj, onPanel1Change, onPanel2Change, onPanel3Change, onPanel4Change }) => {
 
   var currentPanel: string = "";
   var publicity = getImage("publicity");
@@ -187,6 +191,7 @@ export const Home: React.FC<HomeProps> = ({ daySelected, onCurrentDayChange, rem
                 //Calls the handlePanel fucntion to set the current panel selected 
                 const selectedPanel = e.target.value;
                 handleSelectedPanel(1, selectedPanel);
+                onPanel1Change(selectedPanel);
               }} name="panels" id="panels">
                 <option value="empty" disabled className="home__select-option--disable">Selecciona un panel</option>
                 <option value="exams" className="home__select-option">Exámenes próximos</option>
@@ -212,6 +217,7 @@ export const Home: React.FC<HomeProps> = ({ daySelected, onCurrentDayChange, rem
                 //Calls the handlePanel fucntion to set the current panel selected 
                 const selectedPanel = e.target.value;
                 handleSelectedPanel(2, selectedPanel);
+                onPanel2Change(selectedPanel);
               }} name="panels" id="panels">
                 <option value="empty" disabled className="home__select-option--disable">Selecciona un panel</option>
                 <option value="exams" className="home__select-option">Exámenes próximos</option>
@@ -237,6 +243,7 @@ export const Home: React.FC<HomeProps> = ({ daySelected, onCurrentDayChange, rem
                 //Calls the handlePanel fucntion to set the current panel selected 
                 const selectedPanel = e.target.value;
                 handleSelectedPanel(3, selectedPanel);
+                onPanel3Change(selectedPanel);
               }} name="panels" id="panels">
                 <option value="empty" disabled className="home__select-option--disable">Selecciona un panel</option>
                 <option value="exams" className="home__select-option">Exámenes próximos</option>
@@ -262,6 +269,7 @@ export const Home: React.FC<HomeProps> = ({ daySelected, onCurrentDayChange, rem
                 //Calls the handlePanel fucntion to set the current panel selected 
                 const selectedPanel = e.target.value;
                 handleSelectedPanel(4, selectedPanel);
+                onPanel4Change(selectedPanel);
               }} name="panels" id="panels">
                 <option value="empty" disabled className="home__select-option--disable">Selecciona un panel</option>
                 <option value="exams" className="home__select-option">Exámenes próximos</option>

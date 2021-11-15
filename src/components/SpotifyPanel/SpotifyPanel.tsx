@@ -53,7 +53,7 @@ export const SpotifyPanel: React.FC<spotifyPanelProps> = ({ url, onUrlChange }) 
 
   return (
     <div className="spotify-panel">
-      {(playlist === "") ?
+      {/* {(playlist === "") ? */}
         <div className="spotify-panel__container">
           <p className="spotify-panel__title">Inserta la url de tu playlist</p>
           <input type="text" className="spotify-panel__input" onChange={(e) => currentUrl = e.target.value} />
@@ -65,8 +65,9 @@ export const SpotifyPanel: React.FC<spotifyPanelProps> = ({ url, onUrlChange }) 
               handlePlaylistChange(defaultPlaylist);
             }}>Lista predeterminada</button>
           </div>
-        </div> : <iframe className="profile__spotify" src={playlist} width="100%" height="100%" frameBorder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" title="User playlist" />
-      }
+        </div> 
+        {/* : <iframe className="profile__spotify" src={playlist} width="100%" height="100%" frameBorder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" title="User playlist" />
+      } */}
     </div>
   );
 

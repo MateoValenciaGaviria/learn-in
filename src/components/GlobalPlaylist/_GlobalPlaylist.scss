@@ -1,0 +1,53 @@
+.globalPlaylist{
+    height: 100%;
+    position: absolute;
+    top: 0;
+
+    &__playlist-container{
+        display: flex;
+        flex-direction: row;
+        position: absolute;
+        top: 10%;
+        height: 45%;
+        width: auto;
+        left: 0;
+    }
+
+    &__playlist-main{
+        height: auto;
+        width: 500px;
+        overflow: hidden;
+
+        &--hidden{
+            width: 0;
+        }
+    }
+
+    &__playlist{
+        height: 100%;
+    }
+
+    &__playlist-btn{
+        display: flex;
+        height: 40px;
+        right: -40px;
+        background: rgba($color: black, $alpha: .5);
+        outline: none;
+        border-style: none;
+        margin: 0;
+        padding: 2px 4px;
+        justify-content: center;
+        align-items: center;
+        border-bottom-right-radius: 5px;
+    }
+
+    &__playlist-btn-img{
+        height: 80%;
+        opacity: 0.5;
+
+        &:hover{
+            opacity: 1;
+            cursor: pointer;
+        }
+    }
+}

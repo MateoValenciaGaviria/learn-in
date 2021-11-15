@@ -59,7 +59,7 @@ export const Profile: React.FC<ProfileProps> = ({ user, onStateChanged, onUrlCha
       <div className="profile__top-container">
         {(userBackground !== "") ?
           <div className="profile__image-change">
-            <img className="profile__background-img" src={userBackground} alt="User backgrund" />
+            <img className="profile__background-img" src={userBackground} alt="User background" />
             <button className="profile__upload-btn profile__upload-btn--image-change" onClick={(e) => {
               localBackground = "";
               setUserBackground(localBackground);
@@ -169,10 +169,11 @@ export const Profile: React.FC<ProfileProps> = ({ user, onStateChanged, onUrlCha
             </div>
           </div>
           <div className="profile__panels-container">
-            <SpotifyPanel
+            {/* <SpotifyPanel
               url={user.playlist}
-              onUrlChange={onUrlChange}></SpotifyPanel>
+              onUrlChange={onUrlChange}></SpotifyPanel> */}
             <RankingPanel></RankingPanel>
+            <div></div>
             <AchievementsPanel></AchievementsPanel>
             <RewardsPanel></RewardsPanel>
           </div>

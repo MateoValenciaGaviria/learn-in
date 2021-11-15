@@ -8,6 +8,7 @@ import { Chat } from '../Chat/Chat';
 import { Login } from '../Login/Login';
 import { getImage } from '../../utils/getImages';
 import { CourseDetail } from '../../components/CourseDetail/CourseDetail';
+import { GlobalPlaylist } from '../../components/GlobalPlaylist/GlobalPlaylist';
 import { UserType } from '../../utils/types/UserType';
 import { PlatformType } from '../../utils/types/PlatformType';
 import { DATABASE } from "../../utils/firebase";
@@ -34,6 +35,8 @@ var platformObj = {
   panel4: "empty",
 };
 
+var currentGlobalPlaylist = "";
+
 export const App = () => {
 
   //const [ logged, setLogged ] = React.useState(false);
@@ -46,6 +49,9 @@ export const App = () => {
 
   //Platform
   const [mainPlatform, setMainPlatform] = React.useState<PlatformType>(platformObj);
+  const [globalPlaylist, setGlobalPlaylist] = React.useState(currentGlobalPlaylist);
+
+  currentGlobalPlaylist = mainUser.playlist;
 
   //Update user form firebase
   const getUser = async () => {
@@ -114,10 +120,27 @@ export const App = () => {
 
   const handleUrlChange = (url: string) => {
     mainUser.playlist = url;
+    setGlobalPlaylist(url);
   }
 
   const handleBackgroundChange = (background: string) => {
     mainUser.background = background;
+  }
+
+  const handlePanel1Change = (panel: string) => {
+    mainPlatform.panel1 = panel;
+  }
+
+  const handlePanel2Change = (panel: string) => {
+    mainPlatform.panel2 = panel;
+  }
+
+  const handlePanel3Change = (panel: string) => {
+    mainPlatform.panel3 = panel;
+  }
+
+  const handlePanel4Change = (panel: string) => {
+    mainPlatform.panel4 = panel;
   }
 
   //var userAvatar = getImage("useravatar");
@@ -130,11 +153,12 @@ export const App = () => {
       await setDoc(doc(DATABASE, "users", userNameFromLocalStorage), mainUser);
     }
   }
- 
+
   useEffect(() => { getUser(); }, []);
   useEffect(() => { getPlatformInfo(); }, []);
+  useEffect(() => { setGlobalPlaylist(currentGlobalPlaylist) }, [currentGlobalPlaylist]);
   //useEffect(() => { updateUserInfo() }, [mainUser]);
-  
+
   return (
     <HashRouter basename={process.env.PUBLIC_URL}>
       {(!localStorage.getItem('username')) ? <Login></Login> : null}
@@ -171,7 +195,11 @@ export const App = () => {
               onReminderChange={handleReminderChanged}
               url={mainUser.playlist}
               onUrlChange={handleUrlChange}
-              platformObj={mainPlatform}> </Home>}>
+              platformObj={mainPlatform}
+              onPanel1Change={handlePanel1Change}
+              onPanel2Change={handlePanel2Change}
+              onPanel3Change={handlePanel3Change}
+              onPanel4Change={handlePanel4Change}></Home>}>
           </Route>
           <Route path='/courses' render={() =>
             <Courses></Courses>}>
@@ -191,6 +219,7 @@ export const App = () => {
           </Route>
           <Route path="/course-detail/:name" render={() => <CourseDetail teacherView />} />
         </div>
+        <GlobalPlaylist playlist={globalPlaylist}></GlobalPlaylist>
       </div> : null}
     </HashRouter>
   );
