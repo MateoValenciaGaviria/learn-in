@@ -58,6 +58,7 @@ export const Courses = () => {
               important={true}
               updates={1}
               mainColor="#0DBEBE"
+              teacherView
             />
         </section>
         <h1 className="courses__time-line-title">Línea del tiempo</h1>

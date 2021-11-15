@@ -3131,6 +3131,7 @@ hr {
   text-decoration: underline;
   font-family: "Poppins-regular";
   margin-left: 50%;
+  cursor: pointer;
 }
 
 .course-detail__top-bar {
