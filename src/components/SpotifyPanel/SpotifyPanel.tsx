@@ -3,7 +3,8 @@ import { DATABASE } from "../../utils/firebase";
 import { doc, setDoc } from 'firebase/firestore/lite';
 
 var localUrl: string = "";
-const defaultPlaylist: string = "https://open.spotify.com/embed/playlist/0znZGpitzAg7iOvGpfDJP4?theme=0";
+var currentUrl: string = "";
+const defaultPlaylist: string = "https://open.spotify.com/playlist/0znZGpitzAg7iOvGpfDJP4";
 interface spotifyPanelProps {
   url: string,
   onUrlChange: (url: string) => void
@@ -11,7 +12,9 @@ interface spotifyPanelProps {
 
 export const SpotifyPanel: React.FC<spotifyPanelProps> = ({ url, onUrlChange }) => {
 
-  const [playlist, setPlaylist] = React.useState(url);
+  const [playlist, setPlaylist] = React.useState(localUrl);
+
+  localUrl = url;
 
   const updateUrl = async () => {
     if (localStorage.getItem('username')) {
@@ -22,21 +25,41 @@ export const SpotifyPanel: React.FC<spotifyPanelProps> = ({ url, onUrlChange }) 
   }
 
   const handlePlaylistChange = (urlPlaylist: string) => {
-    setPlaylist(urlPlaylist);
-    onUrlChange(urlPlaylist);
+    var currentUrl: string = urlPlaylist;
+    const spotifyEmbed: string = "?utm_source=generator";
+    const youtubeEmbed: string = "https://www.youtube.com/embed/";
+    var embedUrl: string = "";
+    var spotifyIndex: number = 25;
+    var youtubeIndex: number = 17;
+
+    if(currentUrl.includes("spotify")){
+
+      embedUrl = [currentUrl.slice(0, spotifyIndex), "embed/", currentUrl.slice(spotifyIndex)].join('');
+      embedUrl = embedUrl+spotifyEmbed;
+
+    }else if(currentUrl.includes("youtu.be")){
+
+      embedUrl = youtubeEmbed + currentUrl.slice(youtubeIndex);
+
+    }
+
+    currentUrl = embedUrl;
+    setPlaylist(currentUrl);
+    onUrlChange(currentUrl);
   }
 
   useEffect(() => { updateUrl() }, [playlist]);
+  useEffect(() => { setPlaylist(localUrl) }, [localUrl]);
 
   return (
     <div className="spotify-panel">
       {(playlist === "") ?
         <div className="spotify-panel__container">
           <p className="spotify-panel__title">Inserta la url de tu playlist</p>
-          <input type="text" className="spotify-panel__input" onChange={(e) => localUrl = e.target.value} />
+          <input type="text" className="spotify-panel__input" onChange={(e) => currentUrl = e.target.value} />
           <div className="spotify-panel__buttons-container">
             <button className="spotify-panel__btn" onClick={(e) => {
-              handlePlaylistChange(localUrl);
+              handlePlaylistChange(currentUrl);
             }}>Cargar Playlist</button>
             <button className="spotify-panel__btn spotify-panel__btn--secondary" onClick={(e) => {
               handlePlaylistChange(defaultPlaylist);

@@ -9,17 +9,22 @@ import { DATABASE } from "../../utils/firebase";
 import { doc, setDoc } from 'firebase/firestore/lite';
 
 var localBackground = "";
+var currentBackground = "";
 interface ProfileProps {
   user: UserType,
   onStateChanged: (state: number) => void,
-  onUrlChange: (url: string) => void
+  onUrlChange: (url: string) => void,
+  onBackgroundChange: (background: string) => void
 }
 
-export const Profile: React.FC<ProfileProps> = ({ user, onStateChanged, onUrlChange }) => {
+export const Profile: React.FC<ProfileProps> = ({ user, onStateChanged, onUrlChange, onBackgroundChange }) => {
 
   //var userAvatar = getImage(user[0].img);
   const [emoji, setEmoji] = useState(user.state);
-  const [userBackground, setUserBackground] = useState(user.background);
+  const [userBackground, setUserBackground] = useState(localBackground);
+
+  localBackground = user.background;
+
   const [dropdownOpen, setDropdownOpen] = useState(false);
 
   const updateState = async (stateIndex: number) => {
@@ -47,6 +52,7 @@ export const Profile: React.FC<ProfileProps> = ({ user, onStateChanged, onUrlCha
   }
 
   useEffect(() => { updateUrlBackground() }, [userBackground]);
+  useEffect(() => { setUserBackground(localBackground) }, [localBackground]);
 
   return (
     <div className="profile">
@@ -60,9 +66,10 @@ export const Profile: React.FC<ProfileProps> = ({ user, onStateChanged, onUrlCha
             }}>Cargar Imagen</button>
           </div> :
           <div className="profile__upload-container">
-            <input type="text" className="profile__upload-input" onChange={(e) => localBackground = e.target.value} />
+            <input type="text" className="profile__upload-input" onChange={(e) => currentBackground = e.target.value} />
             <button className="profile__upload-btn" onClick={(e) => {
-              setUserBackground(localBackground);
+              setUserBackground(currentBackground);
+              onBackgroundChange(currentBackground);
             }}>Cambiar Imagen</button>
           </div>
         }

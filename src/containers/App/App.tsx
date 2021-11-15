@@ -116,6 +116,10 @@ export const App = () => {
     mainUser.playlist = url;
   }
 
+  const handleBackgroundChange = (background: string) => {
+    mainUser.background = background;
+  }
+
   //var userAvatar = getImage("useravatar");
   var notificationsicon = getImage("notificationsicon");
   var learnInLogo = getImage("learninlogo");
@@ -179,7 +183,8 @@ export const App = () => {
             <Profile
               user={mainUser}
               onStateChanged={handleStateChanged}
-              onUrlChange={handleUrlChange}></Profile>}>
+              onUrlChange={handleUrlChange}
+              onBackgroundChange={handleBackgroundChange}></Profile>}>
           </Route>
           <Route path='/chat' render={() =>
             <Chat></Chat>}>
