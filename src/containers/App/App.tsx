@@ -14,6 +14,7 @@ import { PlatformType } from '../../utils/types/PlatformType';
 import { AchievementsType } from '../../utils/types/AchievementsType';
 import { DATABASE } from "../../utils/firebase";
 import { doc, getDoc, setDoc } from 'firebase/firestore/lite';
+import { RankingType } from '../../utils/types/RankingType';
 
 var userObj = {
   name: "",
@@ -45,6 +46,16 @@ var achievementsObj = {
   thebest: false
 };
 
+var rankObj = [
+  {
+    id: "",
+    course: "",
+    points: 0,
+    rank: "",
+    rankId: 0
+  }
+];
+
 var currentGlobalPlaylist = "";
 
 export const App = () => {
@@ -62,6 +73,7 @@ export const App = () => {
   const [globalPlaylist, setGlobalPlaylist] = React.useState(currentGlobalPlaylist);
 
   const [mainAchievements, setMainAchievements] = React.useState<AchievementsType>(achievementsObj);
+  const [mainRanks, setMainRanks] = React.useState<RankingType[]>(rankObj);
 
   currentGlobalPlaylist = mainUser.playlist;
 
@@ -102,6 +114,18 @@ export const App = () => {
 
       achievementsObj = docSnap.data() as AchievementsType;
       setMainAchievements(achievementsObj);
+    }
+  }
+
+  //Update ranks from firebase
+  const getRanksInfo = async () => {
+    if (localStorage.getItem('username')) {
+      const userNameFromLocalStorage = localStorage.getItem("username")!;
+      const docRef = doc(DATABASE, 'ranks', userNameFromLocalStorage);
+      const docSnap = await getDoc(docRef);
+
+      rankObj = docSnap.data() as RankingType[];
+      setMainRanks(rankObj);
     }
   }
 
@@ -181,6 +205,7 @@ export const App = () => {
   useEffect(() => { getUser(); }, []);
   useEffect(() => { getPlatformInfo(); }, []);
   useEffect(() => { getAchievementsInfo(); }, []);
+  useEffect(() => { getRanksInfo(); }, []);
   useEffect(() => { setGlobalPlaylist(currentGlobalPlaylist) }, [currentGlobalPlaylist]);
   //useEffect(() => { updateUserInfo() }, [mainUser]);
 
@@ -238,7 +263,8 @@ export const App = () => {
               onStateChanged={handleStateChanged}
               onUrlChange={handleUrlChange}
               onBackgroundChange={handleBackgroundChange}
-              achievementsObj={mainAchievements}></Profile>}>
+              achievementsObj={mainAchievements}
+              rankList={mainRanks}></Profile>}>
           </Route>
           <Route path='/chat' render={() =>
             <Chat></Chat>}>

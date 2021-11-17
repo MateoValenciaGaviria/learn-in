@@ -8,18 +8,26 @@ import { UserType } from '../../utils/types/UserType';
 import { AchievementsType } from '../../utils/types/AchievementsType';
 import { DATABASE } from "../../utils/firebase";
 import { doc, setDoc } from 'firebase/firestore/lite';
+import { SecondaryRankingPanel } from '../../components/SecondaryRankingPanel/SecondaryRankingPanel';
+import { RankingType } from '../../utils/types/RankingType';
 
 var localBackground = "";
 var currentBackground = "";
+
+const ranksNames: string[] = [
+  "Diamante rojo", "Diamante", "Esmeralda", "Platino", "Oro", "Plata", "Bronce"
+];
+
 interface ProfileProps {
   user: UserType,
   onStateChanged: (state: number) => void,
   onUrlChange: (url: string) => void,
   onBackgroundChange: (background: string) => void,
-  achievementsObj: AchievementsType
+  achievementsObj: AchievementsType,
+  rankList: RankingType[]
 }
 
-export const Profile: React.FC<ProfileProps> = ({ user, onStateChanged, onUrlChange, onBackgroundChange, achievementsObj }) => {
+export const Profile: React.FC<ProfileProps> = ({ user, onStateChanged, onUrlChange, onBackgroundChange, achievementsObj, rankList }) => {
 
   //var userAvatar = getImage(user[0].img);
   const [emoji, setEmoji] = useState(user.state);
@@ -174,10 +182,12 @@ export const Profile: React.FC<ProfileProps> = ({ user, onStateChanged, onUrlCha
             {/* <SpotifyPanel
               url={user.playlist}
               onUrlChange={onUrlChange}></SpotifyPanel> */}
-            <RankingPanel></RankingPanel>
-            <div></div>
+            <RankingPanel
+              rankList={rankList}></RankingPanel>
+            {/* <SecondaryRankingPanel
+              rankList={rankList}></SecondaryRankingPanel> */}
             <AchievementsPanel
-            achievementsObj={achievementsObj}></AchievementsPanel>
+              achievementsObj={achievementsObj}></AchievementsPanel>
             <RewardsPanel></RewardsPanel>
           </div>
         </div>

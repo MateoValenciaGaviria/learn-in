@@ -112,57 +112,73 @@ export const Home: React.FC<HomeProps> = ({ daySelected, onCurrentDayChange, rem
         switch (currentPanel) {
           case panel2:
             setpanel2(panel1);
+            panelsObj.panel2 = panel1;
             break;
           case panel3:
             setpanel3(panel1);
+            panelsObj.panel3 = panel1;
             break;
           case panel4:
             setpanel4(panel1);
+            panelsObj.panel4 = panel1;
             break;
         }
         setpanel1(currentPanel);
+        panelsObj.panel1 = currentPanel;
         break;
       case 2:
         switch (currentPanel) {
           case panel1:
             setpanel1(panel2);
+            panelsObj.panel1 = panel2;
             break;
           case panel3:
             setpanel3(panel2);
+            panelsObj.panel3 = panel2;
             break;
           case panel4:
             setpanel4(panel2);
+            panelsObj.panel4 = panel2;
             break;
         }
         setpanel2(currentPanel);
+        panelsObj.panel2 = currentPanel;
         break;
       case 3:
         switch (currentPanel) {
           case panel1:
             setpanel1(panel3);
+            panelsObj.panel1 = panel3;
             break;
           case panel2:
             setpanel2(panel3);
+            panelsObj.panel2 = panel3;
             break;
           case panel4:
             setpanel4(panel3);
+            panelsObj.panel4 = panel3;
             break;
         }
         setpanel3(currentPanel);
+        panelsObj.panel3 = currentPanel;
         break;
       case 4:
         switch (currentPanel) {
           case panel1:
             setpanel1(panel4);
+            panelsObj.panel1 = panel4;
             break;
           case panel2:
             setpanel2(panel4);
+            panelsObj.panel2 = panel4;
             break;
           case panel3:
             setpanel3(panel4);
+            panelsObj.panel3 = panel4;
             break;
         }
         setpanel4(currentPanel);
+        panelsObj.panel4 = currentPanel;
         break;
     }
 

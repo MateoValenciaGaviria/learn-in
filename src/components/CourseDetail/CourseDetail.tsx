@@ -110,7 +110,7 @@ export const CourseDetail: React.FC<CourseDetailProps> = ({teacherView}) => {
             </div>
             <div className="course-detail__right-container">
                 {activities === false && <div className="course-detail__rank-wrapper">
-                    <RankingPanel></RankingPanel>
+                    {/* <RankingPanel></RankingPanel> */}
                 </div>}
                 {activities === true && <div className="course-detail__activities-wrapper">
                     <h1>Actividades clase 1</h1>

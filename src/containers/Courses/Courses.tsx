@@ -69,7 +69,7 @@ export const Courses = () => {
       <div className="courses__right-container">
         <div className="courses__rank-wrapper">
 
-        <RankingPanel></RankingPanel>
+        {/* <RankingPanel></RankingPanel> */}
         </div>
       </div>
     </div>

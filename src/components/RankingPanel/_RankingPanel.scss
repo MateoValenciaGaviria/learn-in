@@ -14,16 +14,16 @@
         display: flex;
         flex-direction: row;
         justify-content: space-evenly;
-        height: 100%;
+        height: auto;
     }
 
     &__rank{
         display: flex;
         flex-direction: column;
-        margin-top: auto;
+        //margin-top: auto;
         align-items: center;
         &--middle{
-            margin-top: 0;
+            //margin-top: 0;
         }
     }
 
@@ -34,33 +34,75 @@
         justify-content: center;
         width: fit-content;
         border-radius: 100%;
-        padding: 30px;
+        margin-top: 40px;
 
         &--middle{
-            padding: 40px;
+            margin-top: 0;
+            //padding: 40px;
         }
     }
 
     &__course-letter{
+        text-align: center;
         position: absolute;
         font-size: 20px;
+        top: 48%;
 
         &--middle{
             font-size: 30px;
+            top: 40%;
         }
     }
 
     &__course-name{
+        text-align: center;
         margin-top: 8px;
         margin-bottom: 0;
-        font-size: 15px;
+        font-size: 15px;    
     }
 
     &__rank-name{
-        font-family: $poppins-light;
-        font-size: 13px;
+        text-align: center;
+        font-family: $poppins-light-italic;
+        font-size: 15px;
         margin: 0;
     }
 
+    &__rank-points{
+        text-align: center;
+        font-family: $poppins-light-italic;
+        font-size: 10px;
+        margin: 0;
+    }
 
+    &__rank-color{
+
+        &--1{
+            fill: $bronze !important;
+        }
+
+        &--2{
+            fill: $silver !important;
+        }
+
+        &--3{
+            fill: $gold !important;
+        }
+
+        &--4{
+            fill: $platinum !important;
+        }
+
+        &--5{
+            fill: $emerald !important;
+        }
+
+        &--6{
+            fill: $diamond !important;
+        }
+
+        &--7{
+            fill: $redDiamond !important;
+        }
+    }
 }

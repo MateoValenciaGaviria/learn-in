@@ -55,8 +55,13 @@ $white: #FFFFFF;
 $panelsbackground: #101935;
 $panelheaderbackground: #212B4A;
 
-$diamond: #0DBEBE;
-$pearl: #F862B3;
+$bronze: #B16F32;
+$silver: #90A6B8;
+$gold: #FEC701;
+$platinum: #1BCEAE;
+$emerald: #7ACC01;
+$diamond: #38B2EC;
+$redDiamond: #EC3838;
 
 $religion: #C07643;
 $english: #F73C3C;
@@ -95,3 +100,4 @@ $ethics: #6F447A;
 @import '../components/CourseDetail/CourseDetail';
 @import '../components/GradesView/GradesView';
 @import '../components/GlobalPlaylist/GlobalPlaylist';
+@import '../components/SecondaryRankingPanel/SecondaryRankingPanel';

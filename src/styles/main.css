@@ -122,14 +122,6 @@ abbr {
   background-color: #F73C57;
 }
 
-.diamond {
-  background-color: #0DBEBE;
-}
-
-.pearl {
-  background-color: #F862B3;
-}
-
 hr {
   width: 100%;
   margin: 0;
@@ -1780,12 +1772,12 @@ input[type="checkbox"]:checked::before {
 .profile__panels-container {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (1fr)[2];
-      grid-template-columns: repeat(2, 1fr);
+  -ms-grid-columns: auto auto;
+      grid-template-columns: auto auto;
   grid-column-gap: 35px;
   row-gap: 40px;
   grid-auto-rows: 50% 50%;
-  height: 100%;
+  height: auto;
   margin-top: 30px;
   padding-bottom: 200px;
   margin-left: 40px;
@@ -3058,7 +3050,7 @@ hr {
   -webkit-box-pack: space-evenly;
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
-  height: 100%;
+  height: auto;
 }
 
 .ranking-panel__rank {
@@ -3069,14 +3061,9 @@ hr {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  margin-top: auto;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-}
-
-.ranking-panel__rank--middle {
-  margin-top: 0;
 }
 
 .ranking-panel__rank-icon {
@@ -3094,32 +3081,72 @@ hr {
   width: -moz-fit-content;
   width: fit-content;
   border-radius: 100%;
-  padding: 30px;
+  margin-top: 40px;
 }
 
 .ranking-panel__rank-icon--middle {
-  padding: 40px;
+  margin-top: 0;
 }
 
 .ranking-panel__course-letter {
+  text-align: center;
   position: absolute;
   font-size: 20px;
+  top: 48%;
 }
 
 .ranking-panel__course-letter--middle {
   font-size: 30px;
+  top: 40%;
 }
 
 .ranking-panel__course-name {
+  text-align: center;
   margin-top: 8px;
   margin-bottom: 0;
   font-size: 15px;
 }
 
 .ranking-panel__rank-name {
-  font-family: "Poppins-light";
-  font-size: 13px;
+  text-align: center;
+  font-family: "Poppins-light-italic";
+  font-size: 15px;
   margin: 0;
+}
+
+.ranking-panel__rank-points {
+  text-align: center;
+  font-family: "Poppins-light-italic";
+  font-size: 10px;
+  margin: 0;
+}
+
+.ranking-panel__rank-color--1 {
+  fill: #B16F32 !important;
+}
+
+.ranking-panel__rank-color--2 {
+  fill: #90A6B8 !important;
+}
+
+.ranking-panel__rank-color--3 {
+  fill: #FEC701 !important;
+}
+
+.ranking-panel__rank-color--4 {
+  fill: #1BCEAE !important;
+}
+
+.ranking-panel__rank-color--5 {
+  fill: #7ACC01 !important;
+}
+
+.ranking-panel__rank-color--6 {
+  fill: #38B2EC !important;
+}
+
+.ranking-panel__rank-color--7 {
+  fill: #EC3838 !important;
 }
 
 .achievements-panel {
