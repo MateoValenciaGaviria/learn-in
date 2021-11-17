@@ -11,6 +11,7 @@ import { CourseDetail } from '../../components/CourseDetail/CourseDetail';
 import { GlobalPlaylist } from '../../components/GlobalPlaylist/GlobalPlaylist';
 import { UserType } from '../../utils/types/UserType';
 import { PlatformType } from '../../utils/types/PlatformType';
+import { AchievementsType } from '../../utils/types/AchievementsType';
 import { DATABASE } from "../../utils/firebase";
 import { doc, getDoc, setDoc } from 'firebase/firestore/lite';
 
@@ -35,6 +36,15 @@ var platformObj = {
   panel4: "empty",
 };
 
+var achievementsObj = {
+  help: false,
+  five: false,
+  participate: false,
+  emotions: false,
+  exonerated: false,
+  thebest: false
+};
+
 var currentGlobalPlaylist = "";
 
 export const App = () => {
@@ -50,6 +60,8 @@ export const App = () => {
   //Platform
   const [mainPlatform, setMainPlatform] = React.useState<PlatformType>(platformObj);
   const [globalPlaylist, setGlobalPlaylist] = React.useState(currentGlobalPlaylist);
+
+  const [mainAchievements, setMainAchievements] = React.useState<AchievementsType>(achievementsObj);
 
   currentGlobalPlaylist = mainUser.playlist;
 
@@ -78,6 +90,18 @@ export const App = () => {
       // setpanel2(platformObj.panel2);
       // setpanel3(platformObj.panel3);
       // setpanel4(platformObj.panel4);
+    }
+  }
+
+  //Update achievements from firebase
+  const getAchievementsInfo = async () => {
+    if (localStorage.getItem('username')) {
+      const userNameFromLocalStorage = localStorage.getItem("username")!;
+      const docRef = doc(DATABASE, 'achievements', userNameFromLocalStorage);
+      const docSnap = await getDoc(docRef);
+
+      achievementsObj = docSnap.data() as AchievementsType;
+      setMainAchievements(achievementsObj);
     }
   }
 
@@ -156,6 +180,7 @@ export const App = () => {
 
   useEffect(() => { getUser(); }, []);
   useEffect(() => { getPlatformInfo(); }, []);
+  useEffect(() => { getAchievementsInfo(); }, []);
   useEffect(() => { setGlobalPlaylist(currentGlobalPlaylist) }, [currentGlobalPlaylist]);
   //useEffect(() => { updateUserInfo() }, [mainUser]);
 
@@ -212,7 +237,8 @@ export const App = () => {
               user={mainUser}
               onStateChanged={handleStateChanged}
               onUrlChange={handleUrlChange}
-              onBackgroundChange={handleBackgroundChange}></Profile>}>
+              onBackgroundChange={handleBackgroundChange}
+              achievementsObj={mainAchievements}></Profile>}>
           </Route>
           <Route path='/chat' render={() =>
             <Chat></Chat>}>

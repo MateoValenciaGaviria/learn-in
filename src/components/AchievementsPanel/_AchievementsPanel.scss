@@ -11,29 +11,43 @@
     }
 
     &__container{
-        height: 100%;
+        height: auto;
         display: grid;
         grid-template-columns: auto auto auto;
         grid-auto-rows: 40%;
         row-gap: 30px;
         justify-content: space-evenly;
+        align-items: flex-start;
     }
 
     &__achievement{
         display: flex;
         flex-direction: column;
-        height: 100%;
+        height: auto;
         align-items: center;
+        justify-content: center;
     }
 
     &__achievement-img-container{
-        padding: 30%;
-        background: gray;
+        align-items: center;
+        justify-content: center;
+
+        &--disabled{
+            opacity: 0.5;
+        }
     }
 
     &__achievement-name{
-        margin-top: 10px;
+        //margin-top: 5px;
         font-size: 13px;
-        font-family: $poppins-light;
+        font-family: $poppins-light-italic;
+        text-align: center;
+        max-width: 90%;
+        opacity: 0.3;
+
+        &--active{
+            color: #FFC702;
+            opacity: 1;
+        }
     }
 }

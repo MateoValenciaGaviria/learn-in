@@ -5,6 +5,7 @@ import { RankingPanel } from '../../components/RankingPanel/RankingPanel';
 import { AchievementsPanel } from '../../components/AchievementsPanel/AchievementsPanel';
 import { RewardsPanel } from '../../components/RewardsPanel/RewardsPanel';
 import { UserType } from '../../utils/types/UserType';
+import { AchievementsType } from '../../utils/types/AchievementsType';
 import { DATABASE } from "../../utils/firebase";
 import { doc, setDoc } from 'firebase/firestore/lite';
 
@@ -14,10 +15,11 @@ interface ProfileProps {
   user: UserType,
   onStateChanged: (state: number) => void,
   onUrlChange: (url: string) => void,
-  onBackgroundChange: (background: string) => void
+  onBackgroundChange: (background: string) => void,
+  achievementsObj: AchievementsType
 }
 
-export const Profile: React.FC<ProfileProps> = ({ user, onStateChanged, onUrlChange, onBackgroundChange }) => {
+export const Profile: React.FC<ProfileProps> = ({ user, onStateChanged, onUrlChange, onBackgroundChange, achievementsObj }) => {
 
   //var userAvatar = getImage(user[0].img);
   const [emoji, setEmoji] = useState(user.state);
@@ -174,7 +176,8 @@ export const Profile: React.FC<ProfileProps> = ({ user, onStateChanged, onUrlCha
               onUrlChange={onUrlChange}></SpotifyPanel> */}
             <RankingPanel></RankingPanel>
             <div></div>
-            <AchievementsPanel></AchievementsPanel>
+            <AchievementsPanel
+            achievementsObj={achievementsObj}></AchievementsPanel>
             <RewardsPanel></RewardsPanel>
           </div>
         </div>

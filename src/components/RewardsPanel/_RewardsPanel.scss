@@ -1,7 +1,7 @@
 .rewards-panel{
     display: flex;
     flex-direction: column;
-    height: 100%;
+    height: auto;
     width: 100%;
 
     &__title{
@@ -11,29 +11,45 @@
     }
 
     &__container{
-        height: 100%;
+        height: auto;
         display: grid;
         grid-template-columns: auto auto auto;
         grid-auto-rows: 40%;
         row-gap: 30px;
         justify-content: space-evenly;
+        align-items: flex-start;
     }
 
-    &__achievement{
+    &__reward{
         display: flex;
         flex-direction: column;
-        height: 100%;
+        height: auto;
         align-items: center;
+        justify-content: center;
     }
 
-    &__achievement-img-container{
-        padding: 30%;
-        background: gray;
+    &__reward-img-container{
+        position: relative;
+        align-items: center;
+        justify-content: center;
     }
 
-    &__achievement-name{
-        margin-top: 10px;
+    &__course-letter{
+        margin: 0;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%,-60%);
+        font-size: 25px;
+        font-family: $Poppins-bold;
+        text-align: center;
+    }
+
+    &__reward-name{
         font-size: 13px;
-        font-family: $poppins-light;
+        font-family: $poppins-light-italic;
+        text-align: center;
+        max-width: 90%;
+        opacity: 0.5;
     }
 }

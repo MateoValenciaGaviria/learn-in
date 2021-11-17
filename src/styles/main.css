@@ -1787,7 +1787,7 @@ input[type="checkbox"]:checked::before {
   grid-auto-rows: 50% 50%;
   height: 100%;
   margin-top: 30px;
-  padding-bottom: 100px;
+  padding-bottom: 200px;
   margin-left: 40px;
 }
 
@@ -2903,7 +2903,7 @@ hr {
 }
 
 .book-svg--physics {
-  fill: #6BCCD2 !important;
+  fill: #0DBEBE !important;
 }
 
 .book-svg--mathematics {
@@ -2915,7 +2915,7 @@ hr {
 }
 
 .book-svg--philosophy {
-  fill: #FFDF38 !important;
+  fill: #C07643 !important;
 }
 
 .book-svg--spanish {
@@ -3141,7 +3141,7 @@ hr {
 }
 
 .achievements-panel__container {
-  height: 100%;
+  height: auto;
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: auto auto auto;
@@ -3151,6 +3151,9 @@ hr {
   -webkit-box-pack: space-evenly;
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
 }
 
 .achievements-panel__achievement {
@@ -3161,21 +3164,39 @@ hr {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  height: 100%;
+  height: auto;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .achievements-panel__achievement-img-container {
-  padding: 30%;
-  background: gray;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.achievements-panel__achievement-img-container--disabled {
+  opacity: 0.5;
 }
 
 .achievements-panel__achievement-name {
-  margin-top: 10px;
   font-size: 13px;
-  font-family: "Poppins-light";
+  font-family: "Poppins-light-italic";
+  text-align: center;
+  max-width: 90%;
+  opacity: 0.3;
+}
+
+.achievements-panel__achievement-name--active {
+  color: #FFC702;
+  opacity: 1;
 }
 
 .rewards-panel {
@@ -3186,7 +3207,7 @@ hr {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  height: 100%;
+  height: auto;
   width: 100%;
 }
 
@@ -3197,7 +3218,7 @@ hr {
 }
 
 .rewards-panel__container {
-  height: 100%;
+  height: auto;
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: auto auto auto;
@@ -3207,9 +3228,12 @@ hr {
   -webkit-box-pack: space-evenly;
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
 }
 
-.rewards-panel__achievement {
+.rewards-panel__reward {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -3217,21 +3241,43 @@ hr {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  height: 100%;
+  height: auto;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
-.rewards-panel__achievement-img-container {
-  padding: 30%;
-  background: gray;
+.rewards-panel__reward-img-container {
+  position: relative;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
-.rewards-panel__achievement-name {
-  margin-top: 10px;
+.rewards-panel__course-letter {
+  margin: 0;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -60%);
+          transform: translate(-50%, -60%);
+  font-size: 25px;
+  font-family: "Poppins-bold";
+  text-align: center;
+}
+
+.rewards-panel__reward-name {
   font-size: 13px;
-  font-family: "Poppins-light";
+  font-family: "Poppins-light-italic";
+  text-align: center;
+  max-width: 90%;
+  opacity: 0.5;
 }
 
 .empty-panel {
