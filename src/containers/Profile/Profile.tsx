@@ -184,8 +184,8 @@ export const Profile: React.FC<ProfileProps> = ({ user, onStateChanged, onUrlCha
               onUrlChange={onUrlChange}></SpotifyPanel> */}
             <RankingPanel
               rankList={rankList}></RankingPanel>
-            {/* <SecondaryRankingPanel
-              rankList={rankList}></SecondaryRankingPanel> */}
+            <SecondaryRankingPanel
+              rankList={rankList}></SecondaryRankingPanel>
             <AchievementsPanel
               achievementsObj={achievementsObj}></AchievementsPanel>
             <RewardsPanel></RewardsPanel>
