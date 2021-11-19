@@ -8,6 +8,16 @@
     overflow-y: auto;
     justify-content: flex-start;
     
+    &::-webkit-scrollbar-thumb {
+        //display: none;
+        /* color of the scroll thumb */
+        background-color: $panelheaderbackground;
+        /* roundness of the scroll thumb */
+        border-radius: 20px;
+        /* creates padding around scroll thumb */
+        border: 5px solid $panelsbackground;
+    }
+
     &__wraper{
         display: flex;
         flex-direction: column;
@@ -16,20 +26,6 @@
         padding: 10px;
         padding-bottom: 0;
         
-        &::-webkit-scrollbar-track {
-            /* color of the tracking area */
-            background: $darkbackground;
-        }
-        
-        &::-webkit-scrollbar-thumb {
-            //display: none;
-            /* color of the scroll thumb */
-            background-color: rgba(144, 152, 189, 0.2);
-            /* roundness of the scroll thumb */
-            border-radius: 20px;
-            /* creates padding around scroll thumb */
-            border: 5px solid $darkbackground;
-        }
     }
 
     &__link{

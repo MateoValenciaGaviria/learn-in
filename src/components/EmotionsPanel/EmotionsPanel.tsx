@@ -65,7 +65,7 @@ export const EmotionsPanel: React.FC<EmotionsPanelProps> = ({ handleChat }) => {
                             img={user.img}
                             name={user.name}
                             state={user.state}></EmotionsRow>
-                    })}
+                        })}
                 </div>
             </Link>
         </div>
