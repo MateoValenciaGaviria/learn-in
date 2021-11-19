@@ -3810,4 +3810,138 @@ hr {
   font-family: "Poppins-light-italic";
   font-size: 13px;
 }
+
+.emotions-panel {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: 100%;
+  border-radius: 10px;
+  background-color: #101935;
+  overflow-y: auto;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+
+.emotions-panel__wraper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: auto;
+  width: auto;
+  padding: 10px;
+  padding-bottom: 0;
+}
+
+.emotions-panel__wraper::-webkit-scrollbar-track {
+  /* color of the tracking area */
+  background: #090B22;
+}
+
+.emotions-panel__wraper::-webkit-scrollbar-thumb {
+  /* color of the scroll thumb */
+  background-color: rgba(144, 152, 189, 0.2);
+  /* roundness of the scroll thumb */
+  border-radius: 20px;
+  /* creates padding around scroll thumb */
+  border: 5px solid #090B22;
+}
+
+.emotions-panel__link {
+  text-decoration: none;
+}
+
+.emotion-row {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: auto 70% 15%;
+      grid-template-columns: auto 70% 15%;
+  height: 60px;
+  width: 100%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  background-color: #212B4A;
+}
+
+.emotion-row__img-container {
+  margin: 0 10px;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 40px;
+  width: 40px;
+}
+
+.emotion-row__user-img {
+  position: absolute;
+  border-radius: 100%;
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: top;
+     object-position: top;
+}
+
+.emotion-row__user-name {
+  margin: 0;
+  font-family: "Poppins-bold";
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-left: 10px;
+}
+
+.emotion-row__emoji-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 100%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.emotion-row__emoji {
+  margin: 0;
+  font-size: 35px;
+  text-align: center;
+}
 /*# sourceMappingURL=main.css.map */

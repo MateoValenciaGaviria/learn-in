@@ -249,7 +249,8 @@ export const App = () => {
               onPanel1Change={handlePanel1Change}
               onPanel2Change={handlePanel2Change}
               onPanel3Change={handlePanel3Change}
-              onPanel4Change={handlePanel4Change}></Home>}>
+              onPanel4Change={handlePanel4Change}
+              handleChat={handleChat}></Home>}>
           </Route>
           <Route path='/courses' render={() =>
             <Courses></Courses>}>

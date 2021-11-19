@@ -1,0 +1,95 @@
+.emotions-panel{
+    
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    border-radius: $panelsborderradius;
+    background-color: $panelsbackground;
+    overflow-y: auto;
+    justify-content: flex-start;
+    
+    &__wraper{
+        display: flex;
+        flex-direction: column;
+        height: auto;
+        width: auto;
+        padding: 10px;
+        padding-bottom: 0;
+        
+        &::-webkit-scrollbar-track {
+            /* color of the tracking area */
+            background: $darkbackground;
+        }
+        
+        &::-webkit-scrollbar-thumb {
+            //display: none;
+            /* color of the scroll thumb */
+            background-color: rgba(144, 152, 189, 0.2);
+            /* roundness of the scroll thumb */
+            border-radius: 20px;
+            /* creates padding around scroll thumb */
+            border: 5px solid $darkbackground;
+        }
+    }
+
+    &__link{
+        text-decoration: none;
+    }
+    
+}
+
+.emotion-row{
+    
+    display: grid;
+    grid-template-columns: auto 70% 15%;
+    height: 60px;
+    width: 100%;
+    align-items: center;
+    justify-content: flex-start;
+    margin-bottom: 10px;
+    border-radius: $panelsborderradius;
+    background-color: $panelheaderbackground;
+
+    &__img-container{
+        margin: 0 10px;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 40px;
+        width: 40px;
+    }
+    
+    &__user-img{
+        position: absolute;
+        border-radius: 100%;
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        object-position: top;
+    }
+
+    &__user-name{
+        margin: 0;
+        font-family: $Poppins-bold;
+        display: flex;
+        flex-direction: column;
+        margin-left: 10px;
+    }
+
+    &__emoji-container{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &__emoji{
+        margin: 0;
+        font-size: 35px;
+        text-align: center;
+    }
+
+}

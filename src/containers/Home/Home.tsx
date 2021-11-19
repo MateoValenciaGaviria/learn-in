@@ -7,6 +7,7 @@ import { HomeCalendar } from '../../components/HomeCalendar/HomeCalendar';
 import { HomeSchedule } from '../../components/HomeSchedule/HomeSchedule';
 import { SpotifyPanel } from '../../components/SpotifyPanel/SpotifyPanel';
 import { EmptyPanel } from '../../components/EmptyPanel/EmptyPanel';
+import { EmotionsPanel } from '../../components/EmotionsPanel/EmotionsPanel';
 import { getImage } from '../../utils/getImages';
 import { PlatformType } from '../../utils/types/PlatformType';
 import { DATABASE } from "../../utils/firebase";
@@ -30,10 +31,11 @@ interface HomeProps {
   onPanel1Change: (panel: string) => void,
   onPanel2Change: (panel: string) => void,
   onPanel3Change: (panel: string) => void,
-  onPanel4Change: (panel: string) => void
+  onPanel4Change: (panel: string) => void,
+  handleChat: () => void,
 }
 
-export const Home: React.FC<HomeProps> = ({ daySelected, onCurrentDayChange, reminder, onReminderChange, url, onUrlChange, platformObj, onPanel1Change, onPanel2Change, onPanel3Change, onPanel4Change }) => {
+export const Home: React.FC<HomeProps> = ({ daySelected, onCurrentDayChange, reminder, onReminderChange, url, onUrlChange, platformObj, onPanel1Change, onPanel2Change, onPanel3Change, onPanel4Change, handleChat }) => {
 
   var currentPanel: string = "";
   var publicity = getImage("publicity");
@@ -215,6 +217,7 @@ export const Home: React.FC<HomeProps> = ({ daySelected, onCurrentDayChange, rem
                 <option value="progress" className="home__select-option">Progreso del curso</option>
                 <option value="tasks" className="home__select-option">Lista de tareas</option>
                 {/* <option value="messages" className="home__select-option">Últimos mensajes</option> */}
+                <option value="emotions" className="home__select-option">Estados de ánimo</option>
                 <option value="playlist" className="home__select-option">Lista de reproducción</option>
               </select>
             </div>
@@ -226,6 +229,8 @@ export const Home: React.FC<HomeProps> = ({ daySelected, onCurrentDayChange, rem
             {(panel1 === "playlist") ? <SpotifyPanel
               url={url}
               onUrlChange={onUrlChange}></SpotifyPanel> : null}
+            {(panel1 === "emotions") ? <EmotionsPanel
+              handleChat={handleChat}></EmotionsPanel> : null}
           </div>
           <div className="home__panel-container">
             <div className="home__select-container">
@@ -241,6 +246,7 @@ export const Home: React.FC<HomeProps> = ({ daySelected, onCurrentDayChange, rem
                 <option value="progress" className="home__select-option">Progreso del curso</option>
                 <option value="tasks" className="home__select-option">Lista de tareas</option>
                 {/* <option value="messages" className="home__select-option">Últimos mensajes</option> */}
+                <option value="emotions" className="home__select-option">Estados de ánimo</option>
                 <option value="playlist" className="home__select-option">Lista de reproducción</option>
               </select>
             </div>
@@ -252,6 +258,8 @@ export const Home: React.FC<HomeProps> = ({ daySelected, onCurrentDayChange, rem
             {(panel2 === "playlist") ? <SpotifyPanel
               url={url}
               onUrlChange={onUrlChange}></SpotifyPanel> : null}
+            {(panel2 === "emotions") ? <EmotionsPanel
+              handleChat={handleChat}></EmotionsPanel> : null}
           </div>
           <div className="home__panel-container">
             <div className="home__select-container">
@@ -267,6 +275,7 @@ export const Home: React.FC<HomeProps> = ({ daySelected, onCurrentDayChange, rem
                 <option value="progress" className="home__select-option">Progreso del curso</option>
                 <option value="tasks" className="home__select-option">Lista de tareas</option>
                 {/* <option value="messages" className="home__select-option">Últimos mensajes</option> */}
+                <option value="emotions" className="home__select-option">Estados de ánimo</option>
                 <option value="playlist" className="home__select-option">Lista de reproducción</option>
               </select>
             </div>
@@ -278,6 +287,8 @@ export const Home: React.FC<HomeProps> = ({ daySelected, onCurrentDayChange, rem
             {(panel3 === "playlist") ? <SpotifyPanel
               url={url}
               onUrlChange={onUrlChange}></SpotifyPanel> : null}
+            {(panel3 === "emotions") ? <EmotionsPanel
+              handleChat={handleChat}></EmotionsPanel> : null}
           </div>
           <div className="home__panel-container">
             <div className="home__select-container">
@@ -293,6 +304,7 @@ export const Home: React.FC<HomeProps> = ({ daySelected, onCurrentDayChange, rem
                 <option value="progress" className="home__select-option">Progreso del curso</option>
                 <option value="tasks" className="home__select-option">Lista de tareas</option>
                 {/* <option value="messages" className="home__select-option">Últimos mensajes</option> */}
+                <option value="emotions" className="home__select-option">Estados de ánimo</option>
                 <option value="playlist" className="home__select-option">Lista de reproducción</option>
               </select>
             </div>
@@ -304,6 +316,8 @@ export const Home: React.FC<HomeProps> = ({ daySelected, onCurrentDayChange, rem
             {(panel4 === "playlist") ? <SpotifyPanel
               url={url}
               onUrlChange={onUrlChange}></SpotifyPanel> : null}
+            {(panel4 === "emotions") ? <EmotionsPanel
+              handleChat={handleChat}></EmotionsPanel> : null}
           </div>
         </div>
       </div>
