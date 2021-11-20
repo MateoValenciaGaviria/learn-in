@@ -79,13 +79,11 @@ export const SecondaryRankingPanel: React.FC<SecondaryRankingPanelProps> = ({ ra
     const [sortedRanks, setSortedRanks] = useState(localSortedRanks);
 
     const handleLoadRanks = () => {
-        if (!done) {
-            loadCurrentRanks();
-            updateTopRanks();
-            localSortedRanks = currentTopRanks;
-            setSortedRanks(currentTopRanks);
-            done = true;
-        }
+        currentRanks = [];
+        currentTopRanks = [];
+        loadCurrentRanks();
+        updateTopRanks();
+        localSortedRanks = currentTopRanks;
     }
 
     const loadCurrentRanks = () => {
@@ -136,10 +134,8 @@ export const SecondaryRankingPanel: React.FC<SecondaryRankingPanelProps> = ({ ra
         currentTopRanks.splice(0, 3);
     }
 
-    console.log(sortedRanks);
-
-
     useEffect(() => { handleLoadRanks() }, []);
+    useEffect(() => { setSortedRanks(currentTopRanks) }, [localSortedRanks]);
 
     return (
         <div className="secondary-ranking-panel">

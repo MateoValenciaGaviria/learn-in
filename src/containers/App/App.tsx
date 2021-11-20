@@ -53,6 +53,20 @@ var rankObj = [
     points: 0,
     rank: "",
     rankId: 0
+  },
+  {
+    id: "",
+    course: "",
+    points: 0,
+    rank: "",
+    rankId: 0
+  },
+  {
+    id: "",
+    course: "",
+    points: 0,
+    rank: "",
+    rankId: 0
   }
 ];
 

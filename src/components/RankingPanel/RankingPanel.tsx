@@ -39,7 +39,6 @@ var localTopRanks: RankingType[] = [
 
 var currentTopRanks: RankingType[] = [];
 var currentRanks: RankingType[] = [];
-var done: boolean = false;
 
 interface RankingPanelProps {
   rankList: RankingType[]
@@ -51,16 +50,14 @@ export const RankingPanel: React.FC<RankingPanelProps> = ({ rankList }) => {
   var rank2 = "#B7B7B7";
   var rank3 = "#B7B7B7";
 
-  const [topRanks, setTopRanks] = useState(localTopRanks);
+  const [topRanks, setTopRanks] = useState<RankingType[]>(localTopRanks);
 
   const handleLoadRanks = () => {
-    if (!done) {
-      loadCurrentRanks();
-      updateTopRanks();
-      localTopRanks = currentTopRanks;
-      setTopRanks(currentTopRanks);
-      done = true;
-    }
+    currentRanks = [];
+    currentTopRanks = [];
+    loadCurrentRanks();
+    updateTopRanks();
+    localTopRanks = currentTopRanks;
   }
 
   const loadCurrentRanks = () => {
@@ -104,12 +101,13 @@ export const RankingPanel: React.FC<RankingPanelProps> = ({ rankList }) => {
   }
 
   const updateTopRanks = () => {
-    getTopRank();
-    getTopRank();
-    getTopRank();
+    for (let i = 0; i < 3; i++) {
+      getTopRank();
+    }
   }
 
   useEffect(() => { handleLoadRanks() }, []);
+  useEffect(() => { setTopRanks(localTopRanks) }, [localTopRanks]);
 
   return (
     <div className="ranking-panel">
