@@ -16,6 +16,7 @@ export interface CSSPropertiesWithVars extends CSSProperties {
 export const CourseResourceItem: React.FC<CourseResourceItemProps> = ({ type, title, status }) => {
     return (
         <div className="course-resource-item">
+            <a href="http://"></a>
             <div className="course-resource-item__img"><img src="" alt="" /></div>
             <p className="course-resource-item__title"><b>{type}:</b> {title}</p>
             {status && <p className="course-resource-item__status">{status}</p>}
@@ -89,20 +90,18 @@ export const CourseDetail: React.FC<CourseDetailProps> = ({teacherView}) => {
                         Unidad {unitNumber}
                     </summary>
                     <article className="course-detail__unit-info"  contentEditable={teacherView==true ? "true" : "false"}  >
-                        <p>Estaremos viendo los conceptos de loremp insum dolor its :v:</p>
-                        <ol>
-                            <li>Esto</li>
-                            <li>Carmen</li>
-                            <li>Ignacio</li>
-                            <li>Elena</li>
-                        </ol>
+                        <b>Reto Final</b>
+                        <p>Diseñar un videojuego de un cuento tradicional.</p>
+                        <ul>
+                            <li>Recuerda usar en cada plancha <b>mínimo 8 temas</b> de los vistos en todo el semestre.</li>
+                        </ul>
                     </article>
 
                     <details className="course-detail__class">
                         <summary>
-                            <b> Clase 1:</b> Introducción <button className="course-detail__btn-activities" onClick={handleActivity}>Ver actividades</button>
+                            <b> Clase 31:</b> Asesoría <button className="course-detail__btn-activities" onClick={handleActivity}>Ver actividades</button>
                         </summary>
-                        <CourseResourceItem title="Presentación de la clase" type="Archivo" status="Pendiente"></CourseResourceItem>
+                        <CourseResourceItem title="Bocetos de behance" type="Tarea" status="Pendiente"></CourseResourceItem>
                     </details>
 
                 </details>}
@@ -113,9 +112,9 @@ export const CourseDetail: React.FC<CourseDetailProps> = ({teacherView}) => {
                     <RankingPanel></RankingPanel>
                 </div>}
                 {activities === true && <div className="course-detail__activities-wrapper">
-                    <h1>Actividades clase 1</h1>
+                    <h1>Actividades clase 31</h1>
                     <div className="task-item">
-                        <p className="task-item__text">Ejercicio clase 1</p>
+                        <p className="task-item__text">2 Bocetos de behance</p>
                         <input type="checkbox" name="checkbox" id="" className="task-item__check" />
                     </div>
                 </div>}

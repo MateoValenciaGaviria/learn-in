@@ -105,7 +105,7 @@ export const App = () => {
           <Route path='/chat' render={() => 
               <Chat></Chat>}>
           </Route>
-          <Route path="/course-detail/:name" render={() => <CourseDetail teacherView />} />
+          <Route path="/course-detail/:name" render={() => <CourseDetail />} />
         </div>
       </div> : null}
     </HashRouter>
