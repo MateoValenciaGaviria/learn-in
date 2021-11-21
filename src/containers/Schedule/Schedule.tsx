@@ -239,19 +239,19 @@ export const Schedule = () => {
   // };
 
   const resourceDataSource: Object[] = [
-    {Name: "Actividad", Id: 1, Color: "#142A50"},
+    {Name: "Actividad", Id: 1, Color: "#3f51b5"},
     {Name: "Descanso", Id: 2, Color: "#1F223F80"},
     {Name: "Inglés", Id: 3, Color: "#F73C3C"},
-    {Name: "Química", Id: 4, Color: "#0DBEBE"},
-    {Name: "Física", Id: 5, Color: "#255AE1"},
-    {Name: "Matemáticas", Id: 6, Color: "#6F447A"},
+    {Name: "Química", Id: 4, Color: "#43C486"},
+    {Name: "Física", Id: 5, Color: "#0DBEBE"},
+    {Name: "Matemáticas", Id: 6, Color: "#142A50"},
     {Name: "Artes", Id: 7, Color: "#FF7D2E"},
-    {Name: "Filosofía", Id: 8, Color: "#F84788"},
+    {Name: "Filosofía", Id: 8, Color: "#C07643"},
     {Name: "Español", Id: 9, Color: "#FFB921"},
-    {Name: "Sistemas", Id: 10, Color: "#3F25E1"},
-    {Name: "Deportes", Id: 11, Color: "#0DBEBE"},
+    {Name: "Sistemas", Id: 10, Color: "#4F5D78"},
+    {Name: "Deportes", Id: 11, Color: "#255AE1"},
     {Name: "Biología", Id: 12, Color: "#46C443"},
-    {Name: "Ética", Id: 13, Color: "#C07643"}
+    {Name: "Ética", Id: 13, Color: "#6F447A"}
   ]
 
   return (

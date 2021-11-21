@@ -10,14 +10,80 @@ $easing: cubic-bezier(0.5,2,0.5,0.75);
     &__top-container{
         display: flex;
         flex-direction: column;
-        height: 33%;
+        position: relative;
+        height: 40%;
         background: rgba($color: black, $alpha: .2);
+    }
+
+    &__image-change{
+        position: relative;
+        width: 100%;
+        height: 100%; 
+    }
+
+    &__background-img{
+        width: 100%;
+        height: 100%; 
+        object-fit: cover;
+        object-position: top;
+        position: absolute;
+    }
+
+    &__upload-container{
+        position: absolute;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-end;
+        margin-bottom: 5px;
+        bottom: 0;
+        right: 0;
+    }
+
+    &__upload-input{
+        outline: none;
+        border-style: none;
+        border-radius: 5px;
+        padding-left: 5px;
+        height: 24px;
+        width: 200px;
+        margin-right: 10px;
+        opacity: 0.3;
+
+        &:focus{
+            opacity: 1;
+        }
+    }
+
+    &__upload-btn{
+        background: $magenta;
+        color: $white;
+        font-family: $poppins-light;
+        border-style: none;
+        border-radius: 5px;
+        padding: 5px 10px;
+        outline: none;
+        cursor: pointer;
+        font-size: 10px;
+        opacity: 0.4;
+
+        &:hover{
+            opacity: 1;
+        }
+
+        &--image-change{
+            position: absolute;
+            justify-content: flex-end;
+            margin-bottom: 5px;
+            bottom: 0;
+            right: 0;
+        }
     }
 
     &__bottom-container{
         display: flex;
         flex-direction: row;
-        height: 67%;
+        height: 60%;
         padding: 0 10%;
     }
 
@@ -41,7 +107,7 @@ $easing: cubic-bezier(0.5,2,0.5,0.75);
         position: absolute;
         width: auto;
         right: -20px;
-        bottom: -20px;
+        bottom: -10px;
     }
 
     &__emojis-btn {
@@ -51,7 +117,6 @@ $easing: cubic-bezier(0.5,2,0.5,0.75);
         font-size: 30px;
         padding: 0;
         width: auto;
-        outline: none;
         cursor: pointer;
      }
         
@@ -104,6 +169,7 @@ $easing: cubic-bezier(0.5,2,0.5,0.75);
 
     &__avatar-img{
         width: 100%;
+        border-radius: 10px;
     }
 
     &__information{
@@ -128,6 +194,9 @@ $easing: cubic-bezier(0.5,2,0.5,0.75);
     }
     
     &__user-stats{
+        display: flex;
+        flex-direction: column;
+        height: 100%;
         width: 80%;
         padding-left: 40px;
     }
@@ -148,13 +217,40 @@ $easing: cubic-bezier(0.5,2,0.5,0.75);
 
     &__panels-container{
         display: grid;
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: auto auto;
         grid-column-gap: 35px;
-        row-gap: 40px;
-        grid-auto-rows: 50% 50%;
+        row-gap: 20%;
+        grid-auto-rows: 80% 20%;
         height: 100%;
         margin-top: 30px;
-        padding-bottom: 100px;
+        padding-bottom: 350px; //space at the end of the screen
         margin-left: $main-margin;
+    }
+
+    &__log-out{
+        margin-top: 30px;
+        background: $magenta;
+        font-family: $poppins-light;
+        color: $white;
+        outline: none;
+        border-style: none;
+        border-radius: 20px;
+        height: 30px;
+        cursor: pointer;
+
+        &:hover{
+            opacity: 0.8;
+        }
+    }
+
+    .spotify-panel{
+
+        &__container{
+            width: 85%;
+        }
+
+        &__btn{
+            font-size: 12px;
+        }
     }
 }

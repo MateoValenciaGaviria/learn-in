@@ -105,39 +105,39 @@
 .book-svg{
 
     &--religion{
-        fill: #C07643 !important;
+        fill: $religion !important;
     }
     &--english{
-        fill: #F73C3C !important;
+        fill: $english !important;
     }
     &--chemistry{
-        fill: #43C486 !important;
+        fill: $chemistry !important;
     }
     &--physics{
-        fill: #6BCCD2 !important;
+        fill: $physics !important;
     }
     &--mathematics{
-        fill: #142A50 !important;
+        fill: $mathematics !important;
     } 
     &--arts{
-        fill: #FF7D2E !important;
+        fill: $arts !important;
     } 
     &--philosophy{
-        fill: #FFDF38 !important;
+        fill: $philosophy !important;
     } 
     &--spanish{
-        fill: #FFB921 !important;
+        fill: $spanish !important;
     } 
     &--systems{
-        fill: #4F5D78 !important;
+        fill: $systems !important;
     } 
     &--sports{
-        fill: #255AE1 !important;
+        fill: $sports !important;
     } 
     &--biology{
-        fill: #46C443 !important;
+        fill: $biology !important;
     } 
     &--ethic{
-        fill: #6F447A !important;
+        fill: $ethics !important;
     }
 }

@@ -50,7 +50,7 @@ abbr{
     padding: 4px 8px;
     border-radius: 5px;
     color: $white;
-    background-color: $yellow;
+    background-color: var(--bgColor);
     position: relative;
 
     &--important {
@@ -81,14 +81,6 @@ abbr{
 
 .magenta{
     background-color: $magenta;
-}
-
-.diamond{
-    background-color: $diamond;
-}
-
-.pearl{
-    background-color: $pearl;
 }
 
 hr {
@@ -157,6 +149,8 @@ input[type="checkbox"]:checked::before {
 .app {
     &__content {
         height: 100%;
+        width: 100%;
+        position: relative;
     }
 
     &__navbar {
@@ -242,11 +236,14 @@ input[type="checkbox"]:checked::before {
 
     &__user-avatar {
         height: 100%;
+        border-radius: 100%;
     }
 
     &__sections-container {
         display: flex;
         flex-direction: column;
         height: 90%;
+        width: 100%;
     }
+
 }

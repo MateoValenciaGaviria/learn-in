@@ -1,0 +1,17 @@
+<svg width="72" height="72" viewBox="0 0 72 72" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect x="0.249023" y="0.798615" width="71.2014" height="71.2014" rx="35.6007" fill="#FFC702"/>
+<rect x="2.29169" y="2.84128" width="67.116" height="67.116" rx="33.558" stroke="black" stroke-opacity="0.2" stroke-width="4.08532"/>
+<path d="M32.7504 37.0538V21.8926C32.7504 20.2249 31.3859 18.8604 29.7181 18.8604C28.0504 18.8604 26.6859 20.2249 26.6859 21.8926V41.6022L22.1375 33.7184C21.2279 32.2022 19.4085 31.7474 17.8924 32.8087C16.8311 33.5667 16.2247 34.9313 16.8311 36.2958C19.2569 42.8151 22.8956 49.0312 27.444 54.3376" stroke="black" stroke-opacity="0.2" stroke-width="2.33447" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M32.7504 37.0539V18.8604C32.7504 17.1927 34.1149 15.8282 35.7826 15.8282C37.4503 15.8282 38.8148 17.1927 38.8148 18.8604V37.0539" stroke="black" stroke-opacity="0.2" stroke-width="2.33447" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M38.8151 37.0538V21.8926C38.8151 20.2249 40.1796 18.8604 41.8473 18.8604C43.515 18.8604 44.8795 20.2249 44.8795 21.8926V37.0538" stroke="black" stroke-opacity="0.2" stroke-width="2.33447" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M44.8794 37.0538V24.9249C44.8794 23.2571 46.2439 21.8926 47.9116 21.8926C49.5794 21.8926 50.9439 23.2571 50.9439 24.9249V37.0538C50.9439 43.1183 49.731 49.0312 47.3052 54.4892" stroke="black" stroke-opacity="0.2" stroke-width="2.33447" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+<mask id="mask0_2064_1937" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="72" height="72">
+<rect x="0.249023" y="0.798615" width="71.2014" height="71.2014" rx="35.6007" fill="#FFC702"/>
+<rect x="1.70807" y="2.25766" width="68.2833" height="68.2833" rx="34.1416" stroke="black" stroke-opacity="0.2" stroke-width="2.91809"/>
+</mask>
+<g mask="url(#mask0_2064_1937)">
+<g style="mix-blend-mode:lighten">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M43.1959 -13.7106L-6.08911 35.5744L-0.0217855 41.6417L49.2632 -7.64331L43.1959 -13.7106ZM67.2897 13.6383L11.9217 69.0062L20.0934 77.1779L75.4614 21.81L67.2897 13.6383ZM-0.918046 46.5288L52.3991 -6.78838L54.8163 -4.37122L1.49912 48.946L-0.918046 46.5288ZM77.4949 24.727L24.1777 78.0442L26.5949 80.4613L79.9121 27.1442L77.4949 24.727Z" fill="white" fill-opacity="0.2"/>
+</g>
+</g>
+</svg>

@@ -6,7 +6,7 @@ export interface CSSPropertiesWithVars extends CSSProperties {
     '--bgColor': string;
 }
 
-export const Activity: React.FC<ActivityType> = ({important, bgColor, text}) => {
+export const Activity: React.FC<ActivityType> = ({important, bgColor, text, state}) => {
     return (
         <p className={`activity ${important===true? ' activity--important':''}`} style={{ '--bgColor': bgColor} as React.CSSProperties}>{text}</p>
     );

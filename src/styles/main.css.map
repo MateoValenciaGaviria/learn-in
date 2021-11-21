@@ -24,7 +24,10 @@
         "../components/RewardsPanel/_RewardsPanel.scss",
         "../components/EmptyPanel/_EmptyPanel.scss",
         "../components/CourseDetail/_CourseDetail.scss",
-        "../components/GradesView/_GradesView.scss"
+        "../components/GradesView/_GradesView.scss",
+        "../components/GlobalPlaylist/_GlobalPlaylist.scss",
+        "../components/SecondaryRankingPanel/_SecondaryRankingPanel.scss",
+        "../components/EmotionsPanel/_EmotionsPanel.scss"
     ],
     "names": [],
     "file": "main.css"
