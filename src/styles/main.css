@@ -3402,6 +3402,7 @@ hr {
   text-decoration: underline;
   font-family: "Poppins-regular";
   margin-left: 50%;
+  cursor: pointer;
 }
 
 .course-detail__top-bar {
@@ -3485,7 +3486,7 @@ hr {
 }
 
 .course-detail__unit-info {
-  margin: 0 auto;
+  margin: 20px auto;
   width: 90%;
 }
 

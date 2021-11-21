@@ -46,20 +46,9 @@ export const Courses = () => {
               important={course.important}
               updates={course.updates}
               mainColor={course.mainColor}
-            />
-            
+            />         
 
           })}
-          {/* <IndividualCourse
-              id='25234'
-              name="name"
-              teacherName="test"
-              progress={4}
-              calification={2.2}
-              important={true}
-              updates={1}
-              mainColor="#0DBEBE"
-            /> */}
         </section>
         <h1 className="courses__time-line-title">Línea del tiempo</h1>
         <section className="courses__time-line-wrapper">

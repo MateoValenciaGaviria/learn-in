@@ -7,4 +7,5 @@ export interface IndividualCourseType {
     important: boolean;
     updates: number;
     mainColor: string;
+    teacherView?: boolean
   }

@@ -33,6 +33,7 @@
         text-decoration: underline;
         font-family: $Poppins-regular;
         margin-left: 50%;
+        cursor: pointer;
     }
 
     &__top-bar {
@@ -97,7 +98,7 @@
         }
     }
     &__unit-info {
-        margin: 0 auto;
+        margin: 20px auto;
         width: 90%;
     }
 

@@ -284,7 +284,7 @@ export const App = () => {
           <Route path='/chat' render={() =>
             <Chat></Chat>}>
           </Route>
-          <Route path="/course-detail/:name" render={() => <CourseDetail teacherView />} />
+          <Route path="/course-detail/:name" render={() => <CourseDetail />} />
         </div>
         <GlobalPlaylist playlist={globalPlaylist}></GlobalPlaylist>
       </div> : null}
