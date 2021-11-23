@@ -1,7 +1,7 @@
 import React, { CSSProperties } from 'react';
 import { ActivityType } from '../../utils/types/ActivityType';
 import { Activity } from '../Activity/Activity';
-interface TimeLineItemProps {
+export interface TimeLineItemProps {
     courseName: string,
     unit: string,
     nextClass: string[],
@@ -45,12 +45,14 @@ interface TimeLineItemContainerProps {
 }
 
 export const TimeLineItemContainer: React.FC<TimeLineItemContainerProps> = ({date, timeLineItem}) => {
+    console.log(timeLineItem);
+    
     return (
         <>
             <h5>{date}</h5>
             <div className="time-line-item-container">
-            <TimeLineItem courseName="Español" unit="Unidad 1: Fundamentos básicos" nextClass={["Teoría", "Conceptos"]} details="Veremos los conceptos básicos" tasks={[{important:false, text:"Ejercicio 1", state:"En curso", bgColor:"#46C443"}]}/>
-            <TimeLineItem courseName="Matemáticas" unit="Unidad 1: Operaciones básicas" nextClass={["Teoría", "Conceptos"]} details="Veremos los conceptos básicos" tasks={[{important:false, text:"Ejercicio 1", state:"En curso", bgColor:"#46C443"}]}/>
+           {/*  <TimeLineItem courseName="Español" unit="Unidad 1: Fundamentos básicos" nextClass={["Teoría", "Conceptos"]} details="Veremos los conceptos básicos" tasks={[{important:false, text:"Ejercicio 1", state:"En curso", bgColor:"#46C443"}]}/>
+            <TimeLineItem courseName="Matemáticas" unit="Unidad 1: Operaciones básicas" nextClass={["Teoría", "Conceptos"]} details="Veremos los conceptos básicos" tasks={[{important:false, text:"Ejercicio 1", state:"En curso", bgColor:"#46C443"}]}/> */}
             {timeLineItem.map(item => {
                     return <TimeLineItem courseName={item.courseName} unit={item.unit} nextClass={item.nextClass} tasks={item.tasks} details={item.details}/>
                 })}

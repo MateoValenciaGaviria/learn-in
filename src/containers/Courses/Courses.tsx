@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { IndividualCourse } from '../../components/IndividualCourse/IndividualCourse';
-import { TimeLineItemContainer } from '../../components/TimeLineItem/TimeLineItem';
+import { TimeLineItem, TimeLineItemContainer, TimeLineItemProps } from '../../components/TimeLineItem/TimeLineItem';
 import { collection, getDocs } from 'firebase/firestore/lite';
 import { IndividualCourseType } from '../../utils/types/IndividualCourseType';
 import { DATABASE } from "../../utils/firebase";
@@ -13,11 +13,13 @@ export const Courses = () => {
 
 
   var [coursesList, setCoursesList] = React.useState<IndividualCourseType[]>([]);
+  var [timeLineItems, setTimeLineItems] = React.useState<TimeLineItemProps[]>([]);
+  /* courseName="Español" unit="Unidad 1: Fundamentos básicos" nextClass={["Teoría", "Conceptos"]} details="Veremos los conceptos básicos" tasks={[{important:false, text:"Ejercicio 1", state:"En curso", bgColor:"#46C443"}]} */
 
-  var [timeLineItems, setTimeLineItems] = React.useState([]);
+  timeLineItems.push({courseName:"Diseño Bidimensional", details:"Diseñar un videojuego de un cuento tradicional.", unit:"Unidad 4: Reto Final", nextClass:["2 Bocetos", "Asesoría"], tasks:[{important:true, text:"Bocetos Behance", state:"En curso", bgColor:"#46C443"}]});
+
 
   const getCourses = async () => {
-    console.log("cursos fire");
     const coursesCollection = collection(DATABASE, 'courses');
     const coursesSnapshot = await getDocs(coursesCollection);
     const list: IndividualCourseType[] = [];
@@ -52,7 +54,8 @@ export const Courses = () => {
         </section>
         <h1 className="courses__time-line-title">Línea del tiempo</h1>
         <section className="courses__time-line-wrapper">
-          <TimeLineItemContainer date={"Lunes 1, Noviembre"} timeLineItem={[]} ></TimeLineItemContainer>
+          <TimeLineItemContainer date={"Miércoles 24, Noviembre"} timeLineItem={[{courseName:"Diseño Bidimensional", details:"Diseñar un videojuego de un cuento tradicional.", unit:"Unidad 4: Reto Final", nextClass:["2 Bocetos", "Asesoría"], tasks:[{important:false, text:"Bocetos Behance", state:"En curso", bgColor:"#6F447A"}]}]}></TimeLineItemContainer>
+          <TimeLineItemContainer date={"Viernes 3, Diciembre"} timeLineItem={[{courseName:"Diseño Bidimensional", details:"Entrega y presentación del proyecto final", unit:"Unidad 4: Reto Final", nextClass:["Final"], tasks:[{important:true, text:"Todos los entregables", state:"Pendiente", bgColor:"#46C443"}]}]} ></TimeLineItemContainer>
         </section>
       </div>
       <div className="courses__right-container">
