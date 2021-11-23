@@ -99,45 +99,66 @@
 
     &__emoji{
         font-size: 50px;
+        text-align: center;
     }
 }
 
 .book-svg{
 
-    &--religion{
-        fill: $religion !important;
+    // &--religion{
+    //     fill: $religion !important;
+    // }
+    // &--english{
+    //     fill: $english !important;
+    // }
+    // &--chemistry{
+    //     fill: $chemistry !important;
+    // }
+    // &--physics{
+    //     fill: $physics !important;
+    // }
+    // &--mathematics{
+    //     fill: $mathematics !important;
+    // } 
+    // &--arts{
+    //     fill: $arts !important;
+    // } 
+    // &--philosophy{
+    //     fill: $philosophy !important;
+    // } 
+    // &--spanish{
+    //     fill: $spanish !important;
+    // } 
+    // &--systems{
+    //     fill: $systems !important;
+    // } 
+    // &--sports{
+    //     fill: $sports !important;
+    // } 
+    // &--biology{
+    //     fill: $biology !important;
+    // } 
+    // &--ethic{
+    //     fill: $ethics !important;
+    // }
+
+    //--------------------------------------------------------
+    &--logic{
+        fill: $logic !important;
+    }
+    &--comunication{
+        fill: $comunication !important;
+    }
+    &--algebra{
+        fill: $algebra !important;
     }
     &--english{
         fill: $english !important;
     }
-    &--chemistry{
-        fill: $chemistry !important;
+    &--bidesign{
+        fill: $bidesign !important;
     }
-    &--physics{
-        fill: $physics !important;
-    }
-    &--mathematics{
-        fill: $mathematics !important;
-    } 
-    &--arts{
-        fill: $arts !important;
-    } 
-    &--philosophy{
-        fill: $philosophy !important;
-    } 
-    &--spanish{
-        fill: $spanish !important;
-    } 
-    &--systems{
-        fill: $systems !important;
-    } 
-    &--sports{
-        fill: $sports !important;
-    } 
-    &--biology{
-        fill: $biology !important;
-    } 
-    &--ethic{
-        fill: $ethics !important;
+    &--introduction{
+        fill: $introduction !important;
     }
 }

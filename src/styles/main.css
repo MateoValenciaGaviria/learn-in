@@ -2890,54 +2890,31 @@ hr {
 
 .home-schedule__emoji {
   font-size: 50px;
+  text-align: center;
 }
 
-.book-svg--religion {
-  fill: #C07643 !important;
+.book-svg--logic {
+  fill: #6F447A !important;
+}
+
+.book-svg--comunication {
+  fill: #FF7D2E !important;
+}
+
+.book-svg--algebra {
+  fill: #255AE1 !important;
 }
 
 .book-svg--english {
   fill: #F73C3C !important;
 }
 
-.book-svg--chemistry {
-  fill: #43C486 !important;
-}
-
-.book-svg--physics {
+.book-svg--bidesign {
   fill: #0DBEBE !important;
 }
 
-.book-svg--mathematics {
-  fill: #142A50 !important;
-}
-
-.book-svg--arts {
-  fill: #FF7D2E !important;
-}
-
-.book-svg--philosophy {
-  fill: #C07643 !important;
-}
-
-.book-svg--spanish {
-  fill: #FFB921 !important;
-}
-
-.book-svg--systems {
-  fill: #4F5D78 !important;
-}
-
-.book-svg--sports {
-  fill: #255AE1 !important;
-}
-
-.book-svg--biology {
+.book-svg--introduction {
   fill: #46C443 !important;
-}
-
-.book-svg--ethic {
-  fill: #6F447A !important;
 }
 
 .profile__spotify {

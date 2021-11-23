@@ -174,6 +174,105 @@ export const Schedule = () => {
       ResourceID: 2
     }
   ];
+
+  const localSecondSchedule: any[] = [
+    {
+      Id: 1,
+      Subject: "Álgebra y funciones",
+      StartTime: new Date(2021, 9, 6, 11, 0),
+      EndTime: new Date(2021, 9, 6, 13, 0),
+      RecurrenceRule: "FREQ=WEEKLY;INTERVAL=1;BYDAY=MO;COUNT=NEVER",
+      ResourceID: 5
+    },
+    {
+      Id: 2,
+      Subject: "Introducción al diseño",
+      StartTime: new Date(2021, 9, 6, 14, 0),
+      EndTime: new Date(2021, 9, 6, 16, 30),
+      RecurrenceRule: "FREQ=WEEKLY;INTERVAL=1;BYDAY=MO;COUNT=NEVER",
+      ResourceID: 8
+    },
+    {
+      Id: 3,
+      Subject: "Lógica y argumentación",
+      StartTime: new Date(2021, 10, 6, 7, 0),
+      EndTime: new Date(2021, 10, 6, 9, 0),
+      RecurrenceRule: "FREQ=WEEKLY;INTERVAL=1;BYDAY=TU;COUNT=NEVER",
+      ResourceID: 3
+    },
+    {
+      Id: 4,
+      Subject: "Inglés",
+      StartTime: new Date(2021, 9, 6, 9, 0),
+      EndTime: new Date(2021, 9, 6, 11, 0),
+      RecurrenceRule: "FREQ=WEEKLY;INTERVAL=1;BYDAY=TU;COUNT=NEVER",
+      ResourceID: 6
+    },
+    {
+      Id: 5,
+      Subject: "Álgebra y funciones",
+      StartTime: new Date(2021, 9, 6, 11, 0),
+      EndTime: new Date(2021, 9, 6, 13, 0),
+      RecurrenceRule: "FREQ=WEEKLY;INTERVAL=1;BYDAY=TU;COUNT=NEVER",
+      ResourceID: 5
+    },
+    {
+      Id: 6,
+      Subject: "Comunicación escrita I",
+      StartTime: new Date(2021, 9, 6, 8, 30),
+      EndTime: new Date(2021, 9, 6, 10, 0),
+      RecurrenceRule: "FREQ=WEEKLY;INTERVAL=1;BYDAY=WE;COUNT=NEVER",
+      ResourceID: 4
+    },
+    {
+      Id: 7,
+      Subject: "Diseño bidimensional",
+      StartTime: new Date(2021, 9, 6, 14, 0),
+      EndTime: new Date(2021, 9, 6, 17, 0),
+      RecurrenceRule: "FREQ=WEEKLY;INTERVAL=1;BYDAY=WE;COUNT=NEVER",
+      ResourceID:7
+    },
+    {
+      Id: 7,
+      Subject: "Lógica y argumentación",
+      StartTime: new Date(2021, 9, 6, 7, 0),
+      EndTime: new Date(2021, 9, 6, 9, 0),
+      RecurrenceRule: "FREQ=WEEKLY;INTERVAL=1;BYDAY=TH;COUNT=NEVER",
+      ResourceID: 3
+    },
+    {
+      Id: 8,
+      Subject: "Inglés",
+      StartTime: new Date(2021, 9, 6, 9, 0),
+      EndTime: new Date(2021, 9, 6, 11, 0),
+      RecurrenceRule: "FREQ=WEEKLY;INTERVAL=1;BYDAY=TH;COUNT=NEVER",
+      ResourceID: 6
+    },
+    {
+      Id: 9,
+      Subject: "Álgebra y funciones",
+      StartTime: new Date(2021, 9, 6, 11, 0),
+      EndTime: new Date(2021, 9, 6, 1, 0),
+      RecurrenceRule: "FREQ=WEEKLY;INTERVAL=1;BYDAY=TH;COUNT=NEVER",
+      ResourceID: 5
+    },
+    {
+      Id: 10,
+      Subject: "Comunicación escrita I",
+      StartTime: new Date(2021, 9, 6, 8, 30),
+      EndTime: new Date(2021, 9, 6, 10, 0),
+      RecurrenceRule: "FREQ=WEEKLY;INTERVAL=1;BYDAY=FR;COUNT=NEVER",
+      ResourceID: 4
+    },
+    {
+      Id: 10,
+      Subject: "Diseño bidimensional",
+      StartTime: new Date(2021, 9, 6, 14, 0),
+      EndTime: new Date(2021, 9, 6, 17, 0),
+      RecurrenceRule: "FREQ=WEEKLY;INTERVAL=1;BYDAY=FR;COUNT=NEVER",
+      ResourceID: 7
+    }
+  ];
   
   // const eventTemplate = (props: { [key: string]: Object }): JSX.Element => {
   //   return (<div className="schedule__template-wrape">{props.Subject}</div>);
@@ -254,16 +353,27 @@ export const Schedule = () => {
     {Name: "Ética", Id: 13, Color: "#6F447A"}
   ]
 
+  const secondResourceDataSource: Object[] = [
+    {Name: "Actividad", Id: 1, Color: "#3f51b5"},
+    {Name: "Descanso", Id: 2, Color: "#1F223F80"},
+    {Name: "Lógica y argumentación", Id: 3, Color: "#6F447A"},
+    {Name: "Comunicación escrita I", Id: 4, Color: "#FF7D2E"},
+    {Name: "Álgebra y funciones", Id: 5, Color: "#255AE1"},
+    {Name: "Inglés", Id: 6, Color: "#F73C3C"},
+    {Name: "Diseño bidimensional", Id: 7, Color: "#0DBEBE"},
+    {Name: "Introducción al diseño", Id: 8, Color: "#46C443"},
+  ]
+
   return (
     <div className="schedule">
       <ScheduleComponent 
         currentView="WorkWeek"
         startHour="7:00"
         endHour="24:00"
-        eventSettings={{ dataSource: localSchedule }}>
+        eventSettings={{ dataSource: localSecondSchedule }}>
           <ResourcesDirective>
             <ResourceDirective field="ResourceID" title="Color theme" name="Resources"
-            textField="Name" idField="Id" colorField="Color" dataSource={resourceDataSource}></ResourceDirective>
+            textField="Name" idField="Id" colorField="Color" dataSource={secondResourceDataSource}></ResourceDirective>
           </ResourcesDirective>
         <Inject services={[Day, Week, WorkWeek, Month, Agenda]}></Inject>
       </ScheduleComponent>
