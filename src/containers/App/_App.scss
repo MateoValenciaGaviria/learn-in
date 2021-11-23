@@ -52,6 +52,7 @@ abbr{
     color: $white;
     background-color: var(--bgColor);
     position: relative;
+    max-width: 160px;
 
     &--important {
         background-color: $magenta;
@@ -61,8 +62,8 @@ abbr{
             font-size: 45px;
             color: $magenta;
             font-weight: 800;
-            bottom: -19px;
-            right: -25px;
+            top: -3px;
+            right: -20px;
         }
     }
 }

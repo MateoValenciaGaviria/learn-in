@@ -97,11 +97,18 @@ export const CourseDetail: React.FC<CourseDetailProps> = ({teacherView}) => {
                         </ul>
                     </article>
 
-                    <details className="course-detail__class">
+                    <details className="course-detail__class" open>
                         <summary>
                             <b> Clase 31:</b> Asesoría <button className="course-detail__btn-activities" onClick={handleActivity}>Ver actividades</button>
                         </summary>
-                        <CourseResourceItem title="Bocetos de behance" type="Tarea" status="Pendiente"></CourseResourceItem>
+                        <CourseResourceItem title="Bocetos de behance" type="Tarea" status="En Curso"></CourseResourceItem>    
+                    </details>
+
+                    <details className="course-detail__class" open>
+                        <summary>
+                            <b> Clase 32:</b> Entrega Final <button className="course-detail__btn-activities" onClick={handleActivity}>Ver actividades</button>
+                        </summary>
+                        <CourseResourceItem title="Entrega Final" type="Tarea" status="Pendiente"></CourseResourceItem>    
                     </details>
 
                 </details>}
@@ -109,7 +116,7 @@ export const CourseDetail: React.FC<CourseDetailProps> = ({teacherView}) => {
             </div>
             <div className="course-detail__right-container">
                 {activities === false && <div className="course-detail__rank-wrapper">
-                    {/* <RankingPanel></RankingPanel> */}
+                    {/* <RankingPanel rankList={[]}></RankingPanel> */}
                 </div>}
                 {activities === true && <div className="course-detail__activities-wrapper">
                     <h1>Actividades clase 31</h1>

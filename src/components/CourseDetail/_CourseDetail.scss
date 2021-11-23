@@ -32,8 +32,9 @@
         color: $white;
         text-decoration: underline;
         font-family: $Poppins-regular;
-        margin-left: 50%;
+        position: absolute;
         cursor: pointer;
+        right: 15%;
     }
 
     &__top-bar {
@@ -110,6 +111,7 @@
         flex-direction: column;
         width: 90%;
         margin: 20px auto;
+        position: relative;
     }
 }
 

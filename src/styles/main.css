@@ -90,6 +90,7 @@ abbr {
   color: #FFFFFF;
   background-color: var(--bgColor);
   position: relative;
+  max-width: 160px;
 }
 
 .activity--important {
@@ -102,8 +103,8 @@ abbr {
   font-size: 45px;
   color: #F73C57;
   font-weight: 800;
-  bottom: -19px;
-  right: -25px;
+  top: -3px;
+  right: -20px;
 }
 
 .purple {
@@ -578,6 +579,10 @@ input[type="checkbox"]:checked::before {
       flex-wrap: wrap;
   -ms-flex-pack: distribute;
       justify-content: space-around;
+}
+
+.courses__time-line-wrapper {
+  margin-bottom: 25px;
 }
 
 .schedule {
@@ -2569,16 +2574,13 @@ hr {
 }
 
 .time-line-item {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  /* display: flex;
+    flex-direction: row;
+    justify-content: space-between; */
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 16% 16% 13% 19% 10% 26%;
+      grid-template-columns: 16% 16% 13% 19% 10% 26%;
   border-bottom: 1px solid #40475d;
   padding: 10px 20px;
 }
@@ -3401,8 +3403,9 @@ hr {
   color: #FFFFFF;
   text-decoration: underline;
   font-family: "Poppins-regular";
-  margin-left: 50%;
+  position: absolute;
   cursor: pointer;
+  right: 15%;
 }
 
 .course-detail__top-bar {
@@ -3503,6 +3506,7 @@ hr {
           flex-direction: column;
   width: 90%;
   margin: 20px auto;
+  position: relative;
 }
 
 .task-item {
