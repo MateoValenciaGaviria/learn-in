@@ -39,6 +39,7 @@ export const Home: React.FC<HomeProps> = ({ daySelected, onCurrentDayChange, rem
 
   var currentPanel: string = "";
   var publicity = getImage("publicity");
+  var banner = getImage("banner2");
 
   //Sets default panels "empty"
   const [panel1, setpanel1] = useState(panelsObj.panel1);
@@ -200,7 +201,7 @@ export const Home: React.FC<HomeProps> = ({ daySelected, onCurrentDayChange, rem
     <div className="home">
       <div className="home__left-container">
         <div className="home__publicity-container">
-          <img className="home__publicity-img" src={publicity} alt="School publicity" />
+          <img className="home__publicity-img" src={banner} alt="School publicity" />
         </div>
         <div className="home__modules-container">
           <div className="home__panel-container">
