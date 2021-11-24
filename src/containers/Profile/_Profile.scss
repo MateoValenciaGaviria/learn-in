@@ -168,8 +168,11 @@ $easing: cubic-bezier(0.5,2,0.5,0.75);
     }
 
     &__avatar-img{
-        width: 100%;
+        width: 210px;
+        height: 210px;
         border-radius: 10px;
+        object-fit: cover;
+        object-position: top;
     }
 
     &__information{

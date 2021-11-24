@@ -228,16 +228,26 @@ input[type="checkbox"]:checked::before {
     }
 
     &__user-avatar-container {
-        height: 70%;
+        display: flex;
+        flex-direction: column;
+        height: auto;
+        align-items: center;
 
         .app__link--selected{
             border: none;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
     }
 
     &__user-avatar {
         height: 100%;
+        height: 40px;
+        width: 40px;
         border-radius: 100%;
+        object-fit: cover;
+        object-position: top;
     }
 
     &__sections-container {
