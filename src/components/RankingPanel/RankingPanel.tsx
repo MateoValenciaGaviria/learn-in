@@ -111,12 +111,12 @@ export const RankingPanel: React.FC<RankingPanelProps> = ({ rankList }) => {
 
   return (
     <div className="ranking-panel">
-      <h4 className="ranking-panel__title">Ranking</h4>
+      <h4 className="ranking-panel__title">Clasificación</h4>
       <div className="ranking-panel__ranks-container">
         <div className="ranking-panel__rank">
           <div className="ranking-panel__rank-icon">
             <div className="ranking-panel__rank-medal-container">
-              <svg width="85" height="142" viewBox="0 0 85 142" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <svg className="svg-container" width="85" height="142" viewBox="0 0 85 142" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path className={"ranking-panel__rank-color--" + topRanks[1].rankId} d="M6.68677 39.4662V9.47008C6.68677 6.36719 9.20215 3.85181 12.305 3.85181H71.7134C74.8163 3.85181 77.3317 6.3672 77.3317 9.47009V39.4796C77.3317 41.4543 76.295 43.2841 74.6011 44.299L45.0304 62.017C43.2589 63.0784 41.0479 63.0824 39.2726 62.0274L9.43487 44.296C7.73105 43.2835 6.68677 41.4481 6.68677 39.4662Z" fill={rank2} />
                 <rect x="29.9443" y="5.74146" width="24.1297" height="52.6203" fill="#F1F2F2" />
                 <g style={{ mixBlendMode: "soft-light" }} opacity="0.8">
@@ -159,7 +159,7 @@ export const RankingPanel: React.FC<RankingPanelProps> = ({ rankList }) => {
         <div className="ranking-panel__rank ranking-panel__rank--middle">
           <div className="ranking-panel__rank-icon ranking-panel__rank-icon--middle">
             <div className="ranking-panel__rank-medal-container">
-              <svg width="85" height="142" viewBox="0 0 85 142" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <svg className="svg-container" width="85" height="142" viewBox="0 0 85 142" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path className={"ranking-panel__rank-color--" + topRanks[0].rankId} d="M6.68677 39.4662V9.47008C6.68677 6.36719 9.20215 3.85181 12.305 3.85181H71.7134C74.8163 3.85181 77.3317 6.3672 77.3317 9.47009V39.4796C77.3317 41.4543 76.295 43.2841 74.6011 44.299L45.0304 62.017C43.2589 63.0784 41.0479 63.0824 39.2726 62.0274L9.43487 44.296C7.73105 43.2835 6.68677 41.4481 6.68677 39.4662Z" fill={rank1} />
                 <rect x="29.9443" y="5.74146" width="24.1297" height="52.6203" fill="#F1F2F2" />
                 <g style={{ mixBlendMode: "soft-light" }} opacity="0.8">
@@ -202,7 +202,7 @@ export const RankingPanel: React.FC<RankingPanelProps> = ({ rankList }) => {
         <div className="ranking-panel__rank">
           <div className="ranking-panel__rank-icon">
             <div className="ranking-panel__rank-medal-container">
-              <svg width="85" height="142" viewBox="0 0 85 142" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <svg className="svg-container" width="85" height="142" viewBox="0 0 85 142" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path className={"ranking-panel__rank-color--" + topRanks[2].rankId} d="M6.68677 39.4662V9.47008C6.68677 6.36719 9.20215 3.85181 12.305 3.85181H71.7134C74.8163 3.85181 77.3317 6.3672 77.3317 9.47009V39.4796C77.3317 41.4543 76.295 43.2841 74.6011 44.299L45.0304 62.017C43.2589 63.0784 41.0479 63.0824 39.2726 62.0274L9.43487 44.296C7.73105 43.2835 6.68677 41.4481 6.68677 39.4662Z" fill={rank3} />
                 <rect x="29.9443" y="5.74146" width="24.1297" height="52.6203" fill="#F1F2F2" />
                 <g style={{ mixBlendMode: "soft-light" }} opacity="0.8">

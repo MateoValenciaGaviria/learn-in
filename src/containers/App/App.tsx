@@ -135,7 +135,7 @@ export const App = () => {
   const getRanksInfo = async () => {
     if (localStorage.getItem('username')) {
       const userNameFromLocalStorage = localStorage.getItem("username")!;
-      const docRef = doc(DATABASE, 'ranks', userNameFromLocalStorage);
+      const docRef = doc(DATABASE, 'ranksBi', "global");
       const docSnap = await getDoc(docRef);
 
       rankObj = docSnap.data() as RankingType[];
@@ -267,7 +267,8 @@ export const App = () => {
               handleChat={handleChat}></Home>}>
           </Route>
           <Route path='/courses' render={() =>
-            <Courses></Courses>}>
+            <Courses
+              rankList={mainRanks}></Courses>}>
           </Route>
           <Route path='/schedule' render={() =>
             <Schedule></Schedule>}>

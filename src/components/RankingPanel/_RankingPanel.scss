@@ -11,9 +11,8 @@
     }
 
     &__ranks-container{
-        display: flex;
-        flex-direction: row;
-        justify-content: space-evenly;
+        display: grid;
+        grid-template-columns: 30% 40% 30%;
         height: auto;
     }
 
@@ -105,4 +104,9 @@
             fill: $redDiamond !important;
         }
     }
+
+}
+
+.svg-container{
+    height: 142px !important;
 }

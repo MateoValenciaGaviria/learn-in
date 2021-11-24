@@ -2,6 +2,7 @@
     display: flex;
     flex-direction: row;
     height: 100%;
+    overflow-x: hidden;
 
     &__left-container {
         width: 80%;
@@ -14,9 +15,24 @@
         padding: 0px 20px;
         background-color: $darkgray;
         height: 100%;
+        overflow-y: auto;
+
+        &::-webkit-scrollbar-thumb {
+            //display: none;
+            /* color of the scroll thumb */
+            background-color: rgba(144, 152, 189, 0.2);    
+            /* roundness of the scroll thumb */
+            border-radius: 20px;     
+            /* creates padding around scroll thumb */  
+            border: 5px solid $darkgray;  
+        }
     }
+
     &__rank-wrapper{
-        height: 30%;
+        height: 100%;
+        padding-top: 20px;
+        display: flex;
+        flex-direction: column;
     }
 
     &__wrapper {
@@ -27,4 +43,74 @@
     &__time-line-wrapper{
         margin-bottom: 25px;
     }
+
+    .svg-container{
+        height: 122px !important;
+    }
+
+    .ranking-panel{
+
+        &__ranks-container{
+            margin-top: 10px;
+        }
+
+        &__course-letter{
+            text-align: center;
+            position: absolute;
+            font-size: 18px;
+            top: 48%;
+    
+            &--middle{
+                font-size: 25px;
+                top: 40%;
+            }
+        }
+
+        &__course-name{
+            text-align: center;
+            margin-top: 8px;
+            margin-bottom: 0;
+            font-size: 10px;    
+        }
+    
+        &__rank-name{
+            text-align: center;
+            font-family: $poppins-light-italic;
+            font-size: 10px;
+            margin: 0;
+        }
+    }
+
+    .secondary-ranking-panel{
+
+        &__wraper{
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            width: 100%;
+            padding: 0;
+            overflow-y: hidden;
+            margin-top: 10px;
+            background: none;
+        }
+    }
+
+    .ranking-row{
+
+        grid-template-columns: 20% 80%;
+        margin-bottom: 20px;
+
+        &__course-title{
+            font-size: 15px;
+        }
+
+        &__rank-title{
+            font-size: 13px;
+        }
+
+        &__points{
+            display: none;
+        }
+    }
 }
+

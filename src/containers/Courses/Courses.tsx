@@ -7,9 +7,15 @@ import { DATABASE } from "../../utils/firebase";
 import { Route } from 'react-router-dom';
 import { CourseDetail } from '../../components/CourseDetail/CourseDetail';
 import { RankingPanel } from '../../components/RankingPanel/RankingPanel';
+import { RankingType } from '../../utils/types/RankingType';
+import { SecondaryRankingPanel } from '../../components/SecondaryRankingPanel/SecondaryRankingPanel';
+
+interface CoursesProps {
+  rankList: RankingType[]
+}
 
 
-export const Courses = () => {
+export const Courses: React.FC<CoursesProps> = ({ rankList }) => {
 
 
   var [coursesList, setCoursesList] = React.useState<IndividualCourseType[]>([]);
@@ -60,8 +66,8 @@ export const Courses = () => {
       </div>
       <div className="courses__right-container">
         <div className="courses__rank-wrapper">
-
-        {/* <RankingPanel></RankingPanel> */}
+          <RankingPanel rankList={rankList}></RankingPanel>
+          <SecondaryRankingPanel rankList={rankList}></SecondaryRankingPanel>
         </div>
       </div>
     </div>
