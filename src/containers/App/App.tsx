@@ -72,6 +72,12 @@ var rankObj = [
 
 var currentGlobalPlaylist = "";
 
+var server = "";
+var platformDoc = "";
+var usersDoc = "";
+var achievementsDoc = "";
+var ranksDoc = "";
+
 export const App = () => {
 
   //const [ logged, setLogged ] = React.useState(false);
@@ -91,11 +97,25 @@ export const App = () => {
 
   currentGlobalPlaylist = mainUser.playlist;
 
+  server = localStorage.getItem("server")!;
+
+  if (server === "servidor1") {
+    usersDoc = "users";
+    platformDoc = "platforms";
+    achievementsDoc = "achievements";
+    ranksDoc = "ranksBi";
+  } else if (server === "servidor2") {
+    usersDoc = "users2";
+    platformDoc = "platforms2";
+    achievementsDoc = "achievements2";
+    ranksDoc = "ranks";
+  }
+
   //Update user form firebase
   const getUser = async () => {
     if (localStorage.getItem('username')) {
       const userNameFromLocalStorage = localStorage.getItem("username")!;
-      const docRef = doc(DATABASE, 'users', userNameFromLocalStorage);
+      const docRef = doc(DATABASE, usersDoc, userNameFromLocalStorage);
       const docSnap = await getDoc(docRef);
 
       userObj = docSnap.data() as UserType;
@@ -107,7 +127,7 @@ export const App = () => {
   const getPlatformInfo = async () => {
     if (localStorage.getItem('username')) {
       const userNameFromLocalStorage = localStorage.getItem("username")!;
-      const docRef = doc(DATABASE, 'platforms', userNameFromLocalStorage);
+      const docRef = doc(DATABASE, platformDoc, userNameFromLocalStorage);
       const docSnap = await getDoc(docRef);
 
       platformObj = docSnap.data() as PlatformType;
@@ -123,7 +143,7 @@ export const App = () => {
   const getAchievementsInfo = async () => {
     if (localStorage.getItem('username')) {
       const userNameFromLocalStorage = localStorage.getItem("username")!;
-      const docRef = doc(DATABASE, 'achievements', userNameFromLocalStorage);
+      const docRef = doc(DATABASE, achievementsDoc, userNameFromLocalStorage);
       const docSnap = await getDoc(docRef);
 
       achievementsObj = docSnap.data() as AchievementsType;
@@ -135,7 +155,7 @@ export const App = () => {
   const getRanksInfo = async () => {
     if (localStorage.getItem('username')) {
       const userNameFromLocalStorage = localStorage.getItem("username")!;
-      const docRef = doc(DATABASE, 'ranksBi', "global");
+      const docRef = doc(DATABASE, ranksDoc, (ranksDoc === "ranksBi") ? "global" : "Mateo");
       const docSnap = await getDoc(docRef);
 
       rankObj = docSnap.data() as RankingType[];
@@ -264,14 +284,17 @@ export const App = () => {
               onPanel2Change={handlePanel2Change}
               onPanel3Change={handlePanel3Change}
               onPanel4Change={handlePanel4Change}
-              handleChat={handleChat}></Home>}>
+              handleChat={handleChat}
+              server={server}></Home>}>
           </Route>
           <Route path='/courses' render={() =>
             <Courses
-              rankList={mainRanks}></Courses>}>
+              rankList={mainRanks}
+              server={server}></Courses>}>
           </Route>
           <Route path='/schedule' render={() =>
-            <Schedule></Schedule>}>
+            <Schedule
+              server={server}></Schedule>}>
           </Route>
           <Route path='/profile' render={() =>
             <Profile

@@ -5,6 +5,7 @@ import { DATABASE } from "../../utils/firebase";
 
 interface ScheduleProps {
     daySelected: Date,
+    server: string
 }
 
 export const Schedule: React.FC<ScheduleType> = ({ id, course, hours }) => {
@@ -29,7 +30,10 @@ export const Schedule: React.FC<ScheduleType> = ({ id, course, hours }) => {
         </div>);
 }
 
-export const HomeSchedule: React.FC<ScheduleProps> = ({ daySelected }) => {
+export const HomeSchedule: React.FC<ScheduleProps> = ({ daySelected, server }) => {
+
+    var scheduleDoc = "";
+    (server === "servidor1") ? scheduleDoc = "scheduleBi" : scheduleDoc = "schedule";
 
     const [scheduleList, setScheduleList] = React.useState<ScheduleType[]>([]);
     var scheduleDay: string = "Sunday";
@@ -64,7 +68,7 @@ export const HomeSchedule: React.FC<ScheduleProps> = ({ daySelected }) => {
 
         if (scheduleDay !== "Saturday" && scheduleDay !== "Sunday") {
             const scheduleList: ScheduleType[] = [];
-            const docRef = doc(DATABASE, 'scheduleBi', scheduleDay);
+            const docRef = doc(DATABASE, scheduleDoc, scheduleDay);
             const docSnap = await getDoc(docRef);
             const courseObj = docSnap.data() as ScheduleType[];
 

@@ -2310,6 +2310,36 @@ input[type="checkbox"]:checked::before {
   font-size: 15px;
 }
 
+.login__select {
+  background-color: #FFFFFF;
+  border: none;
+  border-radius: 20px;
+  border: solid #FFFFFF 2px;
+  margin: 0 0 15px 0;
+  width: 100%;
+  height: 30px;
+  font-family: "Poppins-medium";
+  padding: 0 10px;
+  font-size: 13px;
+  cursor: pointer;
+  color: #090B22;
+  outline: none;
+}
+
+.login__select-option {
+  font-family: "Poppins-medium";
+  font-size: 15px;
+  color: #001E4D;
+  padding: 0 0 0 5px;
+}
+
+.login__select-option--disable {
+  font-family: "Poppins-medium";
+  font-size: 15px;
+  color: #9098BD;
+  padding: 0 0 0 5px;
+}
+
 .upcoming-exams {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -3012,6 +3042,54 @@ hr {
 .home-schedule__emoji {
   font-size: 50px;
   text-align: center;
+}
+
+.book-svg--religion {
+  fill: #C07643 !important;
+}
+
+.book-svg--english {
+  fill: #F73C3C !important;
+}
+
+.book-svg--chemistry {
+  fill: #43C486 !important;
+}
+
+.book-svg--physics {
+  fill: #0DBEBE !important;
+}
+
+.book-svg--mathematics {
+  fill: #142A50 !important;
+}
+
+.book-svg--arts {
+  fill: #FF7D2E !important;
+}
+
+.book-svg--philosophy {
+  fill: #C07643 !important;
+}
+
+.book-svg--spanish {
+  fill: #FFB921 !important;
+}
+
+.book-svg--systems {
+  fill: #4F5D78 !important;
+}
+
+.book-svg--sports {
+  fill: #255AE1 !important;
+}
+
+.book-svg--biology {
+  fill: #46C443 !important;
+}
+
+.book-svg--ethic {
+  fill: #6F447A !important;
 }
 
 .book-svg--logic {

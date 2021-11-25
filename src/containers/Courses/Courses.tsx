@@ -11,12 +11,14 @@ import { RankingType } from '../../utils/types/RankingType';
 import { SecondaryRankingPanel } from '../../components/SecondaryRankingPanel/SecondaryRankingPanel';
 
 interface CoursesProps {
-  rankList: RankingType[]
+  rankList: RankingType[],
+  server: string
 }
 
+export const Courses: React.FC<CoursesProps> = ({ rankList, server}) => {
 
-export const Courses: React.FC<CoursesProps> = ({ rankList }) => {
-
+  var courseDoc = "";
+  (server === "servidor1") ? courseDoc = "courses" : courseDoc = "courses2";
 
   var [coursesList, setCoursesList] = React.useState<IndividualCourseType[]>([]);
   var [timeLineItems, setTimeLineItems] = React.useState<TimeLineItemProps[]>([]);
@@ -26,7 +28,7 @@ export const Courses: React.FC<CoursesProps> = ({ rankList }) => {
 
 
   const getCourses = async () => {
-    const coursesCollection = collection(DATABASE, 'courses');
+    const coursesCollection = collection(DATABASE, courseDoc);
     const coursesSnapshot = await getDocs(coursesCollection);
     const list: IndividualCourseType[] = [];
     coursesSnapshot.forEach(doc => {

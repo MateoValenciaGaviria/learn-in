@@ -33,13 +33,20 @@ interface HomeProps {
   onPanel3Change: (panel: string) => void,
   onPanel4Change: (panel: string) => void,
   handleChat: () => void,
+  server: string
 }
 
-export const Home: React.FC<HomeProps> = ({ daySelected, onCurrentDayChange, reminder, onReminderChange, url, onUrlChange, platformObj, onPanel1Change, onPanel2Change, onPanel3Change, onPanel4Change, handleChat }) => {
+export const Home: React.FC<HomeProps> = ({ daySelected, onCurrentDayChange, reminder, onReminderChange, url, onUrlChange, platformObj, onPanel1Change, onPanel2Change, onPanel3Change, onPanel4Change, handleChat, server }) => {
 
   var currentPanel: string = "";
   var publicity = getImage("publicity");
   var banner = getImage("banner2");
+
+  var platformDoc = "";
+  var usersDoc = "";
+
+  (server === "servidor1") ? platformDoc = "platforms" : platformDoc = "platforms2";
+  (server === "servidor1") ? usersDoc = "users" : usersDoc = "users2";
 
   //Sets default panels "empty"
   const [panel1, setpanel1] = useState(panelsObj.panel1);
@@ -62,7 +69,7 @@ export const Home: React.FC<HomeProps> = ({ daySelected, onCurrentDayChange, rem
   const updatePanel1 = async () => {
     if (localStorage.getItem('username')) {
       const userNameFromLocalStorage = localStorage.getItem("username")!;
-      const userRef = doc(DATABASE, 'platforms', userNameFromLocalStorage);
+      const userRef = doc(DATABASE, platformDoc, userNameFromLocalStorage);
       setDoc(userRef, { panel1: panel1 }, { merge: true });
     }
   }
@@ -71,7 +78,7 @@ export const Home: React.FC<HomeProps> = ({ daySelected, onCurrentDayChange, rem
   const updatePanel2 = async () => {
     if (localStorage.getItem('username')) {
       const userNameFromLocalStorage = localStorage.getItem("username")!;
-      const userRef = doc(DATABASE, 'platforms', userNameFromLocalStorage);
+      const userRef = doc(DATABASE, platformDoc, userNameFromLocalStorage);
       setDoc(userRef, { panel2: panel2 }, { merge: true });
     }
   }
@@ -80,7 +87,7 @@ export const Home: React.FC<HomeProps> = ({ daySelected, onCurrentDayChange, rem
   const updatePanel3 = async () => {
     if (localStorage.getItem('username')) {
       const userNameFromLocalStorage = localStorage.getItem("username")!;
-      const userRef = doc(DATABASE, 'platforms', userNameFromLocalStorage);
+      const userRef = doc(DATABASE, platformDoc, userNameFromLocalStorage);
       setDoc(userRef, { panel3: panel3 }, { merge: true });
     }
   }
@@ -89,7 +96,7 @@ export const Home: React.FC<HomeProps> = ({ daySelected, onCurrentDayChange, rem
   const updatePanel4 = async () => {
     if (localStorage.getItem('username')) {
       const userNameFromLocalStorage = localStorage.getItem("username")!;
-      const userRef = doc(DATABASE, 'platforms', userNameFromLocalStorage);
+      const userRef = doc(DATABASE, platformDoc, userNameFromLocalStorage);
       setDoc(userRef, { panel4: panel4 }, { merge: true });
     }
   }
@@ -192,7 +199,7 @@ export const Home: React.FC<HomeProps> = ({ daySelected, onCurrentDayChange, rem
   const updateReminder = async (reminder: string) => {
     if (localStorage.getItem('username')) {
       const userNameFromLocalStorage = localStorage.getItem("username")!;
-      const userRef = doc(DATABASE, 'users', userNameFromLocalStorage);
+      const userRef = doc(DATABASE, usersDoc, userNameFromLocalStorage);
       setDoc(userRef, { reminder: reminder }, { merge: true });
     }
   }
@@ -334,7 +341,8 @@ export const Home: React.FC<HomeProps> = ({ daySelected, onCurrentDayChange, rem
           <hr />
           <div className="home__schedule">
             <HomeSchedule
-              daySelected={daySelected}></HomeSchedule>
+              daySelected={daySelected}
+              server={server}></HomeSchedule>
           </div>
           <hr />
         </div>
