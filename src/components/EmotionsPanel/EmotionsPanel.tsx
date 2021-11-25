@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 interface EmotionsRowProps {
     name: string,
     img: string,
-    state: number
+    state: number,
 }
 
 const EmotionsRow: React.FC<EmotionsRowProps> = ({ name, img, state }) => {
@@ -37,14 +37,18 @@ const EmotionsRow: React.FC<EmotionsRowProps> = ({ name, img, state }) => {
 
 interface EmotionsPanelProps {
     handleChat: () => void,
+    server: string
 }
 
-export const EmotionsPanel: React.FC<EmotionsPanelProps> = ({ handleChat }) => {
+export const EmotionsPanel: React.FC<EmotionsPanelProps> = ({ handleChat, server }) => {
+
+    var usersDoc = "";
+    (server === "servidor1") ? usersDoc = "users" : usersDoc = "users2";
 
     var [usersList, setUsersList] = React.useState<UserType[]>([]);
 
     const getCourses = async () => {
-        const coursesCollection = collection(DATABASE, 'users');
+        const coursesCollection = collection(DATABASE, usersDoc);
         const coursesSnapshot = await getDocs(coursesCollection);
         const list: UserType[] = [];
         coursesSnapshot.forEach(doc => {
@@ -65,7 +69,7 @@ export const EmotionsPanel: React.FC<EmotionsPanelProps> = ({ handleChat }) => {
                             img={user.img}
                             name={user.name}
                             state={user.state}></EmotionsRow>
-                        })}
+                    })}
                 </div>
             </Link>
         </div>

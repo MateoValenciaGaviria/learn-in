@@ -24,14 +24,18 @@ interface ProfileProps {
   onUrlChange: (url: string) => void,
   onBackgroundChange: (background: string) => void,
   achievementsObj: AchievementsType,
-  rankList: RankingType[]
+  rankList: RankingType[],
+  server: string
 }
 
-export const Profile: React.FC<ProfileProps> = ({ user, onStateChanged, onUrlChange, onBackgroundChange, achievementsObj, rankList }) => {
+export const Profile: React.FC<ProfileProps> = ({ user, onStateChanged, onUrlChange, onBackgroundChange, achievementsObj, rankList, server }) => {
 
   //var userAvatar = getImage(user[0].img);
   const [emoji, setEmoji] = useState(user.state);
   const [userBackground, setUserBackground] = useState(localBackground);
+
+  var usersDoc = "";
+  (server === "servidor1") ? usersDoc = "users" : usersDoc = "users2";
 
   localBackground = user.background;
 
@@ -40,7 +44,7 @@ export const Profile: React.FC<ProfileProps> = ({ user, onStateChanged, onUrlCha
   const updateState = async (stateIndex: number) => {
     if (localStorage.getItem('username')) {
       const userNameFromLocalStorage = localStorage.getItem("username")!;
-      const userRef = doc(DATABASE, 'users', userNameFromLocalStorage);
+      const userRef = doc(DATABASE, usersDoc, userNameFromLocalStorage);
       setDoc(userRef, { state: stateIndex }, { merge: true });
     }
   }
@@ -56,7 +60,7 @@ export const Profile: React.FC<ProfileProps> = ({ user, onStateChanged, onUrlCha
   const updateUrlBackground = async () => {
     if (localStorage.getItem('username')) {
       const userNameFromLocalStorage = localStorage.getItem("username")!;
-      const userRef = doc(DATABASE, 'users', userNameFromLocalStorage);
+      const userRef = doc(DATABASE, usersDoc, userNameFromLocalStorage);
       setDoc(userRef, { background: userBackground }, { merge: true });
     }
   }

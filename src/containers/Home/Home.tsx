@@ -238,7 +238,8 @@ export const Home: React.FC<HomeProps> = ({ daySelected, onCurrentDayChange, rem
               url={url}
               onUrlChange={onUrlChange}></SpotifyPanel> : null}
             {(panel1 === "emotions") ? <EmotionsPanel
-              handleChat={handleChat}></EmotionsPanel> : null}
+              handleChat={handleChat}
+              server={server}></EmotionsPanel> : null}
           </div>
           <div className="home__panel-container">
             <div className="home__select-container">
@@ -267,7 +268,8 @@ export const Home: React.FC<HomeProps> = ({ daySelected, onCurrentDayChange, rem
               url={url}
               onUrlChange={onUrlChange}></SpotifyPanel> : null}
             {(panel2 === "emotions") ? <EmotionsPanel
-              handleChat={handleChat}></EmotionsPanel> : null}
+              handleChat={handleChat}
+              server={server}></EmotionsPanel> : null}
           </div>
           <div className="home__panel-container">
             <div className="home__select-container">
@@ -296,7 +298,8 @@ export const Home: React.FC<HomeProps> = ({ daySelected, onCurrentDayChange, rem
               url={url}
               onUrlChange={onUrlChange}></SpotifyPanel> : null}
             {(panel3 === "emotions") ? <EmotionsPanel
-              handleChat={handleChat}></EmotionsPanel> : null}
+              handleChat={handleChat}
+              server={server}></EmotionsPanel> : null}
           </div>
           <div className="home__panel-container">
             <div className="home__select-container">
@@ -325,7 +328,8 @@ export const Home: React.FC<HomeProps> = ({ daySelected, onCurrentDayChange, rem
               url={url}
               onUrlChange={onUrlChange}></SpotifyPanel> : null}
             {(panel4 === "emotions") ? <EmotionsPanel
-              handleChat={handleChat}></EmotionsPanel> : null}
+              handleChat={handleChat}
+              server={server}></EmotionsPanel> : null}
           </div>
         </div>
       </div>
