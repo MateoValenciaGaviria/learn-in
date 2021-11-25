@@ -2473,6 +2473,10 @@ hr {
   font-size: 15px;
 }
 
+.upcoming-activities__info--date {
+  padding-left: 15%;
+}
+
 .upcoming-activities__info--finished {
   color: #23DF41;
 }

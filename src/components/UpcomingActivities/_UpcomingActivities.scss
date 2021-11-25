@@ -42,6 +42,10 @@
         color: $white;
         font-size: 15px;
 
+        &--date{
+            padding-left: 15%;
+        }
+
         &--finished{
             color: #23DF41;
         }

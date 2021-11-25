@@ -375,7 +375,7 @@ export const Schedule: React.FC<ScheduleProps> = ({ server }) => {
         currentView="WorkWeek"
         startHour="7:00"
         endHour="24:00"
-        eventSettings={{ dataSource: (server === "servidor1") ? localSecondSchedule : localSecondSchedule }}>
+        eventSettings={{ dataSource: (server === "servidor1") ? localSchedule : localSecondSchedule }}>
           <ResourcesDirective>
             <ResourceDirective field="ResourceID" title="Color theme" name="Resources"
             textField="Name" idField="Id" colorField="Color" dataSource={ (server === "servidor1") ? resourceDataSource : secondResourceDataSource}></ResourceDirective>
