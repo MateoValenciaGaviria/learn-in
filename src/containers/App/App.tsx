@@ -72,11 +72,11 @@ var rankObj = [
 
 var currentGlobalPlaylist = "";
 
-var server = "";
-var platformDoc = "";
-var usersDoc = "";
-var achievementsDoc = "";
-var ranksDoc = "";
+var server: string = "";
+var platformDoc: string = "";
+var usersDoc: string = "";
+var achievementsDoc: string = "";
+var ranksDoc: string = "";
 
 export const App = () => {
 
@@ -97,7 +97,11 @@ export const App = () => {
 
   currentGlobalPlaylist = mainUser.playlist;
 
-  server = localStorage.getItem("server")!;
+  if(localStorage.getItem("server") !== null){
+    server = localStorage.getItem("server")!;
+  }else{
+    localStorage.clear();
+  }
 
   if (server === "servidor1") {
     usersDoc = "users";
@@ -245,8 +249,8 @@ export const App = () => {
 
   return (
     <HashRouter basename={process.env.PUBLIC_URL}>
-      {(!localStorage.getItem('username')) ? <Login></Login> : null}
-      {(localStorage.getItem('username')) ? <div className="app__content">
+      {(!localStorage.getItem('username') && !localStorage.getItem('server')) ? <Login></Login> : null}
+      {(localStorage.getItem('username') && localStorage.getItem('server')) ? <div className="app__content">
         <div className="app__navbar">
           <img className="app__logo" src={learnInLogo} alt="learn-in logo" />
           <div className="app__links-container">
@@ -303,7 +307,8 @@ export const App = () => {
               onUrlChange={handleUrlChange}
               onBackgroundChange={handleBackgroundChange}
               achievementsObj={mainAchievements}
-              rankList={mainRanks}></Profile>}>
+              rankList={mainRanks}
+              server={server}></Profile>}>
           </Route>
           <Route path='/chat' render={() =>
             <Chat></Chat>}>
