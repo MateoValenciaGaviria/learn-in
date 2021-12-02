@@ -22,9 +22,8 @@ export const Courses: React.FC<CoursesProps> = ({ rankList, server}) => {
 
   var [coursesList, setCoursesList] = React.useState<IndividualCourseType[]>([]);
   var [timeLineItems, setTimeLineItems] = React.useState<TimeLineItemProps[]>([]);
-  /* courseName="Español" unit="Unidad 1: Fundamentos básicos" nextClass={["Teoría", "Conceptos"]} details="Veremos los conceptos básicos" tasks={[{important:false, text:"Ejercicio 1", state:"En curso", bgColor:"#46C443"}]} */
 
-  timeLineItems.push({courseName:"Diseño Bidimensional", details:"Diseñar un videojuego de un cuento tradicional.", unit:"Unidad 4: Reto Final", nextClass:["2 Bocetos", "Asesoría"], tasks:[{important:true, text:"Bocetos Behance", state:"En curso", bgColor:"#46C443"}]});
+/*   (server === "servidor1") ? timeLineItems.push({courseName:"Diseño Bidimensional", details:"Diseñar un videojuego de un cuento tradicional.", unit:"Unidad 4: Reto Final", nextClass:["2 Bocetos", "Asesoría"], tasks:[{important:true, text:"Bocetos Behance", state:"En curso", bgColor:"#46C443"}]}) : timeLineItems.push({courseName:"Física", details:"Realizar ejercicios del libro", unit:"Unidad 4: Termodinámica", nextClass:["Revisión", "Tema nuevo"], tasks:[{important:true, text:"Ejercicios", state:"En curso", bgColor:"#255AE1"}]}); */
 
 
   const getCourses = async () => {
@@ -62,8 +61,9 @@ export const Courses: React.FC<CoursesProps> = ({ rankList, server}) => {
         </section>
         <h1 className="courses__time-line-title">Línea del tiempo</h1>
         <section className="courses__time-line-wrapper">
-          <TimeLineItemContainer date={"Miércoles 24, Noviembre"} timeLineItem={[{courseName:"Diseño Bidimensional", details:"Diseñar un videojuego de un cuento tradicional.", unit:"Unidad 4: Reto Final", nextClass:["2 Bocetos", "Asesoría"], tasks:[{important:false, text:"Bocetos Behance", state:"En curso", bgColor:"#6F447A"}]}]}></TimeLineItemContainer>
-          <TimeLineItemContainer date={"Viernes 3, Diciembre"} timeLineItem={[{courseName:"Diseño Bidimensional", details:"Entrega y presentación del proyecto final", unit:"Unidad 4: Reto Final", nextClass:["Final"], tasks:[{important:true, text:"Todos los entregables", state:"Pendiente", bgColor:"#46C443"}]}]} ></TimeLineItemContainer>
+         {(server === "servidor1") ? <><TimeLineItemContainer date={"Miércoles 24, Noviembre"} timeLineItem={[{ courseName: "Diseño Bidimensional", details: "Diseñar un videojuego de un cuento tradicional.", unit: "Unidad 4: Reto Final", nextClass: ["2 Bocetos", "Asesoría"], tasks: [{ important: false, text: "Bocetos Behance", state: "En curso", bgColor: "#6F447A" }] }]}></TimeLineItemContainer><TimeLineItemContainer date={"Viernes 3, Diciembre"} timeLineItem={[{ courseName: "Diseño Bidimensional", details: "Entrega y presentación del proyecto final", unit: "Unidad 4: Reto Final", nextClass: ["Final"], tasks: [{ important: true, text: "Todos los entregables", state: "Pendiente", bgColor: "#46C443" }] }]}></TimeLineItemContainer></> : 
+         
+         <><TimeLineItemContainer date={"Miércoles 24, Noviembre"} timeLineItem={[{courseName:"Física", details:"Realizar ejercicios del libro", unit:"Unidad 4: Termodinámica", nextClass:["Revisión", "Tema nuevo"], tasks:[{important:false, text:"Ejercicios", state:"En curso", bgColor:"#255AE1"}]}]}></TimeLineItemContainer><TimeLineItemContainer date={"Viernes 3, Diciembre"} timeLineItem={[{courseName:"Español", details:"Realizar lectura de la página 1 a 25", unit:"Unidad 4: Lectura crítica", nextClass:["Quiz", "Tema nuevo"], tasks:[{important:true, text:"Taller de compresión lectora", state:"Pendiente", bgColor:"#FFB921"}]}]}></TimeLineItemContainer></>} 
         </section>
       </div>
       <div className="courses__right-container">

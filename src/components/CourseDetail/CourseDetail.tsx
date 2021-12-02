@@ -2,12 +2,14 @@ import React, { CSSProperties } from "react";
 import { useParams, useHistory } from "react-router-dom";
 import { GradesView } from "../GradesView/GradesView";
 import { RankingPanel } from '../../components/RankingPanel/RankingPanel';
+import { RankingType } from "../../utils/types/RankingType";
 
 
 interface CourseResourceItemProps {
     type: string,
     title: string,
     status?: string,
+
 }
 export interface CSSPropertiesWithVars extends CSSProperties {
     '--mainCourseColor': string;
@@ -26,10 +28,12 @@ export const CourseResourceItem: React.FC<CourseResourceItemProps> = ({ type, ti
 }
 
 interface CourseDetailProps {
-   teacherView?: boolean,
+    teacherView?: boolean,
+    server: string,
+    rankList: RankingType[]
 }
 
-export const CourseDetail: React.FC<CourseDetailProps> = ({teacherView}) => {
+export const CourseDetail: React.FC<CourseDetailProps> = ({ teacherView, server, rankList }) => {
     var loc = document.location.href.split("&");
     const { name } = useParams<{ name?: string }>();
     const mainCourseColor = loc[1].substring(6);
@@ -51,17 +55,17 @@ export const CourseDetail: React.FC<CourseDetailProps> = ({teacherView}) => {
     let content = document.querySelector('.course-detail__unit-info');
     console.log(content?.innerHTML);
 
-    if(teacherView && content!=null){
+    if (teacherView && content != null) {
         content.addEventListener('click', () => {
             // Toggle contentEditable on button click
-            
+
             // If disabled, save text
-            if(content!) {
+            if (content!) {
                 localStorage.setItem('content', content!.innerHTML);
             }
-          });
+        });
     }
-    
+
 
     let history = useHistory();
 
@@ -89,26 +93,24 @@ export const CourseDetail: React.FC<CourseDetailProps> = ({teacherView}) => {
                     <summary className="course-detail__unit-summary">
                         Unidad {unitNumber}
                     </summary>
-                    <article className="course-detail__unit-info"  contentEditable={teacherView==true ? "true" : "false"}  >
-                        <b>Reto Final</b>
-                        <p>Diseñar un videojuego de un cuento tradicional.</p>
-                        <ul>
+                    <article className="course-detail__unit-info" contentEditable={teacherView == true ? "true" : "false"}  >
+                        {(server === "servidor1") ? <><b>Reto Final</b><p>Diseñar un videojuego de un cuento tradicional.</p><ul>
                             <li>Recuerda usar en cada plancha <b>mínimo 8 temas</b> de los vistos en todo el semestre.</li>
-                        </ul>
+                        </ul></> : <><b>Descripción</b><p>Aquí se podrán añadir detalles del curso {name} que el profesor desee compartir</p></>}
                     </article>
 
                     <details className="course-detail__class" open>
                         <summary>
-                            <b> Clase 31:</b> Asesoría <button className="course-detail__btn-activities" onClick={handleActivity}>Ver actividades</button>
+                            {(server === "servidor1") ? <><b> Clase 31:</b> Asesoría <button className="course-detail__btn-activities" onClick={handleActivity}>Ver actividades</button></> : <><b> Clase 10:</b> Talleres <button className="course-detail__btn-activities" onClick={handleActivity}>Ver actividades</button></>}
                         </summary>
-                        <CourseResourceItem title="Bocetos de behance" type="Tarea" status="En Curso"></CourseResourceItem>    
+                        {(server === "servidor1") ? <CourseResourceItem title="Bocetos de behance" type="Tarea" status="En Curso"></CourseResourceItem> : <CourseResourceItem title="Taller 1" type="Tarea" status="En Curso"></CourseResourceItem>}
                     </details>
 
                     <details className="course-detail__class" open>
                         <summary>
-                            <b> Clase 32:</b> Entrega Final <button className="course-detail__btn-activities" onClick={handleActivity}>Ver actividades</button>
+                            {(server === "servidor1") ? <> <b> Clase 32:</b> Entrega Final <button className="course-detail__btn-activities" onClick={handleActivity}>Ver actividades</button></> : <> <b> Clase 32:</b> Exámen Final <button className="course-detail__btn-activities" onClick={handleActivity}>Ver actividades</button></>}
                         </summary>
-                        <CourseResourceItem title="Entrega Final" type="Tarea" status="Pendiente"></CourseResourceItem>    
+                        {(server === "servidor1") ? <CourseResourceItem title="Entrega Final" type="Tarea" status="Pendiente"></CourseResourceItem> : <CourseResourceItem title="Exámen Final" type="Archivo" status="Pendiente"></CourseResourceItem>}
                     </details>
 
                 </details>}
@@ -116,14 +118,19 @@ export const CourseDetail: React.FC<CourseDetailProps> = ({teacherView}) => {
             </div>
             <div className="course-detail__right-container">
                 {activities === false && <div className="course-detail__rank-wrapper">
-                    {/* <RankingPanel rankList={[]}></RankingPanel> */}
+                  
+                    <RankingPanel rankList={rankList}></RankingPanel>
                 </div>}
                 {activities === true && <div className="course-detail__activities-wrapper">
-                    <h1>Actividades clase 31</h1>
-                    <div className="task-item">
-                        <p className="task-item__text">2 Bocetos de behance</p>
-                        <input type="checkbox" name="checkbox" id="" className="task-item__check" />
-                    </div>
+                    {(server === "servidor1") ? <><h1>Actividades clase 31</h1>
+                        <div className="task-item">
+                            <p className="task-item__text">2 Bocetos de behance</p>
+                            <input type="checkbox" name="checkbox" id="" className="task-item__check" />
+                        </div> </> : <><h1>Actividades</h1>
+                        <div className="task-item">
+                            <p className="task-item__text">Ejercicios</p>
+                            <input type="checkbox" name="checkbox" id="" className="task-item__check" />
+                        </div> </>}
                 </div>}
                 <GradesView></GradesView>
             </div>

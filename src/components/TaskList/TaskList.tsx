@@ -17,7 +17,8 @@ export const TaskList = () => {
                     <p className="task-list__title">Hoy</p>
                     <p className="task-list__description">Vencimiento</p>
                 </div>
-                <img className="task-list__check-img" src={checkhover} alt="check hover" />
+                {/* <img className="task-list__check-img" src={checkhover} alt="check hover" /> */}
+                <input type="checkbox" name="checkbox" id="" className="task-item__check" />
             </div>
 
             <div className="task-list__row">
@@ -30,7 +31,7 @@ export const TaskList = () => {
                     <p className="task-list__title">Hoy 1:00 pm</p>
                     <p className="task-list__description">Vencimiento</p>
                 </div>
-                <img className="task-list__check-img" src={checkhover} alt="check hover" />
+                <input type="checkbox" name="checkbox" id="" className="task-item__check" />
             </div>
 
             <div className="task-list__row">
@@ -43,7 +44,7 @@ export const TaskList = () => {
                     <p className="task-list__title">Mañana</p>
                     <p className="task-list__description">Vencimiento</p>
                 </div>
-                <img className="task-list__check-img" src={checkhover} alt="check hover" />
+                <input type="checkbox" name="checkbox" id="" className="task-item__check" />
             </div>
         </div>
     );
