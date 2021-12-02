@@ -82,7 +82,7 @@ export const SecondaryRankingPanel: React.FC<SecondaryRankingPanelProps> = ({ ra
         currentRanks = [];
         currentTopRanks = [];
         loadCurrentRanks();
-        updateTopRanks();
+        getTopRanks();
         localSortedRanks = currentTopRanks;
     }
 
@@ -103,34 +103,16 @@ export const SecondaryRankingPanel: React.FC<SecondaryRankingPanelProps> = ({ ra
 
     const getTopRanks = () => {
 
-        var maxRankId: number = 0;
-        var maxPpoints: number = 0;
-        var index: number = 0;
-
-        for (let i = 0; i < currentRanks.length; i++) {
-
-            if (currentRanks[i].rankId >= maxRankId) {
-                maxRankId = currentRanks[i].rankId;
-                maxPpoints = currentRanks[i].points;
-                index = i;
-                if (currentRanks[i].points >= maxPpoints) {
-                    maxRankId = currentRanks[i].rankId;
-                    maxPpoints = currentRanks[i].points;
-                    index = i;
-                }
+        currentRanks.sort((a, b) => {
+            var n = b.rankId - a.rankId;
+            if (n !== 0) {
+                return n;
             }
 
-        }
+            return b.points - a.points;
+        });
 
-        currentTopRanks.push(currentRanks[index]);
-        currentRanks.splice(index, 1);
-
-    }
-
-    const updateTopRanks = () => {
-        for (let i = 0; i < rankListLength; i++) {
-            getTopRanks();
-        }
+        currentTopRanks = currentRanks;
         currentTopRanks.splice(0, 3);
     }
 

@@ -56,8 +56,8 @@ export const RankingPanel: React.FC<RankingPanelProps> = ({ rankList }) => {
     currentRanks = [];
     currentTopRanks = [];
     loadCurrentRanks();
-    updateTopRanks();
-    localTopRanks = currentTopRanks;
+    getTopRanks();
+    localTopRanks = currentTopRanks.slice(0,4);
   }
 
   const loadCurrentRanks = () => {
@@ -74,36 +74,18 @@ export const RankingPanel: React.FC<RankingPanelProps> = ({ rankList }) => {
     });
   }
 
-  const getTopRank = () => {
+  const getTopRanks = () => {
 
-    var maxRankId: number = 0;
-    var maxPpoints: number = 0;
-    var index: number = 0;
-
-    for (let i = 0; i < currentRanks.length; i++) {
-
-      if (currentRanks[i].rankId >= maxRankId) {
-        maxRankId = currentRanks[i].rankId;
-        maxPpoints = currentRanks[i].points;
-        index = i;
-        if (currentRanks[i].points >= maxPpoints) {
-          maxRankId = currentRanks[i].rankId;
-          maxPpoints = currentRanks[i].points;
-          index = i;
-        }
+    currentRanks.sort((a, b) => {
+      var n = b.rankId - a.rankId;
+      if (n !== 0) {
+        return n;
       }
 
-    }
+      return b.points - a.points;
+    });
 
-    currentTopRanks.push(currentRanks[index]);
-    currentRanks.splice(index, 1);
-
-  }
-
-  const updateTopRanks = () => {
-    for (let i = 0; i < 3; i++) {
-      getTopRank();
-    }
+    currentTopRanks = currentRanks;
   }
 
   useEffect(() => { handleLoadRanks() }, []);
