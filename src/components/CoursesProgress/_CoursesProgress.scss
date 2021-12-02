@@ -6,17 +6,18 @@
     height: 100%;
 
     &__circle{
-        width: 55px;
+        width: 50px;
     }
 
     &__row{
         display: flex;
         flex-direction: row;
-        padding: 13px 25px;
+        padding: 10px 25px;
         align-items: center;
         border-radius: $panelsborderradius;
         background-color: #161A30;
         margin-bottom: 5px;
+        height: 100%;
         &:last-child{
             margin-bottom: 0px;
         }

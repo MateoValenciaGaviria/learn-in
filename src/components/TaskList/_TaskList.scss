@@ -9,9 +9,9 @@
     &__row{
         display: grid;
         grid-template-columns: 10% 55% 25% 10%;
-        padding: 15px 25px;
+        padding: 10px 25px;
         margin-bottom: 5px;
-        height: fit-content;
+        height: 100%;
         align-items: center;
         border-radius: $panelsborderradius;
         background-color: #161A30;

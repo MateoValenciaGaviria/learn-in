@@ -418,6 +418,7 @@ input[type="checkbox"]:checked::before {
   height: 100%;
   margin-top: 30px;
   margin-bottom: 30px;
+  padding-bottom: 30px;
   margin-left: 40px;
   margin-right: 40px;
 }
@@ -2546,7 +2547,7 @@ hr {
 }
 
 .courses-progress__circle {
-  width: 55px;
+  width: 50px;
 }
 
 .courses-progress__row {
@@ -2557,13 +2558,14 @@ hr {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  padding: 13px 25px;
+  padding: 10px 25px;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
   border-radius: 10px;
   background-color: #161A30;
   margin-bottom: 5px;
+  height: 100%;
 }
 
 .courses-progress__row:last-child {
@@ -2623,11 +2625,9 @@ hr {
   display: grid;
   -ms-grid-columns: 10% 55% 25% 10%;
       grid-template-columns: 10% 55% 25% 10%;
-  padding: 15px 25px;
+  padding: 10px 25px;
   margin-bottom: 5px;
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
-  height: fit-content;
+  height: 100%;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
