@@ -77,14 +77,14 @@ export const Profile: React.FC<ProfileProps> = ({ user, onStateChanged, onUrlCha
             <button className="profile__upload-btn profile__upload-btn--image-change" onClick={(e) => {
               localBackground = "";
               setUserBackground(localBackground);
-            }}>Cargar Imagen</button>
+            }}>Cambiar Imagen</button>
           </div> :
           <div className="profile__upload-container">
             <input type="text" className="profile__upload-input" onChange={(e) => currentBackground = e.target.value} />
             <button className="profile__upload-btn" onClick={(e) => {
               setUserBackground(currentBackground);
               onBackgroundChange(currentBackground);
-            }}>Cambiar Imagen</button>
+            }}>Cargar Imagen</button>
           </div>
         }
       </div>
