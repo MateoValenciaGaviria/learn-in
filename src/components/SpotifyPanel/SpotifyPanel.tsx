@@ -7,19 +7,23 @@ var currentUrl: string = "";
 const defaultPlaylist: string = "https://open.spotify.com/playlist/0znZGpitzAg7iOvGpfDJP4";
 interface spotifyPanelProps {
   url: string,
-  onUrlChange: (url: string) => void
+  onUrlChange: (url: string) => void,
+  server: string
 }
 
-export const SpotifyPanel: React.FC<spotifyPanelProps> = ({ url, onUrlChange }) => {
+export const SpotifyPanel: React.FC<spotifyPanelProps> = ({ url, onUrlChange, server }) => {
 
   const [playlist, setPlaylist] = React.useState(localUrl);
 
   localUrl = url;
 
+  var usersDoc = "";
+  (server === "servidor1") ? usersDoc = "users" : usersDoc = "users2";
+
   const updateUrl = async () => {
     if (localStorage.getItem('username')) {
       const userNameFromLocalStorage = localStorage.getItem("username")!;
-      const userRef = doc(DATABASE, 'users', userNameFromLocalStorage);
+      const userRef = doc(DATABASE, usersDoc, userNameFromLocalStorage);
       setDoc(userRef, { playlist: playlist }, { merge: true });
     }
   }

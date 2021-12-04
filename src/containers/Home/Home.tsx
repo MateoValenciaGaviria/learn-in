@@ -236,7 +236,8 @@ export const Home: React.FC<HomeProps> = ({ daySelected, onCurrentDayChange, rem
             {(panel1 === "tasks") ? <TaskList></TaskList> : null}
             {(panel1 === "playlist") ? <SpotifyPanel
               url={url}
-              onUrlChange={onUrlChange}></SpotifyPanel> : null}
+              onUrlChange={onUrlChange}
+              server={server}></SpotifyPanel> : null}
             {(panel1 === "emotions") ? <EmotionsPanel
               handleChat={handleChat}
               server={server}></EmotionsPanel> : null}
@@ -266,7 +267,8 @@ export const Home: React.FC<HomeProps> = ({ daySelected, onCurrentDayChange, rem
             {(panel2 === "tasks") ? <TaskList></TaskList> : null}
             {(panel2 === "playlist") ? <SpotifyPanel
               url={url}
-              onUrlChange={onUrlChange}></SpotifyPanel> : null}
+              onUrlChange={onUrlChange}
+              server={server}></SpotifyPanel> : null}
             {(panel2 === "emotions") ? <EmotionsPanel
               handleChat={handleChat}
               server={server}></EmotionsPanel> : null}
@@ -296,7 +298,8 @@ export const Home: React.FC<HomeProps> = ({ daySelected, onCurrentDayChange, rem
             {(panel3 === "tasks") ? <TaskList></TaskList> : null}
             {(panel3 === "playlist") ? <SpotifyPanel
               url={url}
-              onUrlChange={onUrlChange}></SpotifyPanel> : null}
+              onUrlChange={onUrlChange}
+              server={server}></SpotifyPanel> : null}
             {(panel3 === "emotions") ? <EmotionsPanel
               handleChat={handleChat}
               server={server}></EmotionsPanel> : null}
@@ -326,7 +329,8 @@ export const Home: React.FC<HomeProps> = ({ daySelected, onCurrentDayChange, rem
             {(panel4 === "tasks") ? <TaskList></TaskList> : null}
             {(panel4 === "playlist") ? <SpotifyPanel
               url={url}
-              onUrlChange={onUrlChange}></SpotifyPanel> : null}
+              onUrlChange={onUrlChange}
+              server={server}></SpotifyPanel> : null}
             {(panel4 === "emotions") ? <EmotionsPanel
               handleChat={handleChat}
               server={server}></EmotionsPanel> : null}
